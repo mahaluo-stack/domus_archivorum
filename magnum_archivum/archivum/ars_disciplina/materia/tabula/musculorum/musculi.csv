@@ -1,0 +1,34 @@
+nomen_musculi_regio;nomen_musculi;descriptio
+neck;sternocleidomastoid;neck side
+neck;splenius capitis;neck
+neck;semispinalis capitis;neck
+shoulder;deltoid;shoulder
+shoulder;rotator cuff;shoulder
+back;teres major;upper back
+back;trapezius;shoulders, back
+back;latissimus dorsi;back
+back;rhomboid;middle back
+back;erector spinae;lower back
+chest;pectoralis major;chest
+chest;pectoralis minor;chest
+upper arm;biceps;arm
+upper arm;triceps;arm
+forearm;flexores carpi;
+forearm;extensores carpi;
+forearm;pronator;
+forearm;supinator;supinates the forearm
+forearm;brachioradialis;flexes the forearm at elbow
+abdomen;rectus abdominis;abs
+abdomen;external obliques;obliques
+abdomen;internal obliques;obliques
+abdomen;transverse abdominis;core
+hip;adductor;hip
+hip;iliopsoas;hip flexors
+thigh;quadricep;front of the thigh
+thigh;sartorius;tailors muscle, front thigh
+thigh;hamstring;back of the thigh
+thigh;gracilis;thigh
+glutes;gluteal muscles;glutes
+calf;gastrocnemicus;calf
+calf;soleus;calf
+calf;tibialis anterior;shin
