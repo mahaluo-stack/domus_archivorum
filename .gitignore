@@ -1,68 +1,60 @@
-.gradle
-build/
-!gradle/wrapper/gradle-wrapper.jar
-!**/src/main/**/build/
-!**/src/test/**/build/
-
-### IntelliJ IDEA ###
-.idea/modules.xml
-.idea/jarRepositories.xml
-.idea/compiler.xml
-.idea/libraries/
-*.iws
-*.iml
-*.ipr
-out/
-!**/src/main/**/out/
-!**/src/test/**/out/
-
-### Eclipse ###
-.apt_generated
-.classpath
-.factorypath
-.project
-.settings
-.springBeans
-.sts4-cache
-bin/
-!**/src/main/**/bin/
-!**/src/test/**/bin/
-
-### NetBeans ###
-/nbproject/private/
-/nbbuild/
-/dist/
-/nbdist/
-/.nb-gradle/
-
-### VS Code ###
-.vscode/
-
-### Mac OS ###
+# -----------------------------
+# GLOBAL / OS
+# -----------------------------
 .DS_Store
-*.dtproj.user
-*.dtproj.*
-*.database
-*.deploymentconfig
-*.manifest
-*.local
+Thumbs.db
+Desktop.ini
 
-# SSIS bin/obj
-bin/
-obj/
-*.cache
-*.tmp
-*.dbmdl
-*.dbproj.user
-*.sqlproj.user
-Debug/
-Release/
-dist/
-out/
+# -----------------------------
+# IDEs
+# -----------------------------
+# IntelliJ
+.idea/
+*.iml
 
+# Visual Studio
 .vs/
 *.user
 *.suo
 *.ncb
 *.opendb
 *.VC.db
+
+# VSCode
+.vscode/
+
+# -----------------------------
+# BUILD OUTPUTS
+# -----------------------------
+bin/
+obj/
+build/
+out/
+dist/
+Debug/
+Release/
+
+# -----------------------------
+# SSIS / SSDT SPECIFIC
+# -----------------------------
+*.dtproj.user
+*.dtproj.*
+*.deploymentconfig
+*.database
+*.manifest
+*.local
+*.cache
+*.tmp
+
+# -----------------------------
+# SQL SERVER / DB PROJECTS
+# -----------------------------
+*.dbmdl
+*.dbproj.user
+*.sqlproj.user
+
+# -----------------------------
+# KOTLIN / GRADLE
+# -----------------------------
+.gradle/
+*.kts~
