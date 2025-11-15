@@ -5,36 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3a4952aa-4ad6-4766-9363-944c8cb8dafe" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../magnum_archivum/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../magnum_archivum/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../magnum_archivum/archivum/ars_disciplina/materia/tabula/disciplinarum/angulus.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../magnum_archivum/archivum/ars_disciplina/materia/tabula/disciplinarum/angulus.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../magnum_archivum/archivum/ars_disciplina/materia/tabula/disciplinarum/disciplina_variationes.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../magnum_archivum/archivum/ars_disciplina/materia/tabula/disciplinarum/disciplina_variationes.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../magnum_archivum/archivum/ars_disciplina/materia/tabula/disciplinarum/disciplinae.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../magnum_archivum/archivum/ars_disciplina/materia/tabula/disciplinarum/disciplinae.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../magnum_archivum/archivum/ars_disciplina/materia/tabula/disciplinarum/genera_disciplinae.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../magnum_archivum/archivum/ars_disciplina/materia/tabula/disciplinarum/genera_disciplinae.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../magnum_archivum/archivum/ars_disciplina/materia/tabula/disciplinarum/genera_prehensionis.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../magnum_archivum/archivum/ars_disciplina/materia/tabula/disciplinarum/genera_prehensionis.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../magnum_archivum/archivum/ars_disciplina/materia/tabula/disciplinarum/motus.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../magnum_archivum/archivum/ars_disciplina/materia/tabula/disciplinarum/motus.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../magnum_archivum/archivum/ars_disciplina/materia/tabula/disciplinarum/prehensiones.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../magnum_archivum/archivum/ars_disciplina/materia/tabula/disciplinarum/prehensiones.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../magnum_archivum/archivum/ars_disciplina/procedura/adfero/adfero_ordinata_volumina.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../magnum_archivum/archivum/ars_disciplina/procedura/adfero/adfero_ordinata_volumina.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../magnum_archivum/archivum/ars_disciplina/procedura/adfero/disciplinarum/adfero_angulus.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../magnum_archivum/archivum/ars_disciplina/procedura/adfero/disciplinarum/adfero_angulus.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../magnum_archivum/archivum/ars_disciplina/procedura/adfero/disciplinarum/adfero_motus.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../magnum_archivum/archivum/ars_disciplina/procedura/adfero/disciplinarum/adfero_motus.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../magnum_archivum/archivum/ars_disciplina/volumen/disciplinarum/angulus.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../magnum_archivum/archivum/ars_disciplina/volumen/disciplinarum/angulus.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../magnum_archivum/archivum/ars_disciplina/volumen/disciplinarum/genera_disciplinae.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../magnum_archivum/archivum/ars_disciplina/volumen/disciplinarum/genera_disciplinae.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../magnum_archivum/archivum/ars_disciplina/volumen/disciplinarum/motus.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../magnum_archivum/archivum/ars_disciplina/volumen/disciplinarum/motus.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../magnum_archivum/creatio_schemata/creatio_schemata_catalogus.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../magnum_archivum/creatio_schemata/creatio_schemata_catalogus.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../magnum_archivum/genesis_archivorum/.vs/Genesis Archivorum/FileContentIndex/989cebb6-b2a0-4859-a349-620cfeacd185.vsidx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../magnum_archivum/genesis_archivorum/.vs/Genesis Archivorum/FileContentIndex/bb1f3ab1-f355-4626-866d-6195f6b708c6.vsidx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../magnum_archivum/genesis_archivorum/.vs/Genesis Archivorum/FileContentIndex/bb366ca4-82ad-4a13-bf04-26f45050ab78.vsidx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../magnum_archivum/genesis_archivorum/.vs/Genesis Archivorum/v17/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/../magnum_archivum/genesis_archivorum/.vs/Genesis Archivorum/v17/.suo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../magnum_archivum/genesis_archivorum/.vs/Genesis Archivorum/v17/DocumentLayout.backup.json" beforeDir="false" afterPath="$PROJECT_DIR$/../magnum_archivum/genesis_archivorum/.vs/Genesis Archivorum/v17/DocumentLayout.backup.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../magnum_archivum/genesis_archivorum/.vs/Genesis Archivorum/v17/DocumentLayout.json" beforeDir="false" afterPath="$PROJECT_DIR$/../magnum_archivum/genesis_archivorum/.vs/Genesis Archivorum/v17/DocumentLayout.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../magnum_archivum/genesis_archivorum/Genesis Archivorum.dtproj" beforeDir="false" afterPath="$PROJECT_DIR$/../magnum_archivum/genesis_archivorum/Genesis Archivorum.dtproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../magnum_archivum/genesis_archivorum/Genesis Archivorum.dtproj.user" beforeDir="false" afterPath="$PROJECT_DIR$/../magnum_archivum/genesis_archivorum/Genesis Archivorum.dtproj.user" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../magnum_archivum/genesis_archivorum/Project.params" beforeDir="false" afterPath="$PROJECT_DIR$/../magnum_archivum/genesis_archivorum/Project.params" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../magnum_archivum/genesis_archivorum/Structura Ars Disciplina.dtsx" beforeDir="false" afterPath="$PROJECT_DIR$/../magnum_archivum/genesis_archivorum/Structura Ars Disciplina.dtsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/scriptorium_actorum.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../scriptorium_nexus/src/main/kotlin/disciplinarum/regulae/RegulaDeadlift.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../scriptorium_nexus/src/main/kotlin/disciplinarum/regulae/RegulaDeadlift.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../scriptorium_nexus/src/test/kotlin/disciplinarum/ExaminatioStructorDisciplinae.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../scriptorium_nexus/src/test/kotlin/disciplinarum/ExaminatioStructorDisciplinae.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,22 +44,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/maxha/Documents/domus_archivorum/scriptorium_nexus",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/maxha/Documents/domus_archivorum/scriptorium_nexus&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\maxha\Documents\domus_archivorum\scriptorium_actorum\src\main\kotlin" />
@@ -145,6 +119,7 @@
       <workItem from="1763162342701" duration="962000" />
       <workItem from="1763163571305" duration="89000" />
       <workItem from="1763163940089" duration="687000" />
+      <workItem from="1763247389629" duration="1194000" />
     </task>
     <servers />
   </component>

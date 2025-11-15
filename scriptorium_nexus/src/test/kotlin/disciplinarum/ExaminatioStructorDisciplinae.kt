@@ -14,6 +14,7 @@ import org.example.commune.exceptio.structoris.ExceptioStructorisDisciplinae
 import org.example.disciplinarum.structor.StructorDisciplinae
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Test
+import kotlin.jvm.java
 import kotlin.test.junit5.JUnit5Asserter.assertEquals
 
 class StructorDisciplinaeExaminatio {
@@ -73,7 +74,7 @@ class StructorDisciplinaeExaminatio {
             structor.build()
         }
 
-        assertTrue(e.message!!.contains("Motus necessarium est"))
+        assertTrue(e.message!!.contains("Motus necessarium est."))
     }
 
     @Test

@@ -11,6 +11,7 @@ Desktop.ini
 # IntelliJ
 .idea/
 *.iml
+*.workspace.xml
 
 # Visual Studio
 .vs/
