@@ -13,7 +13,7 @@ BEGIN
         DROP TABLE IF EXISTS #gradus_angulus;
         CREATE TABLE #gradus_angulus
         (
-            angulus VARCHAR(3) NOT NULL
+            angulus FLOAT NOT NULL
         );
 
         SET @scriptum = N'

@@ -11,8 +11,8 @@
   DTS:LocaleID="8192"
   DTS:ObjectName="Structura Ars Disciplina"
   DTS:PackageType="5"
-  DTS:VersionBuild="48"
-  DTS:VersionGUID="{90618454-7174-40B9-AB0D-962BCAAC5D71}">
+  DTS:VersionBuild="51"
+  DTS:VersionGUID="{B21706B3-3760-4279-806F-355F3BEE292D}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -58,7 +58,7 @@
         <DTS:ObjectData>
           <ForEachFileEnumeratorProperties>
             <FEFEProperty
-              Folder="C:\Users\maxha\Documents\magnum_archivum\archivum\ars_disciplina\procedura\adfero" />
+              Folder="C:\Users\maxha\Documents\domus_archivorum\magnum_archivum\archivum\ars_disciplina\procedura\adfero" />
             <FEFEProperty
               FileSpec="*.sql" />
             <FEFEProperty
@@ -116,7 +116,7 @@
         <DTS:ObjectData>
           <ForEachFileEnumeratorProperties>
             <FEFEProperty
-              Folder="C:\Users\maxha\Documents\magnum_archivum\archivum\ars_disciplina\volumen" />
+              Folder="C:\Users\maxha\Documents\domus_archivorum\magnum_archivum\archivum\ars_disciplina\volumen" />
             <FEFEProperty
               FileSpec="*.sql" />
             <FEFEProperty
@@ -187,10 +187,10 @@
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="280,136"
-          Size="280,179"
+          PanelSize="280,246"
+          Size="280,289"
           Id="Package\Iteratio Procedura Adfero"
-          TopLeft="450,477" />
+          TopLeft="440,502" />
         <NodeLayout
           Size="161,42"
           Id="Package\Iteratio Volumen\Creatio Volumen"
@@ -198,24 +198,24 @@
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="237,126"
-          Size="237,169"
+          PanelSize="237,255"
+          Size="237,298"
           Id="Package\Iteratio Volumen"
-          TopLeft="465,279" />
+          TopLeft="465,150" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="586.75,448">
+          TopLeft="581.75,448">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,29"
+              EndConnector="0,54"
               Start="0,0"
-              End="0,21.5">
+              End="0,46.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,21.5" />
+                    End="0,46.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

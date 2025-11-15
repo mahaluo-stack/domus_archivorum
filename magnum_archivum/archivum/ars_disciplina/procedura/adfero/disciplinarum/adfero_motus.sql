@@ -13,7 +13,8 @@ BEGIN
         DROP TABLE IF EXISTS #gradus_motus;
         CREATE TABLE #gradus_motus
         (
-            nomen_motus VARCHAR(50) NOT NULL
+            nomen_motus VARCHAR(50)   NOT NULL,
+            descriptio  VARCHAR(4000) NULL
         );
 
         SET @scriptum = N'
@@ -30,8 +31,10 @@ BEGIN
 
         EXEC sp_executesql @scriptum;
 
-        INSERT INTO disciplinarum.motus(nomen_motus)
-        SELECT gm.nomen_motus
+        INSERT INTO disciplinarum.motus(nomen_motus,
+                                        descriptio)
+        SELECT gm.nomen_motus,
+               gm.descriptio
         FROM #gradus_motus gm;
 
         DROP TABLE #gradus_motus;

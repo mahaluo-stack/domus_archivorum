@@ -14,6 +14,7 @@ BEGIN
     EXECUTE disciplinarum.adfero_angulus @via_tabula = @via_tabula;
     EXECUTE disciplinarum.adfero_disciplina_variationes @via_tabula = @via_tabula;
     EXECUTE disciplinarum.adfero_disciplinae @via_tabula = @via_tabula;
+    EXECUTE disciplinarum.adfero_genera_disciplinae @via_tabula = @via_tabula;
     EXECUTE disciplinarum.adfero_genera_prehensionis @via_tabula = @via_tabula;
     EXECUTE disciplinarum.adfero_motus @via_tabula = @via_tabula;
     EXECUTE disciplinarum.adfero_prehensiones @via_tabula = @via_tabula;
