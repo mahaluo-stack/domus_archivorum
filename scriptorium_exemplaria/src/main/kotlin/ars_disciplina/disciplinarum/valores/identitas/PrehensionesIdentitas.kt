@@ -1,4 +1,6 @@
 package ars_disciplina.disciplinarum.valores.identitas
 
+import ars_disciplina.commune.interfacia.NumerusValorabile
+
 @JvmInline
-value class PrehensionesIdentitas(val identitas: Int)
+value class PrehensionesIdentitas(override val valor: Int): NumerusValorabile<Int>
