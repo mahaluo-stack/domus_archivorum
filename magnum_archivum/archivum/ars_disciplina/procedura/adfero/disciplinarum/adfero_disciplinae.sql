@@ -14,7 +14,7 @@ BEGIN
         CREATE TABLE #gradus_disciplinae
         (
             nomen_disciplinae VARCHAR(50)   NOT NULL,
-            descriptio        VARCHAR(4000) NOT NULL
+            descriptio        VARCHAR(4000) NULL
         );
 
         SET @scriptum = N'

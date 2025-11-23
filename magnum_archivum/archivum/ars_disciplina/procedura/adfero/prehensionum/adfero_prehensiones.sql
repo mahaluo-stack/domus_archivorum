@@ -1,13 +1,13 @@
 USE ars_disciplina
 GO
 
-CREATE OR ALTER PROCEDURE disciplinarum.adfero_prehensiones @via_tabula VARCHAR(4000)
+CREATE OR ALTER PROCEDURE prehensionum.adfero_prehensiones @via_tabula VARCHAR(4000)
 AS
 BEGIN
     BEGIN TRANSACTION
         SET NOCOUNT ON;
 
-        DECLARE @tabula VARCHAR(MAX) = @via_tabula + '\disciplinarum\prehensiones.csv';
+        DECLARE @tabula VARCHAR(MAX) = @via_tabula + '\prehensionum\prehensiones.csv';
         DECLARE @scriptum NVARCHAR(MAX);
 
         DROP TABLE IF EXISTS #gradus_prehensiones;
@@ -30,7 +30,7 @@ BEGIN
 
         EXEC sp_executesql @scriptum;
 
-        INSERT INTO disciplinarum.prehensiones(nomen_prehensionis)
+        INSERT INTO prehensionum.prehensiones(nomen_prehensionis)
         SELECT gp.nomen_prehensionis
         FROM #gradus_prehensiones gp;
 

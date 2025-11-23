@@ -1,7 +1,7 @@
 USE ars_disciplina;
 
-DROP TABLE IF EXISTS disciplinarum.genera_disciplinae;
-CREATE TABLE disciplinarum.genera_disciplinae
+DROP TABLE IF EXISTS classificationum.genera_disciplinae;
+CREATE TABLE classificationum.genera_disciplinae
 (
     genera_disciplinae_identitas INT IDENTITY PRIMARY KEY,
     nomen_genus_disciplinae     VARCHAR(50)   NOT NULL,
