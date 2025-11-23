@@ -1,4 +1,4 @@
-package ars_disciplina.disciplinarum.valores
+package ars_disciplina.classificationum.valores
 
 import ars_disciplina.commune.interfacia.Valorabile
 

@@ -1,4 +1,4 @@
-package ars_disciplina.disciplinarum.valores.identitas
+package ars_disciplina.classificationum.valores.identitas
 
 import ars_disciplina.commune.interfacia.NumerusValorabile
 
