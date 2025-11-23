@@ -1,4 +1,6 @@
 package ars_disciplina.disciplinarum.valores
 
+import ars_disciplina.commune.interfacia.Valorabile
+
 @JvmInline
-value class NomenDisciplinae(val nomen: String)
+value class NomenDisciplinae(override val valor: String): Valorabile

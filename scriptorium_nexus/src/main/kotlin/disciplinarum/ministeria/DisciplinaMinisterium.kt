@@ -5,9 +5,13 @@ import org.example.commune.exceptio.regulae.ExceptioRegulae
 import org.example.disciplinarum.depositum.DepositumDisciplinae
 import org.example.disciplinarum.regulae.RegulaTribunal
 
-object DisciplinaMinisterium {
+class DisciplinaMinisterium(
+    private val tribunal: RegulaTribunal,
+    private val depositum: DepositumDisciplinae
+) {
 
     fun creaEtInserta(entia: EntiaDisciplina, tribunal: RegulaTribunal): Int {
+
         try {
             tribunal.valida(entia)
         } catch (e: ExceptioRegulae) {

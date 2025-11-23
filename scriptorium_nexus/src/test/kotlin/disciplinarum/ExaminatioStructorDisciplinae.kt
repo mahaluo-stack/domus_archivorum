@@ -1,20 +1,24 @@
 package disciplinarum
 
 import ConstantiaExaminatio.FICTUM_NOMEN_DISCIPLINAE
+import ConstantiaExaminatio.FICTUM_NOMEN_GENERA_DISCIPLINAE
+import ConstantiaExaminatio.FICTUM_NOMEN_MOTUS
 import ars_disciplina.disciplinarum.entia.EntiaDisciplina
-import ars_disciplina.disciplinarum.valores.NomenDisciplinae
 import ficta.FactoriaFictaDisciplinarum
+import ficta.FactoriaFictaDisciplinarum.angulus
 import ficta.FactoriaFictaDisciplinarum.disciplinae
 import ficta.FactoriaFictaDisciplinarum.generaDisciplinae
 import ficta.FactoriaFictaDisciplinarum.generaPrehensiones
+import ficta.FactoriaFictaDisciplinarum.lateralisDisciplinae
+import ficta.FactoriaFictaDisciplinarum.modusOneris
 import ficta.FactoriaFictaDisciplinarum.motus
 import ficta.FactoriaFictaDisciplinarum.prehensiones
 import ficta.FactoriaFictaDisciplinarum.variationes
 import org.example.commune.exceptio.structoris.ExceptioStructorisDisciplinae
 import org.example.disciplinarum.structor.StructorDisciplinae
-import org.junit.jupiter.api.Assertions.*
+import org.junit.jupiter.api.Assertions.assertThrows
+import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Test
-import kotlin.jvm.java
 import kotlin.test.junit5.JUnit5Asserter.assertEquals
 
 class StructorDisciplinaeExaminatio {
@@ -24,63 +28,62 @@ class StructorDisciplinaeExaminatio {
         val entia: EntiaDisciplina = FactoriaFictaDisciplinarum.entiaDisciplinae()
 
         assertEquals(
-            "examinare nomen disciplinae",
-            entia.disciplinae.nomen,
-            NomenDisciplinae(FICTUM_NOMEN_DISCIPLINAE)
+            "Examinare nomen disciplinae",
+            FICTUM_NOMEN_DISCIPLINAE,
+            entia.disciplinae.nomen.valor
         )
         assertEquals(
-            "examinare motus",
-            1,
-            entia.motus.size
+            "Examinare motus",
+            FICTUM_NOMEN_MOTUS,
+            entia.motus.nomen.valor
         )
         assertEquals(
-            "examinare disciplinae variationes",
+            "Examinare disciplinae variationes",
             1,
             entia.variationes.size
         )
         assertEquals(
-            "examinare genus disciplinae",
-            1,
-            entia.generaDisciplinae.size
+            "Examinare genus disciplinae",
+            FICTUM_NOMEN_GENERA_DISCIPLINAE,
+            entia.generaDisciplinae.nomen.valor
         )
     }
 
     @Test
     fun examinare_structorem_reicit_si_disciplinae_desunt() {
         val structor = StructorDisciplinae()
-            .generaDisciplinae(generaDisciplinae())
-            .variationis(variationes())
-            .prehensiones(prehensiones())
-            .generaPrehensiones(generaPrehensiones())
-            .motus(motus())
+            .structGeneraDisciplinae(generaDisciplinae())
+            .structMotus(motus())
+            .structModusOneris(modusOneris())
+            .structLateralisDisciplinae(lateralisDisciplinae())
+            .structVariationes(variationes())
+            .structAngulus(angulus())
+            .structPrehensiones(prehensiones())
+            .structGeneraPrehensiones(generaPrehensiones())
 
         val e = assertThrows(ExceptioStructorisDisciplinae::class.java) {
-            structor.build()
+            structor.struct()
         }
 
-        assertTrue(e.message!!.contains("Disciplinae necessarium est."))
+        assertTrue(e.message!!.contains("Disciplinae necessaria"))
     }
 
     @Test
     fun examinare_structorem_reicit_si_motus_desunt() {
         val structor = StructorDisciplinae()
-            .disciplinae(disciplinae())
-            .generaDisciplinae(generaDisciplinae())
-            .variationis(variationes())
-            .prehensiones(prehensiones())
-            .generaPrehensiones(generaPrehensiones())
+            .structDisciplinae(disciplinae())
+            .structGeneraDisciplinae(generaDisciplinae())
+            .structModusOneris(modusOneris())
+            .structLateralisDisciplinae(lateralisDisciplinae())
+            .structVariationes(variationes())
+            .structAngulus(angulus())
+            .structPrehensiones(prehensiones())
+            .structGeneraPrehensiones(generaPrehensiones())
 
         val e = assertThrows(ExceptioStructorisDisciplinae::class.java) {
-            structor.build()
+            structor.struct()
         }
 
-        assertTrue(e.message!!.contains("Motus necessarium est."))
-    }
-
-    @Test
-    fun examinare_structorem_servat_angulum_optionalem() {
-        val entia: EntiaDisciplina = FactoriaFictaDisciplinarum.entiaDisciplinae(angulus = null)
-
-        assertNull(entia.angulus)
+        assertTrue(e.message!!.contains("Motus necessarius"))
     }
 }

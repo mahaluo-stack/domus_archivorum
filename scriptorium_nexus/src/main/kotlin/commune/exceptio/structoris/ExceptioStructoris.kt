@@ -1,5 +1,5 @@
 package org.example.commune.exceptio.structoris
 
-open class ExceptioStructoris(nuntius: String, cause: Throwable? = null) : RuntimeException(nuntius, cause)
+open class ExceptioStructoris(nuntius: String, causa: Throwable? = null) : RuntimeException(nuntius, causa)
 
-class ExceptioStructorisDisciplinae(nuntius: String, cause: Throwable? = null) : ExceptioStructoris(nuntius, cause)
+class ExceptioStructorisDisciplinae(nuntius: String, causa: Throwable? = null) : ExceptioStructoris(nuntius, causa)
