@@ -18,8 +18,8 @@ object DepositumMotus {
                 ps.executeQuery().use { rs ->
                     val out = mutableListOf<Motus>()
                     while (rs.next()) {
-                        val identitas = MotusIdentitas(identitas = rs.getInt("motus_identitas"))
-                        val nomen = NomenMotus(nomen = rs.getString("nomen_motus"))
+                        val identitas = MotusIdentitas(valor = rs.getInt("motus_identitas"))
+                        val nomen = NomenMotus(valor = rs.getString("nomen_motus"))
                         out.add(
                             Motus(
                                 identitas,

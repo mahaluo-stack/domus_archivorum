@@ -6,7 +6,7 @@ import ars_disciplina.disciplinarum.valores.identitas.AngulusIdentitas
 import org.example.commune.conexio.Conexio
 
 object DepositumAngulus {
-    fun legeOmnes(): List<Angulus> {
+    fun legeOmnes(): Set<Angulus> {
         Conexio.getConnection().use { conn ->
             val sql = """
                 SELECT 
@@ -16,18 +16,18 @@ object DepositumAngulus {
             """.trimIndent()
             conn.prepareStatement(sql).use { ps ->
                 ps.executeQuery().use { rs ->
-                    val out = mutableListOf<Angulus>()
+                    val collectio = mutableSetOf<Angulus>()
                     while (rs.next()) {
-                        val identitas = AngulusIdentitas(identitas = rs.getInt("angulus_identitas"))
-                        val percentum = AngulusPercentum(percentum = rs.getDouble("angulus"))
-                        out.add(
+                        val identitas = AngulusIdentitas(valor = rs.getInt("angulus_identitas"))
+                        val percentum = AngulusPercentum(valor = rs.getDouble("angulus"))
+                        collectio.add(
                             Angulus(
                                 identitas,
                                 percentum
                             )
                         )
                     }
-                    return out
+                    return collectio
                 }
             }
         }

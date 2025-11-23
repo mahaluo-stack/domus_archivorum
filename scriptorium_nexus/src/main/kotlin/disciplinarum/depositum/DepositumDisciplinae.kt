@@ -8,7 +8,7 @@ import ars_disciplina.disciplinarum.valores.identitas.DisciplinaeIdentitas
 import org.example.commune.conexio.Conexio
 
 object DepositumDisciplinae {
-    fun legeOmnes(): List<Disciplinae> {
+    fun legeOmnes(): Set<Disciplinae> {
         Conexio.getConnection().use { conn ->
             val sql = """
                 SELECT 
@@ -19,12 +19,12 @@ object DepositumDisciplinae {
             """.trimIndent()
             conn.prepareStatement(sql).use { ps ->
                 ps.executeQuery().use { rs ->
-                    val out = mutableListOf<Disciplinae>()
+                    val collectio = mutableSetOf<Disciplinae>()
                     while (rs.next()) {
-                        val identitas = DisciplinaeIdentitas(identitas = rs.getInt("disciplinae_identitas"))
-                        val nomen = NomenDisciplinae(nomen = rs.getString("nomen_disciplinae"))
-                        val descriptio = DescriptioDisciplina(descriptio = rs.getString("descriptio"))
-                        out.add(
+                        val identitas = DisciplinaeIdentitas(valor = rs.getInt("disciplinae_identitas"))
+                        val nomen = NomenDisciplinae(valor = rs.getString("nomen_disciplinae"))
+                        val descriptio = DescriptioDisciplina(valor = rs.getString("descriptio") ?: "")
+                        collectio.add(
                             Disciplinae(
                                 identitas,
                                 nomen,
@@ -32,7 +32,7 @@ object DepositumDisciplinae {
                             )
                         )
                     }
-                    return out
+                    return collectio
                 }
             }
         }
