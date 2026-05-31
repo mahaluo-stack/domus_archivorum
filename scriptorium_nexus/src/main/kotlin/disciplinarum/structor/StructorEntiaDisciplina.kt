@@ -1,24 +1,24 @@
 package org.example.disciplinarum.structor
 
 import ars_disciplina.classificationum.tabula.GeneraDisciplinae
-import ars_disciplina.classificationum.tabula.LateralisDisciplinae
+import ars_disciplina.classificationum.tabula.Lateralis
 import ars_disciplina.classificationum.tabula.ModusOneris
 import ars_disciplina.disciplinarum.entia.EntiaDisciplina
 import ars_disciplina.disciplinarum.tabula.Angulus
-import ars_disciplina.disciplinarum.tabula.DisciplinaVariationes
 import ars_disciplina.disciplinarum.tabula.Disciplinae
 import ars_disciplina.disciplinarum.tabula.Motus
+import ars_disciplina.disciplinarum.tabula.Variationes
 import ars_disciplina.prehensionum.tabula.GeneraPrehensionis
 import ars_disciplina.prehensionum.tabula.Prehensiones
 import org.example.commune.exceptio.structoris.ExceptioStructorisDisciplinae
 
-class StructorDisciplinae {
+class StructorEntiaDisciplina {
     private lateinit var disciplinae: Disciplinae
     private lateinit var generaDisciplinae: GeneraDisciplinae
     private lateinit var motus: Motus
     private lateinit var modusOneris: Set<ModusOneris>
-    private lateinit var lateralisDisciplinae: Set<LateralisDisciplinae>
-    private lateinit var variationes: Set<DisciplinaVariationes>
+    private lateinit var lateralisDisciplinae: Set<Lateralis>
+    private lateinit var variationes: Set<Variationes>
     private lateinit var angulus: Set<Angulus>
     private lateinit var prehensiones: Set<Prehensiones>
     private lateinit var generaPrehensiones: Set<GeneraPrehensionis>
@@ -29,10 +29,10 @@ class StructorDisciplinae {
 
     fun structMotus(motus: Motus) = apply { this.motus = motus }
     fun structModusOneris(modusOneris: Set<ModusOneris>) = apply { this.modusOneris = modusOneris }
-    fun structLateralisDisciplinae(lateralisDisciplinae: Set<LateralisDisciplinae>) =
+    fun structLateralisDisciplinae(lateralisDisciplinae: Set<Lateralis>) =
         apply { this.lateralisDisciplinae = lateralisDisciplinae }
 
-    fun structVariationes(variationes: Set<DisciplinaVariationes>) = apply { this.variationes = variationes }
+    fun structVariationes(variationes: Set<Variationes>) = apply { this.variationes = variationes }
     fun structAngulus(angulus: Set<Angulus>) = apply { this.angulus = angulus }
     fun structPrehensiones(prehensiones: Set<Prehensiones>) = apply { this.prehensiones = prehensiones }
     fun structGeneraPrehensiones(generaPrehensiones: Set<GeneraPrehensionis>) =
