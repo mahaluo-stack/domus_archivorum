@@ -12,12 +12,12 @@ BEGIN
     EXECUTE instrumentorum.adfero_genus_instrumenti @via_tabula = @via_tabula;
 
     EXECUTE disciplinarum.adfero_angulus @via_tabula = @via_tabula;
-    EXECUTE disciplinarum.adfero_disciplina_variationes @via_tabula = @via_tabula;
+    EXECUTE disciplinarum.adfero_variationes @via_tabula = @via_tabula;
     EXECUTE disciplinarum.adfero_disciplinae @via_tabula = @via_tabula;
     EXECUTE disciplinarum.adfero_motus @via_tabula = @via_tabula;
 
     EXECUTE classificationum.adfero_genera_disciplinae @via_tabula = @via_tabula;
-    EXECUTE classificationum.adfero_lateralis_disciplinae @via_tabula = @via_tabula;
+    EXECUTE classificationum.adfero_lateralis @via_tabula = @via_tabula;
     EXECUTE classificationum.adfero_modus_oneris @via_tabula = @via_tabula;
 
     EXECUTE prehensionum.adfero_genera_prehensionis @via_tabula = @via_tabula;

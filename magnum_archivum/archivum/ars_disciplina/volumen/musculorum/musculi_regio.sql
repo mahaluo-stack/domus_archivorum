@@ -6,5 +6,6 @@ CREATE TABLE musculorum.musculi_regio
     musculi_regio_identitas INT IDENTITY PRIMARY KEY,
     nomen_musculi_regio     VARCHAR(50)   NOT NULL,
     descriptio              VARCHAR(4000) NULL,
-    creatio                 DATETIME2(0) DEFAULT SYSDATETIME()
+    creatio                 DATETIME2(0) DEFAULT SYSDATETIME(),
+    CONSTRAINT nomen_musculi_regio_unicum UNIQUE (nomen_musculi_regio)
 );

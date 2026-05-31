@@ -6,5 +6,6 @@ CREATE TABLE instrumentorum.instrumenta
     instrumenta_identitas INT IDENTITY PRIMARY KEY,
     nomen_instrumenti     VARCHAR(50)   NOT NULL,
     descriptio            VARCHAR(4000) NULL,
-    creatio               DATETIME2(0) DEFAULT SYSDATETIME()
+    creatio               DATETIME2(0) DEFAULT SYSDATETIME(),
+    CONSTRAINT nomen_instrumenti_unicum UNIQUE (nomen_instrumenti)
 );
