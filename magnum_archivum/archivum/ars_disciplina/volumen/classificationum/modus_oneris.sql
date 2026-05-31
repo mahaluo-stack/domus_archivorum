@@ -5,5 +5,6 @@ CREATE TABLE classificationum.modus_oneris
 (
     modus_oneris_identitas INT IDENTITY PRIMARY KEY,
     nomen_modus_oneris     VARCHAR(50) NOT NULL,
-    creatio                DATETIME2(0) DEFAULT SYSDATETIME()
+    creatio                DATETIME2(0) DEFAULT SYSDATETIME(),
+    CONSTRAINT nomen_modus_oneris_unicum UNIQUE (nomen_modus_oneris)
 );

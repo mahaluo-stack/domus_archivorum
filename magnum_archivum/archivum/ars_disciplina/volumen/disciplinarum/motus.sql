@@ -6,5 +6,6 @@ CREATE TABLE disciplinarum.motus
     motus_identitas INT IDENTITY PRIMARY KEY,
     nomen_motus     VARCHAR(50)   NOT NULL,
     descriptio      VARCHAR(4000) NULL,
-    creatio         DATETIME2(0) DEFAULT SYSDATETIME()
+    creatio         DATETIME2(0) DEFAULT SYSDATETIME(),
+    CONSTRAINT nomen_motus_unicum UNIQUE (nomen_motus)
 );
