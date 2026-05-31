@@ -15,7 +15,7 @@ import ficta.FactoriaFictaDisciplinarum.motus
 import ficta.FactoriaFictaDisciplinarum.prehensiones
 import ficta.FactoriaFictaDisciplinarum.variationes
 import org.example.commune.exceptio.structoris.ExceptioStructorisDisciplinae
-import org.example.disciplinarum.structor.StructorDisciplinae
+import org.example.disciplinarum.structor.StructorEntiaDisciplina
 import org.junit.jupiter.api.Assertions.assertThrows
 import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Test
@@ -51,7 +51,7 @@ class StructorDisciplinaeExaminatio {
 
     @Test
     fun examinare_structorem_reicit_si_disciplinae_desunt() {
-        val structor = StructorDisciplinae()
+        val structor = StructorEntiaDisciplina()
             .structGeneraDisciplinae(generaDisciplinae())
             .structMotus(motus())
             .structModusOneris(modusOneris())
@@ -70,7 +70,7 @@ class StructorDisciplinaeExaminatio {
 
     @Test
     fun examinare_structorem_reicit_si_motus_desunt() {
-        val structor = StructorDisciplinae()
+        val structor = StructorEntiaDisciplina()
             .structDisciplinae(disciplinae())
             .structGeneraDisciplinae(generaDisciplinae())
             .structModusOneris(modusOneris())

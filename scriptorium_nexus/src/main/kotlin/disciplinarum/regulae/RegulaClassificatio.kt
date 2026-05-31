@@ -1,5 +1,6 @@
 package org.example.disciplinarum.regulae
 
+import ars_disciplina.disciplinarum.entia.EntiaDisciplina
 import ars_disciplina.disciplinarum.valores.NomenDisciplinae
 import org.example.commune.exceptio.regulae.FabricaExceptionumRegularum
 import org.example.commune.exemplaria.constantia.ConstantiaClassificationum.GENUS_COMPOUND
@@ -11,6 +12,7 @@ import org.example.commune.exemplaria.constantia.ConstantiaClassificationum.MODU
 import org.example.commune.exemplaria.constantia.ConstantiaExceptionum.REGULA_GENERUM_DISCIPLINAE
 import org.example.commune.exemplaria.constantia.ConstantiaExceptionum.REGULA_LATERALIS
 import org.example.commune.exemplaria.constantia.ConstantiaExceptionum.REGULA_MODUS_ONERIS
+import org.example.commune.regulae.RegulaTribunal
 
 class RegulaClassificatio(
     private val tribunal: RegulaTribunal,
@@ -19,7 +21,7 @@ class RegulaClassificatio(
     // Require compound exercise
     fun exigitCompositatem() {
         variantes.forEach { nomen ->
-            tribunal.registra(nomen) { d ->
+            tribunal.registra<EntiaDisciplina>(nomen.valor.lowercase()) { d ->
                 if (d.generaDisciplinae.nomen.valor.lowercase() != GENUS_COMPOUND) {
                     throw FabricaExceptionumRegularum.violatio(
                         REGULA_GENERUM_DISCIPLINAE,
@@ -33,7 +35,7 @@ class RegulaClassificatio(
     // Require isolation exercise
     fun exigitIsolationem() {
         variantes.forEach { nomen ->
-            tribunal.registra(nomen) { d ->
+            tribunal.registra<EntiaDisciplina>(nomen.valor.lowercase()) { d ->
                 if (d.generaDisciplinae.nomen.valor.lowercase() != GENUS_ISOLATION) {
                     throw FabricaExceptionumRegularum.violatio(
                         REGULA_GENERUM_DISCIPLINAE,
@@ -47,11 +49,11 @@ class RegulaClassificatio(
     // Require unilateral exercise
     fun exigitUnilateralitatem() {
         variantes.forEach { nomen ->
-            tribunal.registra(nomen) { d ->
-                if (d.lateralisDisciplinae.none { it.nomen.valor.lowercase() == LATERALIS_UNILATERAL }) {
+            tribunal.registra<EntiaDisciplina>(nomen.valor.lowercase()) { d ->
+                if (d.lateralis.none { it.nomen.valor.lowercase() == LATERALIS_UNILATERAL }) {
                     throw FabricaExceptionumRegularum.violatio(
                         REGULA_LATERALIS,
-                        "Disciplina lateralis pro: '${nomen.valor}' debet esse: '${LATERALIS_UNILATERAL}'."
+                        "Lateralis pro: '${nomen.valor}' debet esse: '${LATERALIS_UNILATERAL}'."
                     )
                 }
             }
@@ -61,11 +63,11 @@ class RegulaClassificatio(
     // Require bilateral exercise
     fun exigitBilateralitatem() {
         variantes.forEach { nomen ->
-            tribunal.registra(nomen) { d ->
-                if (d.lateralisDisciplinae.none { it.nomen.valor.lowercase() == LATERALIS_BILATERAL }) {
+            tribunal.registra<EntiaDisciplina>(nomen.valor.lowercase()) { d ->
+                if (d.lateralis.none { it.nomen.valor.lowercase() == LATERALIS_BILATERAL }) {
                     throw FabricaExceptionumRegularum.violatio(
                         REGULA_LATERALIS,
-                        "Disciplina lateralis pro: '${nomen.valor}' debet esse: '${LATERALIS_BILATERAL}'."
+                        "Lateralis pro: '${nomen.valor}' debet esse: '${LATERALIS_BILATERAL}'."
                     )
                 }
             }
@@ -73,17 +75,23 @@ class RegulaClassificatio(
     }
 
     // Require bilateral or unilateral, or both
-    fun exigitLaterales(vararg permissae: String) {
-        val allowed = permissae.map { it.lowercase() }.toSet()
+    fun exigitLaterales(vararg statutus: String) {
+        val statutusConjunctio = statutus.map { it.lowercase() }.toSet()
+
+        if (statutusConjunctio.isEmpty()) {
+            throw FabricaExceptionumRegularum.absentia(REGULA_LATERALIS)
+        }
 
         variantes.forEach { nomen ->
-            tribunal.registra(nomen) { d ->
-                val actual = d.lateralisDisciplinae.map { it.nomen.valor.lowercase() }.toSet()
-                val invalid = actual - allowed
-                if (invalid.isNotEmpty()) {
+            tribunal.registra<EntiaDisciplina>(nomen.valor.lowercase()) { d ->
+                val realis = d.lateralis
+                    .map { it.nomen.valor.lowercase() }
+                    .toSet()
+                val invalidae = realis - statutusConjunctio
+                if (invalidae.isNotEmpty()) {
                     throw FabricaExceptionumRegularum.violatio(
                         REGULA_LATERALIS,
-                        "Lateralis disciplinae: '${invalid.joinToString()}' non permittitur pro: '${nomen.valor}'."
+                        "Lateralis: '${invalidae.joinToString()}' non permittitur pro: '${nomen.valor}'."
                     )
                 }
             }
@@ -93,10 +101,10 @@ class RegulaClassificatio(
     // Require external load
     fun exigitModumExternum() {
         variantes.forEach { nomen ->
-            tribunal.registra(nomen) { d ->
-                val found = d.modusOneris
+            tribunal.registra<EntiaDisciplina>(nomen.valor.lowercase()) { d ->
+                val inventa = d.modusOneris
                     .any { it.nomen.valor.lowercase() == MODUS_ONERIS_EXTERNAL_LOAD }
-                if (!found) {
+                if (!inventa) {
                     throw FabricaExceptionumRegularum.violatio(
                         REGULA_MODUS_ONERIS,
                         "Modus oneris pro: '${nomen.valor}' debet esse: '${MODUS_ONERIS_EXTERNAL_LOAD}'."
@@ -109,9 +117,10 @@ class RegulaClassificatio(
     // Require bodyweight
     fun exigitModumCorporis() {
         variantes.forEach { nomen ->
-            tribunal.registra(nomen) { d ->
-                val found = d.modusOneris.any { it.nomen.valor.lowercase() == MODUS_ONERIS_BODYWEIGHT }
-                if (!found) {
+            tribunal.registra<EntiaDisciplina>(nomen.valor.lowercase()) { d ->
+                val inventa = d.modusOneris
+                    .any { it.nomen.valor.lowercase() == MODUS_ONERIS_BODYWEIGHT }
+                if (!inventa) {
                     throw FabricaExceptionumRegularum.violatio(
                         REGULA_MODUS_ONERIS,
                         "Modus oneris pro: '${nomen.valor}' debet esse: '${MODUS_ONERIS_BODYWEIGHT}'."
@@ -122,18 +131,22 @@ class RegulaClassificatio(
     }
 
     // Require external load or bodyweight, or both
-    fun exigitModosOneris(vararg permissae: String) {
-        val allowed = permissae.map { it.lowercase() }.toSet()
+    fun exigitModosOneris(vararg statutus: String) {
+        val statutusConjunctio = statutus.map { it.lowercase() }.toSet()
+
+        if (statutusConjunctio.isEmpty()) {
+            throw FabricaExceptionumRegularum.absentia(REGULA_MODUS_ONERIS)
+        }
 
         variantes.forEach { nomen ->
-            tribunal.registra(nomen) { d ->
-                val actual = d.modusOneris.map { it.nomen.valor.lowercase() }.toSet()
-                val invalid = actual - allowed
+            tribunal.registra<EntiaDisciplina>(nomen.valor.lowercase()) { d ->
+                val realis = d.modusOneris.map { it.nomen.valor.lowercase() }.toSet()
+                val invalidae = realis - statutusConjunctio
 
-                if (invalid.isNotEmpty()) {
+                if (invalidae.isNotEmpty()) {
                     throw FabricaExceptionumRegularum.violatio(
                         REGULA_MODUS_ONERIS,
-                        "Modus oneris: '${invalid.joinToString()}' non permittitur pro: '${nomen.valor}'"
+                        "Modus oneris: '${invalidae.joinToString()}' non permittitur pro: '${nomen.valor}'"
                     )
                 }
             }

@@ -1,10 +1,10 @@
 package org.example.disciplinarum.regulae.disciplinae
 
 import ars_disciplina.classificationum.valores.NomenGeneraDisciplinae
-import ars_disciplina.classificationum.valores.NomenLateralisDisciplinae
+import ars_disciplina.classificationum.valores.NomenLateralis
 import ars_disciplina.classificationum.valores.NomenModusOneris
-import ars_disciplina.disciplinarum.valores.NomenDisciplinaVariatones
 import ars_disciplina.disciplinarum.valores.NomenMotus
+import ars_disciplina.disciplinarum.valores.NomenVariatones
 import ars_disciplina.prehensionum.valores.NomenGeneraPrehensionis
 import ars_disciplina.prehensionum.valores.NomenPrehensionis
 import org.example.commune.exemplaria.constantia.ConstantiaClassificationum.GENUS_COMPOUND
@@ -23,38 +23,40 @@ import org.example.commune.exemplaria.constantia.ConstantiaVariationum.ECCENTRIC
 import org.example.commune.exemplaria.constantia.ConstantiaVariationum.ELEVATED
 import org.example.commune.exemplaria.constantia.ConstantiaVariationum.NEGATIVE
 import org.example.commune.exemplaria.constantia.ConstantiaVariationum.PAUSE
-import org.example.commune.exemplaria.constantia.ConstantiaVariationum.PINNED
 import org.example.commune.exemplaria.constantia.ConstantiaVariationum.STANDING
 import org.example.commune.exemplaria.constantia.ConstantiaVariationum.TOUCH_AND_GO
 import org.example.commune.registrum.*
-import org.example.disciplinarum.regulae.RegulaTribunal
+import org.example.commune.regulae.RegulaTribunal
 import org.example.disciplinarum.regulae.regulaFamilia
 
 object RegulaDeadlift {
 
     val variationesPermissae = setOf(
-        RegistraDisciplinaVariationes.invenirePerClavemNecesse(NomenDisciplinaVariatones(NEGATIVE)),
-        RegistraDisciplinaVariationes.invenirePerClavemNecesse(NomenDisciplinaVariatones(TOUCH_AND_GO)),
-        RegistraDisciplinaVariationes.invenirePerClavemNecesse(NomenDisciplinaVariatones(PAUSE)),
-        RegistraDisciplinaVariationes.invenirePerClavemNecesse(NomenDisciplinaVariatones(STANDING)),
-        RegistraDisciplinaVariationes.invenirePerClavemNecesse(NomenDisciplinaVariatones(ELEVATED)),
-        RegistraDisciplinaVariationes.invenirePerClavemNecesse(NomenDisciplinaVariatones(DEFICIT)),
-        RegistraDisciplinaVariationes.invenirePerClavemNecesse(NomenDisciplinaVariatones(PINNED)),
-        RegistraDisciplinaVariationes.invenirePerClavemNecesse(NomenDisciplinaVariatones(ECCENTRIC)),
-        RegistraDisciplinaVariationes.invenirePerClavemNecesse(NomenDisciplinaVariatones(BANDED))
+        RegistraVariationes.invenirePerClavemNecesse(NomenVariatones(NEGATIVE)),
+        RegistraVariationes.invenirePerClavemNecesse(NomenVariatones(TOUCH_AND_GO)),
+        RegistraVariationes.invenirePerClavemNecesse(NomenVariatones(PAUSE)),
+        RegistraVariationes.invenirePerClavemNecesse(NomenVariatones(STANDING)),
+        RegistraVariationes.invenirePerClavemNecesse(NomenVariatones(ELEVATED)),
+        RegistraVariationes.invenirePerClavemNecesse(NomenVariatones(DEFICIT)),
+        RegistraVariationes.invenirePerClavemNecesse(NomenVariatones(ECCENTRIC)),
+        RegistraVariationes.invenirePerClavemNecesse(NomenVariatones(BANDED))
     )
 
     val motusRequisitus = RegistraMotus.invenirePerClavemNecesse(
-        NomenMotus(MOTUS_PULL))
+        NomenMotus(MOTUS_PULL)
+    )
 
     val genusDisciplinaeRequisitus = RegistraGeneraDisciplinae.invenirePerClavemNecesse(
-        NomenGeneraDisciplinae(GENUS_COMPOUND))
+        NomenGeneraDisciplinae(GENUS_COMPOUND)
+    )
 
-    val lateralisRequisitus = RegistraLateralisDisciplinae.invenirePerClavemNecesse(
-        NomenLateralisDisciplinae(LATERALIS_BILATERAL))
+    val lateralisRequisitus = RegistraLateralis.invenirePerClavemNecesse(
+        NomenLateralis(LATERALIS_BILATERAL)
+    )
 
     val modusOnerisRequisitus = RegistraModusOneris.invenirePerClavemNecesse(
-        NomenModusOneris(MODUS_ONERIS_EXTERNAL_LOAD))
+        NomenModusOneris(MODUS_ONERIS_EXTERNAL_LOAD)
+    )
 
     val prehensionesPermissae = setOf(
         RegistraPrehensiones.invenirePerClavemNecesse(NomenPrehensionis(PREHENSIONES_WIDE)),
@@ -70,7 +72,7 @@ object RegulaDeadlift {
     fun registra(tribunal: RegulaTribunal) {
 
         val nomenDisciplinaVariatones = variationesPermissae.map { it.nomen.valor }
-        val nomenPrehensionis = prehensionesPermissae.map { it.nomen.valor}
+        val nomenPrehensionis = prehensionesPermissae.map { it.nomen.valor }
         val generaPrehensionisPermissae = generaPrehensionisPermissae.map { it.nomen.valor }
 
         regulaFamilia(tribunal, DEADLIFT_FAMILY) {
