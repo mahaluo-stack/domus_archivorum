@@ -1,9 +1,9 @@
 package org.example.disciplinarum.depositum
 
+import ars_disciplina.Conexio
 import ars_disciplina.disciplinarum.tabula.Variationes
 import ars_disciplina.disciplinarum.valores.NomenVariatones
 import ars_disciplina.disciplinarum.valores.identitas.VariationesIdentitas
-import org.example.commune.conexio.Conexio
 
 object DepositumVariationes {
     fun legeOmnes(): Set<Variationes> {
