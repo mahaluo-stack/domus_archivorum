@@ -6,7 +6,7 @@ import kotlinx.datetime.TimeZone
 import kotlinx.datetime.toLocalDateTime
 import exceptio.valores.FabricaExceptionumValoris
 
-interface InterfaciaCreatioTempus : InterfaciaValida {
+interface InterfaciaCreatioTempus : org.example.exemplaria.interfacies.InterfaciaValida {
     val tempus: LocalDateTime
 
     fun valida() {

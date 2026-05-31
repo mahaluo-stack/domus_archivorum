@@ -1,4 +1,4 @@
-package initializa
+package ars_disciplina.initializa
 
 import org.example.commune.registrum.*
 import org.example.commune.regulae.RegulaTribunal
@@ -13,7 +13,6 @@ object Nexuum {
 
     fun initializa() {
 
-        // 1. LOAD REGISTRIES
         RegistraDisciplinae.initializa(DepositumDisciplinae.legeOmnes())
         RegistraGeneraDisciplinae.initializa(DepositumGeneraDisciplinae.legeOmnes())
         RegistraMotus.initializa(DepositumMotus.legeOmnes())

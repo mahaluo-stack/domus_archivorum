@@ -1,10 +1,10 @@
 package org.example.instrumentorum.depositum
 
+import ars_disciplina.Conexio
 import ars_disciplina.instrumentorum.tabula.Instrumenta
 import ars_disciplina.instrumentorum.valores.DescriptioInstrumenti
 import ars_disciplina.instrumentorum.valores.NomenInstrumenti
 import ars_disciplina.instrumentorum.valores.identitas.InstrumentaIdentitas
-import org.example.commune.conexio.Conexio
 
 object DepositumInstrumenta {
     fun legeOmnes(): Set<Instrumenta> {

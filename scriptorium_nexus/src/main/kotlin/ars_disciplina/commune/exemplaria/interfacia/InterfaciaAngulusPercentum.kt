@@ -4,7 +4,7 @@ import exceptio.valores.FabricaExceptionumValoris.angulusPercentum
 import org.example.commune.exemplaria.constantia.ConstantiaExceptionum.ANGULUS_MAXIMUS
 import org.example.commune.exemplaria.constantia.ConstantiaExceptionum.ANGULUS_MINIMUS
 
-interface InterfaciaAngulusPercentum : InterfaciaValida {
+interface InterfaciaAngulusPercentum : org.example.exemplaria.interfacies.InterfaciaValida {
     val percentum: Double
 
     fun valida() {
