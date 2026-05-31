@@ -6,6 +6,5 @@ import ars_disciplina.instrumentorum.valores.DescriptioInstrumenti
 
 class EntiaInstrumenti(
     val instrumenta: Instrumenta,
-    val descriptio: DescriptioInstrumenti,
-    val genusInstrumenti: List<GenusInstrumenti>
+    val genusInstrumenti: GenusInstrumenti
 )
