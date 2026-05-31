@@ -1,4 +1,4 @@
-package org.example.commune.conexio
+package ars_disciplina.commune
 
 import com.zaxxer.hikari.HikariConfig
 import com.zaxxer.hikari.HikariDataSource

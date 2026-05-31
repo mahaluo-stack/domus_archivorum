@@ -2,7 +2,8 @@ rootProject.name = "domus_archivorum"
 
 include(
     "magnum_archivum",
-    "scriptorium_actorum",
+    "curia_actarii",
+    "scriptorium_depositum",
     "scriptorium_exemplaria",
     "scriptorium_nexus"
 )
