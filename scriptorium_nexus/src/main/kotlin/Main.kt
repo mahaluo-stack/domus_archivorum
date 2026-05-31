@@ -5,7 +5,5 @@ import initializa.Nexuum
 
 fun main() {
 
-
-
     Nexuum.initializa()
 }
