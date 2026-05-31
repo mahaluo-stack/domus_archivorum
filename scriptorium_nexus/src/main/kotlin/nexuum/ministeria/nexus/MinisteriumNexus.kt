@@ -7,13 +7,13 @@ abstract class MinisteriumNexus<T> {
 
     protected abstract val nomenTabulae: String
     protected abstract val nomenColumnae: String
-    protected abstract fun identitas(identitates: T): Int
+    protected abstract fun identitas(identitas: T): Int
 
     fun inserta(
         disciplinaeIdentitas: DisciplinaeIdentitas,
-        entitas: T
+        identitas: T
     ) {
-        insertaOmnes(disciplinaeIdentitas, setOf(entitas))
+        insertaOmnes(disciplinaeIdentitas, setOf(identitas))
     }
 
     fun insertaOmnes(
