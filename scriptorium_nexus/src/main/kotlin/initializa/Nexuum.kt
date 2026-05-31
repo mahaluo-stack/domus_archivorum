@@ -1,12 +1,12 @@
 package initializa
 
 import org.example.commune.registrum.*
+import org.example.commune.regulae.RegulaTribunal
 import org.example.disciplinarum.depositum.*
-import org.example.disciplinarum.regulae.RegulaTribunal
 import org.example.disciplinarum.regulae.disciplinae.RegulaDeadlift
+import org.example.disciplinarum.regulae.disciplinae.RegulaGeneralis
 import org.example.disciplinarum.regulae.disciplinae.RegulaLunge
 import org.example.disciplinarum.regulae.disciplinae.RegulaSquat
-import org.example.nexuum.familia.DeadliftFamilia
 
 object Nexuum {
     val tribunal = RegulaTribunal()
@@ -18,8 +18,8 @@ object Nexuum {
         RegistraGeneraDisciplinae.initializa(DepositumGeneraDisciplinae.legeOmnes())
         RegistraMotus.initializa(DepositumMotus.legeOmnes())
         RegistraModusOneris.initializa(DepositumModusOneris.legeOmnes())
-        RegistraLateralisDisciplinae.initializa(DepositumLateralisDisciplinae.legeOmnes())
-        RegistraDisciplinaVariationes.initializa(DepositumDisciplinaVariationes.legeOmnes())
+        RegistraLateralis.initializa(DepositumLateralis.legeOmnes())
+        RegistraVariationes.initializa(DepositumVariationes.legeOmnes())
         RegistraAngulus.initializa(DepositumAngulus.legeOmnes())
         RegistraPrehensiones.initializa(DepositumPrehensiones.legeOmnes())
         RegistraGeneraPrehensionis.initializa(DepositumGeneraPrehensionis.legeOmnes())
@@ -28,11 +28,15 @@ object Nexuum {
         RegulaDeadlift.registra(tribunal)
         RegulaSquat.registra(tribunal)
         RegulaLunge.registra(tribunal)
+        RegulaGeneralis.registra(tribunal)
 
-        // 3. Create entities
-        val deadliftExercises = DeadliftFamilia.crea()
+        // present rules and exercises to GUI
+        //
+
 
 
 
     }
+
+
 }
