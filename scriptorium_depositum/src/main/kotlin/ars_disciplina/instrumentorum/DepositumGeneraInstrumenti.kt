@@ -1,9 +1,9 @@
 package org.example.instrumentorum.depositum
 
+import ars_disciplina.Conexio
 import ars_disciplina.instrumentorum.tabula.GenusInstrumenti
 import ars_disciplina.instrumentorum.valores.NomenGenusInstrumenti
 import ars_disciplina.instrumentorum.valores.identitas.GenusInstrumentiIdentitas
-import org.example.commune.conexio.Conexio
 
 object DepositumGeneraInstrumenti {
     fun legeOmnes(): Set<GenusInstrumenti> {
