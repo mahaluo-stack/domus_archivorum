@@ -14,6 +14,7 @@ BEGIN
         CREATE TABLE #gradus_regulae
         (
             nomen_regulae VARCHAR(50)   NOT NULL,
+            genus         VARCHAR(10)   NOT NULL,
             descriptio    VARCHAR(4000) NOT NULL
         );
 
@@ -31,8 +32,11 @@ BEGIN
 
         EXEC sp_executesql @scriptum;
 
-        INSERT INTO regularum.regulae(nomen_regulae, descriptio)
+        INSERT INTO regularum.regulae(nomen_regulae,
+                                      genus,
+                                      descriptio)
         SELECT gr.nomen_regulae,
+               gr.genus,
                gr.descriptio
         FROM #gradus_regulae gr;
 

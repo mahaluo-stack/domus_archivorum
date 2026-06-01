@@ -1,19 +1,19 @@
-nomen_regulae;descriptio
-exigit variationes;exercise variations
-exigit motum;movement type
-exigit angulum;exercise can be performed with incline and decline angles
-exigit angulum non negativum;exercise can not be performed with decline angles
-exigit prehensiones;grip types available for exercise
-exigit genus prehensiones;grip widths available for exercise
-exigit compositatem;compound exercise
-exigit isolationem;isolation exercise
-exigit unilateralitatem;exercise is performed unilaterally
-exigit bilateralitatem;exercise is performed bilaterally
-exigit laterales;exercise is performed unilaterally, bilaterally or both
-exigit modum externum;exercise is performed using an external load
-exigit modum corporis;exercise is performed using bodyweight
-exigit modus oneris;exercise is performed using bodyweight, external load or both
-vetat angulum;exercise can not be performed with specific angles
-vetat motum;exercise can not be performed with movement type
-vetat prehensiones;exercise can not be performed with grip types
-vetat genus prehensionis;exercise can not be performed with different grip widths
+nomen_regulae;genus;descriptio
+exigit variationes;exigit;exercise variations
+exigit motum;exigit;movement type
+exigit angulum;exigit;exercise can be performed with incline and decline angles
+exigit angulum non negativum;exigit;exercise can not be performed with decline angles
+exigit prehensiones;exigit;grip types available for exercise
+exigit genus prehensionis;exigit;grip widths available for exercise
+exigit compositatem;exigit;compound exercise
+exigit isolationem;exigit;isolation exercise
+exigit unilateralitatem;exigit;exercise is performed unilaterally
+exigit bilateralitatem;exigit;exercise is performed bilaterally
+exigit laterales;exigit;exercise is performed unilaterally, bilaterally or both
+exigit modum externum;exigit;exercise is performed using an external load
+exigit modum corporis;exigit;exercise is performed using bodyweight
+exigit modus oneris;exigit;exercise is performed using bodyweight, external load or both
+vetat angulum;vetat;exercise can not be performed with specific angles
+vetat motum;vetat;exercise can not be performed with movement type
+vetat prehensiones;vetat;exercise can not be performed with grip types
+vetat genus prehensionis;vetat;exercise can not be performed with different grip widths
