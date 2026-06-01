@@ -2,8 +2,8 @@ package ars_disciplina
 
 import ars_disciplina.commune.registrum.*
 import ars_disciplina.disciplinarum.archetypus.PulldownArchetypus
-import ars_disciplina.disciplinarum.regulae.RegistratorRegularumArchetyporum
-import ars_disciplina.disciplinarum.regulae.RegulaGeneralis
+import ars_disciplina.disciplinarum.regulae.registrator.RegistratorRegularumArchetyporum
+import ars_disciplina.disciplinarum.regulae.registrator.RegistratorRegularumExercitatioGeneralis
 import org.example.commune.registrum.RegistraAngulus
 import org.example.commune.registrum.RegistraDisciplinae
 import org.example.commune.registrum.RegistraMotus
@@ -49,7 +49,7 @@ object Nexus {
 
     private fun registraRegulas() {
 
-        RegulaGeneralis.registra(tribunal)
+        RegistratorRegularumExercitatioGeneralis.registra(tribunal)
 
         RegistraArchetyporum.omnia().forEach {
             RegistratorRegularumArchetyporum.registra(

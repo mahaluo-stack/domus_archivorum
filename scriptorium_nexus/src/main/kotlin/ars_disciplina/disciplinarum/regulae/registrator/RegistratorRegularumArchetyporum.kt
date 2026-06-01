@@ -1,5 +1,6 @@
-package ars_disciplina.disciplinarum.regulae
+package ars_disciplina.disciplinarum.regulae.registrator
 
+import ars_disciplina.disciplinarum.regulae.ApplicatoresRegularum
 import org.example.commune.exemplaria.interfacia.ArchetypusDisciplinae
 import org.example.commune.regulae.RegulaTribunal
 import org.example.disciplinarum.regulae.regulaeArchetyporum

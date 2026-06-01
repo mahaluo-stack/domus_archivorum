@@ -1,4 +1,4 @@
-package ars_disciplina.disciplinarum.regulae
+package ars_disciplina.disciplinarum.regulae.registrator
 
 import ars_disciplina.disciplinarum.constantia.ConstantiaDisciplinae
 import ars_disciplina.disciplinarum.constantia.ConstantiaMotus
@@ -7,7 +7,7 @@ import ars_disciplina.prehensionum.ConstantiaPrehensionum
 import org.example.commune.regulae.RegulaTribunal
 import org.example.disciplinarum.regulae.regulaExercitatio
 
-object RegulaGeneralis {
+object RegistratorRegularumExercitatioGeneralis {
     fun registra(tribunal: RegulaTribunal) {
         regulaExercitatio(tribunal, ConstantiaDisciplinae.BENCH_PRESS) {
             exigitDisciplinaVariationes(
