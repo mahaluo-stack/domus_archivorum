@@ -1,6 +1,10 @@
 package ars_disciplina.regularum
 
 import ars_disciplina.Conexio
+import ars_disciplina.regularum.tabula.Regulae
+import ars_disciplina.regularum.valores.DescriptioRegulae
+import ars_disciplina.regularum.valores.NomenRegulae
+import ars_disciplina.regularum.valores.RegulaeIdentitas
 
 object DepositumRegulae {
     fun legeOmnes(): Set<Regulae> {

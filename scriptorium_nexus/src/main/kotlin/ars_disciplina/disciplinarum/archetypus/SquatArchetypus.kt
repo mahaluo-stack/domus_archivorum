@@ -22,7 +22,7 @@ import ars_disciplina.disciplinarum.constantia.ConstantiaVariationum.PINNED
 import ars_disciplina.disciplinarum.valores.NomenDisciplinae
 import ars_disciplina.disciplinarum.valores.NomenMotus
 import ars_disciplina.disciplinarum.valores.NomenVariatones
-import ars_disciplina.regularum.OmniRegulae
+import ars_disciplina.regularum.constantia.OmniRegulae
 import org.example.commune.exemplaria.interfacia.ArchetypusDisciplinae
 import org.example.commune.registrum.RegistraDisciplinae
 import org.example.commune.registrum.RegistraMotus

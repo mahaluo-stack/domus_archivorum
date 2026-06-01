@@ -1,4 +1,4 @@
-package ars_disciplina.regularum
+package ars_disciplina.regularum.constantia
 
 enum class OmniRegulae {
     EXIGIT_VARIATIONES,

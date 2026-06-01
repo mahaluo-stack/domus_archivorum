@@ -29,7 +29,7 @@ import ars_disciplina.prehensionum.ConstantiaPrehensionum.PREHENSIONES_NEUTRAL
 import ars_disciplina.prehensionum.ConstantiaPrehensionum.PREHENSIONES_WIDE
 import ars_disciplina.prehensionum.valores.NomenGeneraPrehensionis
 import ars_disciplina.prehensionum.valores.NomenPrehensionis
-import ars_disciplina.regularum.OmniRegulae
+import ars_disciplina.regularum.constantia.OmniRegulae
 import org.example.commune.exemplaria.interfacia.ArchetypusDisciplinae
 import org.example.commune.registrum.RegistraAngulus
 import org.example.commune.registrum.RegistraDisciplinae

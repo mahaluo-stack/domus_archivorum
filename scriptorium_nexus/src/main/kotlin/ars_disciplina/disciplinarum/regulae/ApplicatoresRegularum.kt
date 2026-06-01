@@ -1,6 +1,6 @@
 package ars_disciplina.disciplinarum.regulae
 
-import ars_disciplina.regularum.OmniRegulae
+import ars_disciplina.regularum.constantia.OmniRegulae
 import org.example.commune.exemplaria.interfacia.ArchetypusDisciplinae
 import org.example.disciplinarum.regulae.RegulaeArchetyporum
 

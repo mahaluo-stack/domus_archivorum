@@ -9,7 +9,7 @@ import ars_disciplina.disciplinarum.tabula.Motus
 import ars_disciplina.disciplinarum.tabula.Variationes
 import ars_disciplina.prehensionum.tabula.GeneraPrehensionis
 import ars_disciplina.prehensionum.tabula.Prehensiones
-import ars_disciplina.regularum.OmniRegulae
+import ars_disciplina.regularum.constantia.OmniRegulae
 
 interface ArchetypusDisciplinae {
     val nomenArchetypi: String

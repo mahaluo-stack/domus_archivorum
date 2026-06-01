@@ -25,25 +25,25 @@ class RegulaeArchetyporum(
 
     fun exigitVariationes(vararg statutus: String) = regulaDisciplinae.exigitVariationes(*statutus)
     fun exigitMotum(statutus: String) = regulaDisciplinae.exigitMotum(statutus)
-    fun vetatAngulum() = regulaDisciplinae.vetatAngulum()
-    fun exigitAngulum() = regulaDisciplinae.exigitAngulum()
+    fun exigitCompositatem() = regulaClassificatio.exigitCompositatem()
+    fun exigitIsolationem() = regulaClassificatio.exigitIsolationem()
+
     fun exigitAngulumNonNegativum() = regulaDisciplinae.exigitAngulumNonNegativum()
     fun exigitAngulos(vararg anguli: Double) = regulaDisciplinae.exigitAngulos(*anguli)
     fun exigitAngulumMinimum(minimum: Double) = regulaDisciplinae.exigitAngulumMinimum(minimum)
 
-    fun vetatPrehensiones() = regulaPrehensiones.vetatPrehensiones()
-    fun vetatGenusPrehenionis() = regulaPrehensiones.vetatGenusPrehensionis()
     fun exigitPrehensiones(vararg statutus: String) = regulaPrehensiones.exigitPrehensiones(*statutus)
     fun exigitGenusPrehensionis(vararg statutus: String) = regulaPrehensiones.exigitGenusPrehensionis(*statutus)
 
-    fun exigitCompositatem() = regulaClassificatio.exigitCompositatem()
-    fun exigitIsolationem() = regulaClassificatio.exigitIsolationem()
-
+    fun exigitLaterales() = regulaClassificatio.exigitLaterales()
     fun exigitUnilateralitatem() = regulaClassificatio.exigitUnilateralitatem()
     fun exigitBilateralitatem() = regulaClassificatio.exigitBilateralitatem()
-    fun exigitLaterales() = regulaClassificatio.exigitLaterales()
 
+    fun exigitModusOneris() = regulaClassificatio.exigitModusOneris()
     fun exigitModumExternum() = regulaClassificatio.exigitModumExternum()
     fun exigitModumCorporis() = regulaClassificatio.exigitModumCorporis()
-    fun exigitModusOneris() = regulaClassificatio.exigitModusOneris()
+
+    fun vetatPrehensiones() = regulaPrehensiones.vetatPrehensiones()
+    fun vetatGenusPrehenionis() = regulaPrehensiones.vetatGenusPrehensionis()
+    fun vetatAngulum() = regulaDisciplinae.vetatAngulum()
 }

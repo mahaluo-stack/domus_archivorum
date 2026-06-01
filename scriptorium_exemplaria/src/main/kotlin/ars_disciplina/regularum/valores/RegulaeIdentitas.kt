@@ -1,4 +1,4 @@
-package ars_disciplina.regularum
+package ars_disciplina.regularum.valores
 
 import ars_disciplina.commune.interfacia.NumerusValorabile
 
