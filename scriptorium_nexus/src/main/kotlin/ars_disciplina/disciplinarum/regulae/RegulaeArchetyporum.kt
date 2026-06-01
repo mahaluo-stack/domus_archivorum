@@ -25,8 +25,8 @@ class RegulaeArchetyporum(
 
     fun exigitVariationes(vararg statutus: String) = regulaDisciplinae.exigitVariationes(*statutus)
     fun exigitMotum(statutus: String) = regulaDisciplinae.exigitMotum(statutus)
-    fun vetatAngulus() = regulaDisciplinae.vetatAngulum()
-    fun exigitAngulus() = regulaDisciplinae.exigitAngulum()
+    fun vetatAngulum() = regulaDisciplinae.vetatAngulum()
+    fun exigitAngulum() = regulaDisciplinae.exigitAngulum()
     fun exigitAngulumNonNegativum() = regulaDisciplinae.exigitAngulumNonNegativum()
     fun exigitAngulos(vararg anguli: Double) = regulaDisciplinae.exigitAngulos(*anguli)
     fun exigitAngulumMinimum(minimum: Double) = regulaDisciplinae.exigitAngulumMinimum(minimum)
@@ -45,5 +45,5 @@ class RegulaeArchetyporum(
 
     fun exigitModumExternum() = regulaClassificatio.exigitModumExternum()
     fun exigitModumCorporis() = regulaClassificatio.exigitModumCorporis()
-    fun exigitModosOneris() = regulaClassificatio.exigitModusOneris()
+    fun exigitModusOneris() = regulaClassificatio.exigitModusOneris()
 }
