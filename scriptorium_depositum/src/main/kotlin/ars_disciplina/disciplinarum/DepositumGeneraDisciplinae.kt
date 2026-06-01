@@ -1,10 +1,10 @@
 package org.example.disciplinarum.depositum
 
+import ars_disciplina.Conexio
 import ars_disciplina.classificationum.tabula.GeneraDisciplinae
 import ars_disciplina.classificationum.valores.DescriptioClassificationum
 import ars_disciplina.classificationum.valores.NomenGeneraDisciplinae
 import ars_disciplina.classificationum.valores.identitas.GeneraDisciplinaeIdentitas
-import org.example.commune.conexio.Conexio
 
 object DepositumGeneraDisciplinae {
     fun legeOmnes(): Set<GeneraDisciplinae> {

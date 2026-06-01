@@ -3,7 +3,7 @@ package disciplinarum
 import ConstantiaExaminatio.FICTUM_NOMEN_DISCIPLINAE
 import ConstantiaExaminatio.FICTUM_NOMEN_GENERA_DISCIPLINAE
 import ConstantiaExaminatio.FICTUM_NOMEN_MOTUS
-import ars_disciplina.disciplinarum.entia.EntiaDisciplina
+import ars_disciplina.disciplinarum.EntiaDisciplina
 import ficta.FactoriaFictaDisciplinarum
 import ficta.FactoriaFictaDisciplinarum.angulus
 import ficta.FactoriaFictaDisciplinarum.disciplinae
@@ -55,7 +55,7 @@ class StructorDisciplinaeExaminatio {
             .structGeneraDisciplinae(generaDisciplinae())
             .structMotus(motus())
             .structModusOneris(modusOneris())
-            .structLateralisDisciplinae(lateralisDisciplinae())
+            .structLateralis(lateralisDisciplinae())
             .structVariationes(variationes())
             .structAngulus(angulus())
             .structPrehensiones(prehensiones())
@@ -74,7 +74,7 @@ class StructorDisciplinaeExaminatio {
             .structDisciplinae(disciplinae())
             .structGeneraDisciplinae(generaDisciplinae())
             .structModusOneris(modusOneris())
-            .structLateralisDisciplinae(lateralisDisciplinae())
+            .structLateralis(lateralisDisciplinae())
             .structVariationes(variationes())
             .structAngulus(angulus())
             .structPrehensiones(prehensiones())

@@ -1,9 +1,6 @@
-import org.example.commune.exemplaria.constantia.ConstantiaClassificationum.GENUS_COMPOUND
-import org.example.commune.exemplaria.constantia.ConstantiaClassificationum.LATERALIS_BILATERAL
-import org.example.commune.exemplaria.constantia.ConstantiaClassificationum.MODUS_ONERIS_BODYWEIGHT
-import org.example.commune.exemplaria.constantia.ConstantiaMotus.MOTUS_PULL
-import org.example.commune.exemplaria.constantia.ConstantiaPrehensionum.GENUS_NEUTRAL
-import org.example.commune.exemplaria.constantia.ConstantiaPrehensionum.GENUS_PRONATED
+import ars_disciplina.disciplinarum.constantia.ConstantiaMotus.MOTUS_PULL
+import ars_disciplina.prehensionum.ConstantiaPrehensionum.GENUS_NEUTRAL
+import ars_disciplina.prehensionum.ConstantiaPrehensionum.GENUS_PRONATED
 
 object ConstantiaExaminatio {
     const val FICTUM_NOMEN_DISCIPLINAE = "deadlift"

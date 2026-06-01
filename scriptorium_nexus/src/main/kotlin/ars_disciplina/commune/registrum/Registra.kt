@@ -15,5 +15,5 @@ open class Registra<K, T>(
     fun invenirePerClavemNecesse(clavis: K): T = perClavem[clavis]
         ?: throw clavisNonInventum("Clavis: '${clavis}' non inventa in registro.")
 
-    fun items(): Collection<T> = perClavem.values
+    fun omnia(): Collection<T> = perClavem.values
 }

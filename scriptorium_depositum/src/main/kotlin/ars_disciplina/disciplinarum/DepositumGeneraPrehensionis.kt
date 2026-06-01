@@ -1,10 +1,10 @@
 package org.example.disciplinarum.depositum
 
+import ars_disciplina.Conexio
 import ars_disciplina.prehensionum.tabula.GeneraPrehensionis
 import ars_disciplina.prehensionum.valores.DescriptioPrehensionis
 import ars_disciplina.prehensionum.valores.NomenGeneraPrehensionis
 import ars_disciplina.prehensionum.valores.identitas.GeneraPrehensionisIdentitas
-import org.example.commune.conexio.Conexio
 
 object DepositumGeneraPrehensionis {
     fun legeOmnes(): Set<GeneraPrehensionis> {

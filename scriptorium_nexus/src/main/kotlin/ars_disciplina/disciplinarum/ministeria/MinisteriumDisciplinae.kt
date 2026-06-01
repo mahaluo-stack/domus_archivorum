@@ -1,6 +1,6 @@
 package org.example.disciplinarum.ministeria
 
-import ars_disciplina.disciplinarum.entia.EntiaDisciplina
+import ars_disciplina.disciplinarum.EntiaDisciplina
 import ars_disciplina.disciplinarum.tabula.Disciplinae
 import org.example.commune.conexio.Conexio
 

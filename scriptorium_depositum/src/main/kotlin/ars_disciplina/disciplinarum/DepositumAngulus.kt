@@ -1,9 +1,9 @@
 package org.example.disciplinarum.depositum
 
+import ars_disciplina.Conexio
 import ars_disciplina.disciplinarum.tabula.Angulus
 import ars_disciplina.disciplinarum.valores.AngulusPercentum
 import ars_disciplina.disciplinarum.valores.identitas.AngulusIdentitas
-import org.example.commune.conexio.Conexio
 
 object DepositumAngulus {
     fun legeOmnes(): Set<Angulus> {

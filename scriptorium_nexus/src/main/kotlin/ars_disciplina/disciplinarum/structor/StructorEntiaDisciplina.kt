@@ -3,7 +3,7 @@ package org.example.disciplinarum.structor
 import ars_disciplina.classificationum.tabula.GeneraDisciplinae
 import ars_disciplina.classificationum.tabula.Lateralis
 import ars_disciplina.classificationum.tabula.ModusOneris
-import ars_disciplina.disciplinarum.entia.EntiaDisciplina
+import ars_disciplina.disciplinarum.EntiaDisciplina
 import ars_disciplina.disciplinarum.tabula.Angulus
 import ars_disciplina.disciplinarum.tabula.Disciplinae
 import ars_disciplina.disciplinarum.tabula.Motus
@@ -17,7 +17,7 @@ class StructorEntiaDisciplina {
     private lateinit var generaDisciplinae: GeneraDisciplinae
     private lateinit var motus: Motus
     private lateinit var modusOneris: Set<ModusOneris>
-    private lateinit var lateralisDisciplinae: Set<Lateralis>
+    private lateinit var lateralis: Set<Lateralis>
     private lateinit var variationes: Set<Variationes>
     private lateinit var angulus: Set<Angulus>
     private lateinit var prehensiones: Set<Prehensiones>
@@ -29,8 +29,7 @@ class StructorEntiaDisciplina {
 
     fun structMotus(motus: Motus) = apply { this.motus = motus }
     fun structModusOneris(modusOneris: Set<ModusOneris>) = apply { this.modusOneris = modusOneris }
-    fun structLateralisDisciplinae(lateralisDisciplinae: Set<Lateralis>) =
-        apply { this.lateralisDisciplinae = lateralisDisciplinae }
+    fun structLateralis(lateralis: Set<Lateralis>) = apply { this.lateralis = lateralis }
 
     fun structVariationes(variationes: Set<Variationes>) = apply { this.variationes = variationes }
     fun structAngulus(angulus: Set<Angulus>) = apply { this.angulus = angulus }
@@ -52,7 +51,7 @@ class StructorEntiaDisciplina {
         if (!::modusOneris.isInitialized || modusOneris.isEmpty())
             throw ExceptioStructorisDisciplinae("Modus oneris necessarius est.")
 
-        if (!::lateralisDisciplinae.isInitialized || lateralisDisciplinae.isEmpty())
+        if (!::lateralis.isInitialized || lateralis.isEmpty())
             throw ExceptioStructorisDisciplinae("Lateralis disciplinae necessaria est.")
 
         if (!::variationes.isInitialized) variationes = emptySet()
@@ -68,7 +67,7 @@ class StructorEntiaDisciplina {
             generaDisciplinae,
             motus,
             modusOneris,
-            lateralisDisciplinae,
+            lateralis,
             variationes,
             angulus,
             prehensiones,

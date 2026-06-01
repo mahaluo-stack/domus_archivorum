@@ -7,5 +7,5 @@ CREATE TABLE prehensionum.prehensiones
     nomen_prehensionis     VARCHAR(50)   NOT NULL,
     descriptio             VARCHAR(4000) NULL,
     creatio                DATETIME2(0) DEFAULT SYSDATETIME(),
-    CONSTRAINT nnomen_prehensionis_unicum UNIQUE (nomen_prehensionis)
+    CONSTRAINT nomen_prehensionis_unicum UNIQUE (nomen_prehensionis)
 );

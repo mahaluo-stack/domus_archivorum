@@ -1,9 +1,9 @@
 package org.example.disciplinarum.depositum
 
+import ars_disciplina.Conexio
 import ars_disciplina.classificationum.tabula.Lateralis
 import ars_disciplina.classificationum.valores.NomenLateralis
 import ars_disciplina.classificationum.valores.identitas.LateralisIdentitas
-import org.example.commune.conexio.Conexio
 
 object DepositumLateralis {
     fun legeOmnes(): Set<Lateralis> {

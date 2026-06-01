@@ -18,7 +18,7 @@ import ars_disciplina.classificationum.valores.NomenModusOneris
 import ars_disciplina.classificationum.valores.identitas.GeneraDisciplinaeIdentitas
 import ars_disciplina.classificationum.valores.identitas.LateralisDisciplinaeIdentitas
 import ars_disciplina.classificationum.valores.identitas.ModusOnerisIdentitas
-import ars_disciplina.disciplinarum.entia.EntiaDisciplina
+import ars_disciplina.disciplinarum.EntiaDisciplina
 import ars_disciplina.disciplinarum.tabula.Angulus
 import ars_disciplina.disciplinarum.tabula.DisciplinaVariationes
 import ars_disciplina.disciplinarum.tabula.Disciplinae

@@ -1,9 +1,9 @@
 package org.example.disciplinarum.depositum
 
+import ars_disciplina.Conexio
 import ars_disciplina.classificationum.tabula.ModusOneris
 import ars_disciplina.classificationum.valores.NomenModusOneris
 import ars_disciplina.classificationum.valores.identitas.ModusOnerisIdentitas
-import org.example.commune.conexio.Conexio
 
 object DepositumModusOneris {
     fun legeOmnes(): Set<ModusOneris> {
