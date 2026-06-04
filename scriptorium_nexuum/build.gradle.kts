@@ -2,7 +2,7 @@ plugins {
     kotlin("jvm") version "2.2.0"
 }
 
-group = "org.nexus"
+group = "org.nexuum"
 version = "1.0.0"
 
 repositories {

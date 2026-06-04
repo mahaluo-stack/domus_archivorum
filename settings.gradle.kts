@@ -7,5 +7,5 @@ include(
     "scriptorium_exemplaria",
     "scriptorium_infrastructura",
     "scriptorium_ministerium",
-    "scriptorium_nexus"
+    "scriptorium_nexuum"
 )
