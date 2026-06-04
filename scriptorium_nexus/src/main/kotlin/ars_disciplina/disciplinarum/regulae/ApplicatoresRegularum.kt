@@ -1,10 +1,10 @@
 package ars_disciplina.disciplinarum.regulae
 
+import ars_disciplina.disciplinarum.entia.EntiaArchetypi
 import ars_disciplina.regularum.constantia.OmniRegulae
-import org.example.commune.exemplaria.interfacia.ArchetypusDisciplinae
-import org.example.disciplinarum.regulae.RegulaeArchetyporum
+import org.example.disciplinarum.regulae.RegulaeArchetypi
 
-typealias ApplicatorRegulae = RegulaeArchetyporum.(ArchetypusDisciplinae) -> Unit
+typealias ApplicatorRegulae = RegulaeArchetypi.(EntiaArchetypi) -> Unit
 
 object ApplicatoresRegularum {
     val omnes = mapOf<OmniRegulae, ApplicatorRegulae>(

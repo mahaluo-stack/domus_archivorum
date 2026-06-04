@@ -1,9 +1,7 @@
 package org.example.disciplinarum.ministeria
 
-import ars_disciplina.classificationum.tabula.Lateralis
 import ars_disciplina.classificationum.tabula.ModusOneris
-import org.example.commune.conexio.Conexio
-import kotlin.use
+import ars_disciplina.commune.Conexio
 
 class MinisteriumModiOneris {
     fun inserta(modusOneris: ModusOneris): Int {

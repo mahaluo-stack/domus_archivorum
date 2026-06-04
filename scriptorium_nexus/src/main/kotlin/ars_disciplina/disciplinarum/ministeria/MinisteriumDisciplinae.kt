@@ -1,8 +1,7 @@
 package org.example.disciplinarum.ministeria
 
-import ars_disciplina.disciplinarum.EntiaDisciplina
+import ars_disciplina.commune.Conexio
 import ars_disciplina.disciplinarum.tabula.Disciplinae
-import org.example.commune.conexio.Conexio
 
 class MinisteriumDisciplinae() {
     fun inserta(disciplinae: Disciplinae): Int {

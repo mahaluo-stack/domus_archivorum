@@ -1,9 +1,7 @@
 package org.example.disciplinarum.ministeria
 
 import ars_disciplina.classificationum.tabula.Lateralis
-import ars_disciplina.prehensionum.tabula.GeneraPrehensionis
-import org.example.commune.conexio.Conexio
-import kotlin.use
+import ars_disciplina.commune.Conexio
 
 class MinisteriumLateralitatis {
     fun inserta(lateralis: Lateralis): Int {

@@ -1,6 +1,6 @@
 package org.example.disciplinarum.regulae
 
-import ars_disciplina.disciplinarum.EntiaDisciplina
+import ars_disciplina.disciplinarum.entia.EntiaDisciplina
 import ars_disciplina.disciplinarum.valores.NomenDisciplinae
 import org.example.commune.exceptio.regulae.FabricaExceptionumRegularum
 import org.example.commune.exemplaria.constantia.ConstantiaExceptionum.REGULA_GENERUM_PREHENSIONIS

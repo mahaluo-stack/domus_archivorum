@@ -1,6 +1,6 @@
 package org.example.nexuum.ministeria.entia
 
-import ars_disciplina.disciplinarum.EntiaDisciplina
+import ars_disciplina.disciplinarum.entia.EntiaDisciplina
 import org.example.commune.exceptio.regulae.ExceptioRegulae
 import org.example.commune.regulae.RegulaTribunal
 import org.example.nexuum.ministeria.nexus.MinisteriumDisciplinaAnguli

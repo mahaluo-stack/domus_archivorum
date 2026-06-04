@@ -1,4 +1,4 @@
-package ars_disciplina.disciplinarum
+package ars_disciplina.disciplinarum.entia
 
 import ars_disciplina.classificationum.tabula.GeneraDisciplinae
 import ars_disciplina.classificationum.tabula.Lateralis

@@ -1,9 +1,7 @@
 package org.example.disciplinarum.ministeria
 
+import ars_disciplina.commune.Conexio
 import ars_disciplina.disciplinarum.tabula.Variationes
-import ars_disciplina.prehensionum.tabula.Prehensiones
-import org.example.commune.conexio.Conexio
-import kotlin.use
 
 class MinisteriumVariationum {
     fun inserta(variationes: Variationes): Int {

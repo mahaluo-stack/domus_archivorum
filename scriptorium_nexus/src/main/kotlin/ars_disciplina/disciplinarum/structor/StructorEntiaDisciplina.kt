@@ -3,7 +3,7 @@ package org.example.disciplinarum.structor
 import ars_disciplina.classificationum.tabula.GeneraDisciplinae
 import ars_disciplina.classificationum.tabula.Lateralis
 import ars_disciplina.classificationum.tabula.ModusOneris
-import ars_disciplina.disciplinarum.EntiaDisciplina
+import ars_disciplina.disciplinarum.entia.EntiaDisciplina
 import ars_disciplina.disciplinarum.tabula.Angulus
 import ars_disciplina.disciplinarum.tabula.Disciplinae
 import ars_disciplina.disciplinarum.tabula.Motus

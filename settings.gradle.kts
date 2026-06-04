@@ -5,5 +5,7 @@ include(
     "curia_actarii",
     "scriptorium_depositum",
     "scriptorium_exemplaria",
+    "scriptorium_infrastructura",
+    "scriptorium_ministerium",
     "scriptorium_nexus"
 )

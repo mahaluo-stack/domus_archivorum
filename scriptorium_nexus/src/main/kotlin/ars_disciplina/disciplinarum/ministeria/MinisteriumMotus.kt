@@ -1,7 +1,7 @@
 package org.example.disciplinarum.ministeria
 
+import ars_disciplina.commune.Conexio
 import ars_disciplina.disciplinarum.tabula.Motus
-import org.example.commune.conexio.Conexio
 
 class MinisteriumMotus() {
     fun inserta(motus: Motus): Int {

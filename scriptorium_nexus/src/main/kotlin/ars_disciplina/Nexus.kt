@@ -1,31 +1,27 @@
 package ars_disciplina
 
+import ars_disciplina.classificationum.DepositumGeneraDisciplinae
 import ars_disciplina.commune.registrum.*
-import ars_disciplina.disciplinarum.archetypus.PulldownArchetypus
-import ars_disciplina.disciplinarum.regulae.registrator.RegistratorRegularumArchetyporum
-import ars_disciplina.disciplinarum.regulae.registrator.RegistratorRegularumExercitatioGeneralis
+import ars_disciplina.disciplinarum.DepositumArchetypi
+import ars_disciplina.regularum.DepositumRegulae
 import org.example.commune.registrum.RegistraAngulus
 import org.example.commune.registrum.RegistraDisciplinae
 import org.example.commune.registrum.RegistraMotus
 import org.example.commune.registrum.RegistraVariationes
 import org.example.commune.regulae.RegulaTribunal
 import org.example.disciplinarum.depositum.*
-import org.example.disciplinarum.familia.DeadliftArchetypus
-import org.example.disciplinarum.familia.LungeArchetypus
-import org.example.disciplinarum.familia.SquatArchetypus
 
 object Nexus {
     val tribunal = RegulaTribunal()
 
     fun initializa() {
-
         initializaRegistra()
-        initializaArchetyporum()
-        registraRegulas()
     }
 
     private fun initializaRegistra() {
         RegistraDisciplinae.initializa(DepositumDisciplinae.legeOmnes())
+        RegistraArchetypi.initializa(DepositumArchetypi.legeOmnes())
+        RegistraRegulae.initializa(DepositumRegulae.legeOmnes())
         RegistraGeneraDisciplinae.initializa(DepositumGeneraDisciplinae.legeOmnes())
         RegistraMotus.initializa(DepositumMotus.legeOmnes())
         RegistraModusOneris.initializa(DepositumModusOneris.legeOmnes())
@@ -34,28 +30,5 @@ object Nexus {
         RegistraAngulus.initializa(DepositumAngulus.legeOmnes())
         RegistraPrehensiones.initializa(DepositumPrehensiones.legeOmnes())
         RegistraGeneraPrehensionis.initializa(DepositumGeneraPrehensionis.legeOmnes())
-    }
-
-    private fun initializaArchetyporum() {
-        RegistraArchetyporum.initializa(
-            setOf(
-                DeadliftArchetypus,
-                SquatArchetypus,
-                LungeArchetypus,
-                PulldownArchetypus
-            )
-        )
-    }
-
-    private fun registraRegulas() {
-
-        RegistratorRegularumExercitatioGeneralis.registra(tribunal)
-
-        RegistraArchetyporum.omnia().forEach {
-            RegistratorRegularumArchetyporum.registra(
-                tribunal,
-                it
-            )
-        }
     }
 }

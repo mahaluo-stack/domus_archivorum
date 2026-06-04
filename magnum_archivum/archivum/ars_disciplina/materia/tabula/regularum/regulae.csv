@@ -1,10 +1,12 @@
 nomen_regulae;genus;descriptio
 exigit variationes;exigit;exercise variations
-exigit motum;exigit;movement type
-exigit angulum;exigit;exercise can be performed with incline and decline angles
-exigit angulum non negativum;exigit;exercise can not be performed with decline angles
-exigit prehensiones;exigit;grip types available for exercise
-exigit genus prehensionis;exigit;grip widths available for exercise
+exigit tractionem;exigit;pull exercise
+exigit propulsionem;exigit;push exercise
+exigit angulum minimum;exigit;minimum angle
+exigit angulum non negativum;exigit;exercise can not be performed with a decline angle
+exigit angulos permissos;exigit;exercise can only be performed with specific angles
+exigit prehensiones;exigit;exercise can be performed with different grip types
+exigit genus prehensionis;exigit;exercise can be performed with different grip widths
 exigit compositatem;exigit;compound exercise
 exigit isolationem;exigit;isolation exercise
 exigit unilateralitatem;exigit;exercise is performed unilaterally
@@ -14,6 +16,5 @@ exigit modum externum;exigit;exercise is performed using an external load
 exigit modum corporis;exigit;exercise is performed using bodyweight
 exigit modus oneris;exigit;exercise is performed using bodyweight, external load or both
 vetat angulum;vetat;exercise can not be performed with specific angles
-vetat motum;vetat;exercise can not be performed with movement type
 vetat prehensiones;vetat;exercise can not be performed with grip types
 vetat genus prehensionis;vetat;exercise can not be performed with different grip widths

@@ -18,7 +18,7 @@ import ars_disciplina.classificationum.valores.NomenModusOneris
 import ars_disciplina.classificationum.valores.identitas.GeneraDisciplinaeIdentitas
 import ars_disciplina.classificationum.valores.identitas.LateralisDisciplinaeIdentitas
 import ars_disciplina.classificationum.valores.identitas.ModusOnerisIdentitas
-import ars_disciplina.disciplinarum.EntiaDisciplina
+import ars_disciplina.disciplinarum.entia.EntiaDisciplina
 import ars_disciplina.disciplinarum.tabula.Angulus
 import ars_disciplina.disciplinarum.tabula.DisciplinaVariationes
 import ars_disciplina.disciplinarum.tabula.Disciplinae
@@ -64,13 +64,13 @@ object FactoriaFictaDisciplinarum {
     fun disciplinae() = Disciplinae(
         DisciplinaeIdentitas(1),
         NomenDisciplinae(FICTUM_NOMEN_DISCIPLINAE),
-        DescriptioDisciplina("a strength training exercise that primarily involves hips, legs, glutes and back.")
+        DescriptioDisciplinae("a strength training exercise that primarily involves hips, legs, glutes and back.")
     )
 
     fun generaDisciplinae() = GeneraDisciplinae(
         GeneraDisciplinaeIdentitas(1),
         NomenGeneraDisciplinae(FICTUM_NOMEN_GENERA_DISCIPLINAE),
-        DescriptioDisciplina("a compound exercise is a multi-joint movement that simultaneously works multiple muscle groups.")
+        DescriptioDisciplinae("a compound exercise is a multi-joint movement that simultaneously works multiple muscle groups.")
     )
 
     fun motus() = Motus(

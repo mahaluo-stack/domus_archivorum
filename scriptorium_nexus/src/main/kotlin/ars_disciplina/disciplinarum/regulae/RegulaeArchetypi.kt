@@ -3,19 +3,19 @@ package org.example.disciplinarum.regulae
 import ars_disciplina.disciplinarum.valores.NomenDisciplinae
 import org.example.commune.regulae.RegulaTribunal
 
-fun regulaeArchetyporum(
+fun regulaeArchetypi(
     tribunal: RegulaTribunal,
     variantes: Set<String>,
-    block: RegulaeArchetyporum.() -> Unit
+    block: RegulaeArchetypi.() -> Unit
 ) {
-    RegulaeArchetyporum(tribunal, variantes.map { NomenDisciplinae(it) }.toSet()).apply(block)
+    RegulaeArchetypi(tribunal, variantes.map { NomenDisciplinae(it) }.toSet()).apply(block)
 }
 
 @DslMarker
-annotation class RegulaeArchetyporumDsl
+annotation class RegulaeArchetypiDsl
 
-@RegulaeArchetyporumDsl
-class RegulaeArchetyporum(
+@RegulaeArchetypiDsl
+class RegulaeArchetypi(
     tribunal: RegulaTribunal,
     variantes: Set<NomenDisciplinae>
 ) {

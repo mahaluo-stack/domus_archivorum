@@ -3,7 +3,7 @@ package disciplinarum
 import ConstantiaExaminatio.FICTUM_NOMEN_DISCIPLINAE
 import ConstantiaExaminatio.FICTUM_NOMEN_GENERA_DISCIPLINAE
 import ConstantiaExaminatio.FICTUM_NOMEN_MOTUS
-import ars_disciplina.disciplinarum.EntiaDisciplina
+import ars_disciplina.disciplinarum.entia.EntiaDisciplina
 import ficta.FactoriaFictaDisciplinarum
 import ficta.FactoriaFictaDisciplinarum.angulus
 import ficta.FactoriaFictaDisciplinarum.disciplinae

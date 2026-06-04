@@ -1,9 +1,7 @@
 package org.example.disciplinarum.ministeria
 
-import ars_disciplina.disciplinarum.EntiaDisciplina
+import ars_disciplina.commune.Conexio
 import ars_disciplina.disciplinarum.tabula.Angulus
-import org.example.commune.conexio.Conexio
-import kotlin.use
 
 class MinisteriumAngulorum {
     fun inserta(angulus: Angulus): Int {
