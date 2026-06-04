@@ -1,6 +1,5 @@
 plugins {
     kotlin("jvm") version "2.2.0"
-    `maven-publish`
 }
 
 group = "org.depositum"
@@ -12,11 +11,7 @@ repositories {
 }
 
 dependencies {
-    implementation("org.jetbrains.kotlinx:dataframe:1.0.0-dev-8856")
-    implementation("org.jetbrains.kotlinx:dataframe-jdbc:1.0.0-dev-8856")
-    implementation("com.microsoft.sqlserver:mssql-jdbc:13.2.1.jre11")
-    implementation("org.slf4j:slf4j-simple:2.0.9")
-    implementation("com.zaxxer:HikariCP:7.0.2")
+    implementation(project(":scriptorium_infrastructura"))
     implementation(project(":scriptorium_exemplaria"))
 
     testImplementation(kotlin("test"))
