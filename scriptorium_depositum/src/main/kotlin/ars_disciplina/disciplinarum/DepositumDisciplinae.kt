@@ -1,39 +1,26 @@
 package org.example.disciplinarum.depositum
 
+import ars_disciplina.DepositumTabulae
+import ars_disciplina.commune.constantia.ConstantiaNomenColumnae.NOMEN_COLUMNAE_DESCRIPTIO
+import ars_disciplina.commune.constantia.ConstantiaNomenColumnae.NOMEN_COLUMNAE_DISCIPLINAE_IDENTITAS
+import ars_disciplina.commune.constantia.ConstantiaNomenColumnae.NOMEN_COLUMNAE_NOMEN_DISCIPLINAE
+import ars_disciplina.commune.constantia.ConstantiaNomenSchemata.NOMEN_ARCHIVUM_ARS_DISCIPLINA
+import ars_disciplina.commune.constantia.ConstantiaNomenSchemata.NOMEN_SCHEMATA_DISCIPLINARUM
+import ars_disciplina.commune.constantia.ConstantiaNomenTabulae.NOMEN_TABULAE_DISCIPLINAE
 import ars_disciplina.disciplinarum.tabula.Disciplinae
-import ars_disciplina.disciplinarum.valores.DescriptioDisciplina
+import ars_disciplina.disciplinarum.valores.DescriptioDisciplinae
 import ars_disciplina.disciplinarum.valores.NomenDisciplinae
 import ars_disciplina.disciplinarum.valores.identitas.DisciplinaeIdentitas
-import org.example.commune.conexio.Conexio
+import java.sql.ResultSet
 
-object DepositumDisciplinae {
-    fun legeOmnes(): Set<Disciplinae> {
-        Conexio.getConnection().use { conn ->
-            val sql = """
-                SELECT 
-                    disciplinae_identitas, 
-                    nomen_disciplinae,
-                    descriptio
-                FROM ars_disciplina.disciplinarum.disciplinae
-            """.trimIndent()
-            conn.prepareStatement(sql).use { ps ->
-                ps.executeQuery().use { rs ->
-                    val collectio = mutableSetOf<Disciplinae>()
-                    while (rs.next()) {
-                        val identitas = DisciplinaeIdentitas(valor = rs.getInt("disciplinae_identitas"))
-                        val nomen = NomenDisciplinae(valor = rs.getString("nomen_disciplinae"))
-                        val descriptio = DescriptioDisciplina(valor = rs.getString("descriptio") ?: "")
-                        collectio.add(
-                            Disciplinae(
-                                identitas,
-                                nomen,
-                                descriptio
-                            )
-                        )
-                    }
-                    return collectio
-                }
-            }
-        }
+object DepositumDisciplinae : DepositumTabulae<Disciplinae>() {
+    override val nomenSchemata = "$NOMEN_ARCHIVUM_ARS_DISCIPLINA.$NOMEN_SCHEMATA_DISCIPLINARUM"
+    override val nomenTabulae = NOMEN_TABULAE_DISCIPLINAE
+    override fun crea(rs: ResultSet): Disciplinae {
+        return Disciplinae(
+            DisciplinaeIdentitas(rs.getInt(NOMEN_COLUMNAE_DISCIPLINAE_IDENTITAS)),
+            NomenDisciplinae(rs.getString(NOMEN_COLUMNAE_NOMEN_DISCIPLINAE)),
+            DescriptioDisciplinae(rs.getString(NOMEN_COLUMNAE_DESCRIPTIO) ?: "")
+        )
     }
 }

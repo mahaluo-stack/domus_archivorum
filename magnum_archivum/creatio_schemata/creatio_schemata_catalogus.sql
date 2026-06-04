@@ -20,5 +20,6 @@ VALUES ('ars_disciplina', 'musculorum'),
        ('ars_disciplina', 'actorum'),
        ('ars_disciplina', 'nexuum'),
        ('ars_disciplina', 'prehensionum'),
-       ('ars_disciplina', 'classificationum');
+       ('ars_disciplina', 'classificationum'),
+       ('ars_disciplina', 'regularum');
 GO

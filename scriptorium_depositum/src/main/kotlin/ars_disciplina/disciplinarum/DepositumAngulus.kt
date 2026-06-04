@@ -1,35 +1,23 @@
 package org.example.disciplinarum.depositum
 
+import ars_disciplina.DepositumTabulae
+import ars_disciplina.commune.constantia.ConstantiaNomenColumnae.NOMEN_COLUMNAE_ANGULUS
+import ars_disciplina.commune.constantia.ConstantiaNomenColumnae.NOMEN_COLUMNAE_ANGULUS_IDENTITAS
+import ars_disciplina.commune.constantia.ConstantiaNomenSchemata.NOMEN_ARCHIVUM_ARS_DISCIPLINA
+import ars_disciplina.commune.constantia.ConstantiaNomenSchemata.NOMEN_SCHEMATA_DISCIPLINARUM
+import ars_disciplina.commune.constantia.ConstantiaNomenTabulae.NOMEN_TABULAE_ANGULUS
 import ars_disciplina.disciplinarum.tabula.Angulus
 import ars_disciplina.disciplinarum.valores.AngulusPercentum
 import ars_disciplina.disciplinarum.valores.identitas.AngulusIdentitas
-import org.example.commune.conexio.Conexio
+import java.sql.ResultSet
 
-object DepositumAngulus {
-    fun legeOmnes(): Set<Angulus> {
-        Conexio.getConnection().use { conn ->
-            val sql = """
-                SELECT 
-                    angulus_identitas, 
-                    angulus 
-                FROM ars_disciplina.disciplinarum.angulus
-            """.trimIndent()
-            conn.prepareStatement(sql).use { ps ->
-                ps.executeQuery().use { rs ->
-                    val collectio = mutableSetOf<Angulus>()
-                    while (rs.next()) {
-                        val identitas = AngulusIdentitas(valor = rs.getInt("angulus_identitas"))
-                        val percentum = AngulusPercentum(valor = rs.getDouble("angulus"))
-                        collectio.add(
-                            Angulus(
-                                identitas,
-                                percentum
-                            )
-                        )
-                    }
-                    return collectio
-                }
-            }
-        }
+object DepositumAngulus : DepositumTabulae<Angulus>() {
+    override val nomenSchemata = "$NOMEN_ARCHIVUM_ARS_DISCIPLINA.$NOMEN_SCHEMATA_DISCIPLINARUM"
+    override val nomenTabulae = NOMEN_TABULAE_ANGULUS
+    override fun crea(rs: ResultSet): Angulus {
+        return Angulus(
+            AngulusIdentitas(rs.getInt(NOMEN_COLUMNAE_ANGULUS_IDENTITAS)),
+            AngulusPercentum(rs.getDouble(NOMEN_COLUMNAE_ANGULUS))
+        )
     }
 }

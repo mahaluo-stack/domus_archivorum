@@ -1,43 +1,29 @@
 package ars_disciplina.musculorum
 
-import ars_disciplina.Conexio
+import ars_disciplina.DepositumTabulae
+import ars_disciplina.commune.constantia.ConstantiaNomenColumnae.NOMEN_COLUMNAE_DESCRIPTIO
+import ars_disciplina.commune.constantia.ConstantiaNomenColumnae.NOMEN_COLUMNAE_GENUS_INSTRUMENTI_IDENTITAS
+import ars_disciplina.commune.constantia.ConstantiaNomenColumnae.NOMEN_COLUMNAE_NOMEN_GENUS_INSTRUMENTI
+import ars_disciplina.commune.constantia.ConstantiaNomenColumnae.NOMEN_COLUMNAE_NOMEN_MUSCULI
+import ars_disciplina.commune.constantia.ConstantiaNomenSchemata.NOMEN_ARCHIVUM_ARS_DISCIPLINA
+import ars_disciplina.commune.constantia.ConstantiaNomenSchemata.NOMEN_SCHEMATA_MUSCULORUM
+import ars_disciplina.commune.constantia.ConstantiaNomenTabulae.NOMEN_TABULAE_MUSCULI
 import ars_disciplina.musculorum.valores.DescriptioMusculi
 import ars_disciplina.musculorum.valores.NomenMusculi
 import ars_disciplina.musculorum.valores.identitas.MusculiIdentitas
 import ars_disciplina.musculorum.valores.identitas.MusculiRegioIdentitas
 import org.example.exemplaria.tabulae.Musculi
+import java.sql.ResultSet
 
-object DepositumMusculi {
-    fun legeOmnes(): Set<Musculi> {
-        Conexio.getConnection().use { conn ->
-            val sql = """
-                SELECT 
-                    musculi_regio_identitas,
-                    nomen_musculi,
-                    descriptio
-                FROM ars_disciplina.musculorum.musculi
-            """.trimIndent()
-            conn.prepareStatement(sql).use { ps ->
-                ps.executeQuery().use { rs ->
-                    val collectio = mutableSetOf<Musculi>()
-                    while (rs.next()) {
-                        val musculiRegioIdentitas = MusculiRegioIdentitas(valor = rs.getInt("musculi_regio_identitas"))
-                        val identitas = MusculiIdentitas(valor = rs.getInt("musculi_identitas"))
-                        val nomen = NomenMusculi(valor = rs.getString("nomen_musculi"))
-                        val descriptio = DescriptioMusculi(valor = rs.getString("descriptio") ?: "")
-
-                        collectio.add(
-                            Musculi(
-                                identitas,
-                                musculiRegioIdentitas,
-                                nomen,
-                                descriptio
-                            )
-                        )
-                    }
-                    return collectio
-                }
-            }
-        }
+object DepositumMusculi : DepositumTabulae<Musculi>() {
+    override val nomenSchemata = "$NOMEN_ARCHIVUM_ARS_DISCIPLINA.$NOMEN_SCHEMATA_MUSCULORUM"
+    override val nomenTabulae = NOMEN_TABULAE_MUSCULI
+    override fun crea(rs: ResultSet): Musculi {
+        return Musculi(
+            MusculiIdentitas(rs.getInt(NOMEN_COLUMNAE_NOMEN_GENUS_INSTRUMENTI)),
+            MusculiRegioIdentitas(rs.getInt(NOMEN_COLUMNAE_GENUS_INSTRUMENTI_IDENTITAS)),
+            NomenMusculi(rs.getString(NOMEN_COLUMNAE_NOMEN_MUSCULI)),
+            DescriptioMusculi(rs.getString(NOMEN_COLUMNAE_DESCRIPTIO) ?: "")
+        )
     }
 }

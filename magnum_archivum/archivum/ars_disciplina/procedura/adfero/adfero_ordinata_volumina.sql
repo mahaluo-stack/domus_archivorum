@@ -22,5 +22,7 @@ BEGIN
 
     EXECUTE prehensionum.adfero_genera_prehensionis @via_tabula = @via_tabula;
     EXECUTE prehensionum.adfero_prehensiones @via_tabula = @via_tabula;
+
+    EXECUTE regularum.adfero_regulae @via_tabula = @via_tabula;
 END
 GO
