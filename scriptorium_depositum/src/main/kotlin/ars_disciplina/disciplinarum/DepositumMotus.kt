@@ -20,7 +20,7 @@ object DepositumMotus : DepositumTabulae<Motus>() {
         return Motus(
             MotusIdentitas(rs.getInt(NOMEN_COLUMNAE_MOTUS_IDENTITAS)),
             NomenMotus(rs.getString(NOMEN_COLUMNAE_NOMEN_MOTUS)),
-            DescriptioMotus(rs.getString(NOMEN_COLUMNAE_DESCRIPTIO))
+            DescriptioMotus(rs.getString(NOMEN_COLUMNAE_DESCRIPTIO) ?: "")
         )
     }
 }

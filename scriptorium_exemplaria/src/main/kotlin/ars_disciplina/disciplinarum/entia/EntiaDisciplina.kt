@@ -7,8 +7,13 @@ import ars_disciplina.disciplinarum.tabula.Angulus
 import ars_disciplina.disciplinarum.tabula.Disciplinae
 import ars_disciplina.disciplinarum.tabula.Motus
 import ars_disciplina.disciplinarum.tabula.Variationes
+import ars_disciplina.instrumentorum.tabula.GenusInstrumenti
+import ars_disciplina.instrumentorum.tabula.Instrumenta
 import ars_disciplina.prehensionum.tabula.GeneraPrehensionis
 import ars_disciplina.prehensionum.tabula.Prehensiones
+import org.example.exemplaria.tabulae.Musculi
+import org.example.exemplaria.tabulae.MusculiPars
+import org.example.exemplaria.tabulae.MusculiRegio
 
 class EntiaDisciplina(
     val disciplinae: Disciplinae,
@@ -21,5 +26,12 @@ class EntiaDisciplina(
 
     val angulus: Set<Angulus>,
     val prehensiones: Set<Prehensiones>,
-    val generaPrehensiones: Set<GeneraPrehensionis>
+    val generaPrehensiones: Set<GeneraPrehensionis>,
+
+    val musculiRegio: Set<MusculiRegio>,
+    val musculi: Set<Musculi>,
+    val musculiPars: Set<MusculiPars>,
+
+    val instrumenta: Set<Instrumenta>,
+    val genusInstrumenti: Set<GenusInstrumenti>
 )

@@ -2,8 +2,8 @@ package org.example.instrumentorum.depositum
 
 import ars_disciplina.DepositumTabulae
 import ars_disciplina.commune.constantia.ConstantiaNomenColumnae.NOMEN_COLUMNAE_DESCRIPTIO
-import ars_disciplina.commune.constantia.ConstantiaNomenColumnae.NOMEN_COLUMNAE_GENUS_INSTRUMENTI_IDENTITAS
-import ars_disciplina.commune.constantia.ConstantiaNomenColumnae.NOMEN_COLUMNAE_NOMEN_GENUS_INSTRUMENTI
+import ars_disciplina.commune.constantia.ConstantiaNomenColumnae.NOMEN_COLUMNAE_INSTRUMENTA_IDENTITAS
+import ars_disciplina.commune.constantia.ConstantiaNomenColumnae.NOMEN_COLUMNAE_NOMEN_INSTRUMENTI
 import ars_disciplina.commune.constantia.ConstantiaNomenSchemata.NOMEN_ARCHIVUM_ARS_DISCIPLINA
 import ars_disciplina.commune.constantia.ConstantiaNomenSchemata.NOMEN_SCHEMATA_INSTRUMENTORUM
 import ars_disciplina.commune.constantia.ConstantiaNomenTabulae.NOMEN_TABULAE_INSTRUMENTI
@@ -18,8 +18,8 @@ object DepositumInstrumenta : DepositumTabulae<Instrumenta>() {
     override val nomenTabulae = NOMEN_TABULAE_INSTRUMENTI
     override fun crea(rs: ResultSet): Instrumenta {
         return Instrumenta(
-            InstrumentaIdentitas(rs.getInt(NOMEN_COLUMNAE_GENUS_INSTRUMENTI_IDENTITAS)),
-            NomenInstrumenti(rs.getString(NOMEN_COLUMNAE_NOMEN_GENUS_INSTRUMENTI)),
+            InstrumentaIdentitas(rs.getInt(NOMEN_COLUMNAE_INSTRUMENTA_IDENTITAS)),
+            NomenInstrumenti(rs.getString(NOMEN_COLUMNAE_NOMEN_INSTRUMENTI)),
             DescriptioInstrumenti(rs.getString(NOMEN_COLUMNAE_DESCRIPTIO) ?: "")
         )
     }

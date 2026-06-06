@@ -5,7 +5,7 @@ import ars_disciplina.musculorum.valores.NomenMusculiRegio
 import ars_disciplina.musculorum.valores.identitas.MusculiRegioIdentitas
 
 data class MusculiRegio(
-    val identitas: MusculiRegioIdentitas,
+    val musculiRegioIdentitas: MusculiRegioIdentitas,
     val nomen: NomenMusculiRegio,
     val descriptio: DescriptioMusculi
 )

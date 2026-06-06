@@ -2,8 +2,8 @@ package ars_disciplina.musculorum
 
 import ars_disciplina.DepositumTabulae
 import ars_disciplina.commune.constantia.ConstantiaNomenColumnae.NOMEN_COLUMNAE_DESCRIPTIO
-import ars_disciplina.commune.constantia.ConstantiaNomenColumnae.NOMEN_COLUMNAE_GENUS_INSTRUMENTI_IDENTITAS
-import ars_disciplina.commune.constantia.ConstantiaNomenColumnae.NOMEN_COLUMNAE_NOMEN_GENUS_INSTRUMENTI
+import ars_disciplina.commune.constantia.ConstantiaNomenColumnae.NOMEN_COLUMNAE_MUSCULI_IDENTITAS
+import ars_disciplina.commune.constantia.ConstantiaNomenColumnae.NOMEN_COLUMNAE_MUSCULI_REGIO_IDENTITAS
 import ars_disciplina.commune.constantia.ConstantiaNomenColumnae.NOMEN_COLUMNAE_NOMEN_MUSCULI
 import ars_disciplina.commune.constantia.ConstantiaNomenSchemata.NOMEN_ARCHIVUM_ARS_DISCIPLINA
 import ars_disciplina.commune.constantia.ConstantiaNomenSchemata.NOMEN_SCHEMATA_MUSCULORUM
@@ -20,8 +20,8 @@ object DepositumMusculi : DepositumTabulae<Musculi>() {
     override val nomenTabulae = NOMEN_TABULAE_MUSCULI
     override fun crea(rs: ResultSet): Musculi {
         return Musculi(
-            MusculiIdentitas(rs.getInt(NOMEN_COLUMNAE_NOMEN_GENUS_INSTRUMENTI)),
-            MusculiRegioIdentitas(rs.getInt(NOMEN_COLUMNAE_GENUS_INSTRUMENTI_IDENTITAS)),
+            MusculiIdentitas(rs.getInt(NOMEN_COLUMNAE_MUSCULI_IDENTITAS)),
+            MusculiRegioIdentitas(rs.getInt(NOMEN_COLUMNAE_MUSCULI_REGIO_IDENTITAS)),
             NomenMusculi(rs.getString(NOMEN_COLUMNAE_NOMEN_MUSCULI)),
             DescriptioMusculi(rs.getString(NOMEN_COLUMNAE_DESCRIPTIO) ?: "")
         )

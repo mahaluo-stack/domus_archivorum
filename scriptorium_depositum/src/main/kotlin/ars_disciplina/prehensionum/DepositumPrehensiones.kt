@@ -21,6 +21,6 @@ object DepositumPrehensiones : DepositumTabulae<Prehensiones>() {
     ) = Prehensiones(
         PrehensionesIdentitas(rs.getInt(NOMEN_COLUMNAE_PREHENSIONES_IDENTITAS)),
         NomenPrehensionis(rs.getString(NOMEN_COLUMNAE_NOMEN_PREHENSIONIS)),
-        DescriptioPrehensionis(rs.getString(NOMEN_COLUMNAE_DESCRIPTIO))
+        DescriptioPrehensionis(rs.getString(NOMEN_COLUMNAE_DESCRIPTIO) ?: "")
     )
 }

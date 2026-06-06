@@ -8,7 +8,7 @@ import ars_disciplina.prehensionum.valores.identitas.PrehensionesIdentitas
 
 object DepositumDisciplinaPrehensiones : DepositumNexuum<DisciplinaPrehensiones>() {
     override val nomenTabulae = NOMEN_TABULAE_DISCIPLINA_PREHENSIONES
-    override val nomenColumnae = NOMEN_COLUMNAE_PREHENSIONES_IDENTITAS
+    override val nomenColumnaeAlterumIdentitas = NOMEN_COLUMNAE_PREHENSIONES_IDENTITAS
     override fun crea(
         disciplinaeIdentitas: DisciplinaeIdentitas,
         alterumIdentitas: Int
