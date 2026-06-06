@@ -7,7 +7,7 @@ import commune.contractus.responsa.instrumentorum.ResponsumInstrumenta
 import servitium.ServitiumLecturae
 import translatores.instrumentorum.TranslatorInstrumenta
 
-object ServitiumInstrumentum : ServitiumLecturae<InstrumentaIdentitas, Instrumenta, ResponsumInstrumenta>() {
+object ServitiumInstrumenta : ServitiumLecturae<InstrumentaIdentitas, Instrumenta, ResponsumInstrumenta>() {
 
     override fun omniaEntia() = RegistrumInstrumenta.omnia()
     override fun invenireEntia(identitas: InstrumentaIdentitas) = RegistrumInstrumenta.invenire(identitas)
