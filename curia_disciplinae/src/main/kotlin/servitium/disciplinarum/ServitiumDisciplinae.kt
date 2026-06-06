@@ -1,15 +1,15 @@
 package servitium.disciplinarum
 
+import ars_disciplina.disciplinarum.tabula.Disciplinae
 import ars_disciplina.disciplinarum.valores.identitas.DisciplinaeIdentitas
-import ars_disciplina.registrum.RegistrumDisciplinae
-import commune.contractus.responsa.ResponsumDisciplinae
+import ars_disciplina.registrum.disciplinarum.RegistrumDisciplinae
+import commune.contractus.responsa.disciplinarum.ResponsumDisciplinae
+import servitium.ServitiumLecturae
 import translatores.disciplinarum.TranslatorDisciplinae
 
-object ServitiumDisciplinae {
+object ServitiumDisciplinae : ServitiumLecturae<DisciplinaeIdentitas, Disciplinae, ResponsumDisciplinae>() {
 
-    fun omnia(): Collection<ResponsumDisciplinae> =
-        RegistrumDisciplinae.omniaDisciplinae().map(TranslatorDisciplinae::adResponsum)
-
-    fun invenire(identitas: DisciplinaeIdentitas): ResponsumDisciplinae =
-        TranslatorDisciplinae.adResponsum(RegistrumDisciplinae.invenireDisciplinae(identitas))
+    override fun omniaEntia() = RegistrumDisciplinae.omniaDisciplinae()
+    override fun invenireEntia(identitas: DisciplinaeIdentitas) = RegistrumDisciplinae.invenireDisciplinae(identitas)
+    override fun adResponsum(entia: Disciplinae): ResponsumDisciplinae = TranslatorDisciplinae.adResponsum(entia)
 }

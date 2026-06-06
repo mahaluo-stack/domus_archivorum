@@ -1,4 +1,4 @@
-package ars_disciplina.registrum
+package ars_disciplina.registrum.disciplinarum
 
 import ars_disciplina.commune.exemplaria.FabricaEntiaDisciplinae
 import ars_disciplina.disciplinarum.entia.EntiaDisciplina

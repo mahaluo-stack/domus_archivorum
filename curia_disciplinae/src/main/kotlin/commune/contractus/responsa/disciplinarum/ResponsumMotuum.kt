@@ -1,4 +1,4 @@
-package commune.contractus.responsa
+package commune.contractus.responsa.disciplinarum
 
 import ars_disciplina.disciplinarum.valores.DescriptioMotus
 import ars_disciplina.disciplinarum.valores.NomenMotus

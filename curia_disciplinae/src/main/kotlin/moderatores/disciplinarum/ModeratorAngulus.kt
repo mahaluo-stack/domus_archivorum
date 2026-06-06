@@ -1,16 +1,16 @@
 package moderatores.disciplinarum
 
-import auxilia.motusIdentitas
+import auxilia.angulusIdentitas
 import io.ktor.server.response.*
 import io.ktor.server.routing.*
-import servitium.disciplinarum.ServitiumMotuum
+import servitium.disciplinarum.ServitiumAnguli
 
-fun Route.moderatorMotus() {
+fun Route.moderatorAngulus() {
 
-    route("/motus") {
+    route("/angulus") {
         get {
             call.respond(
-                ServitiumMotuum.omnia()
+                ServitiumAnguli.omnia()
             )
         }
     }
@@ -18,8 +18,7 @@ fun Route.moderatorMotus() {
     route("/{identitas}") {
         get {
             call.respond(
-                ServitiumMotuum
-                    .invenire(call.motusIdentitas())
+                ServitiumAnguli.invenire(call.angulusIdentitas())
             )
         }
     }

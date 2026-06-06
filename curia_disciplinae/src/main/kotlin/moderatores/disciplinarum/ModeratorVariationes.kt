@@ -1,16 +1,16 @@
 package moderatores.disciplinarum
 
-import auxilia.motusIdentitas
+import auxilia.variationesIdentitas
 import io.ktor.server.response.*
 import io.ktor.server.routing.*
-import servitium.disciplinarum.ServitiumMotuum
+import servitium.disciplinarum.ServitiumVariationes
 
-fun Route.moderatorMotus() {
+fun Route.moderatorVariationes() {
 
-    route("/motus") {
+    route("/variationes") {
         get {
             call.respond(
-                ServitiumMotuum.omnia()
+                ServitiumVariationes.omnia()
             )
         }
     }
@@ -18,8 +18,7 @@ fun Route.moderatorMotus() {
     route("/{identitas}") {
         get {
             call.respond(
-                ServitiumMotuum
-                    .invenire(call.motusIdentitas())
+                ServitiumVariationes.invenire(call.variationesIdentitas())
             )
         }
     }

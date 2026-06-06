@@ -1,9 +1,7 @@
 package ars_disciplina.commune.registra
 
 import ars_disciplina.disciplinarum.tabula.Archetypus
-import ars_disciplina.disciplinarum.valores.NomenArchetypi
+import ars_disciplina.disciplinarum.valores.identitas.ArchetypusIdentitas
 import org.example.commune.registrum.Registra
 
-object RegistraArchetypi : Registra<NomenArchetypi, Archetypus>(
-    { it.nomenArchetypi }
-)
+object RegistraArchetypi : Registra<ArchetypusIdentitas, Archetypus>({ it.archetypiIdentitas })

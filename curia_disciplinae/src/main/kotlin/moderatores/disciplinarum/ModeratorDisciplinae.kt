@@ -5,7 +5,7 @@ import io.ktor.server.response.*
 import io.ktor.server.routing.*
 import servitium.disciplinarum.ServitiumDisciplinae
 
-fun Route.disciplinaeModerator() {
+fun Route.moderatorDisciplinae() {
 
     route("/disciplina") {
         get {

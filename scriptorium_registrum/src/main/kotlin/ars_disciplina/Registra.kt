@@ -64,6 +64,6 @@ object Registra {
         RegistraGeneraPrehensionis.initializa(DepositumGeneraPrehensionis.legeOmnes())
 
         // regularum
-        RegistraRegularum.initializa(DepositumRegulae.legeOmnes())
+        RegistraRegulae.initializa(DepositumRegulae.legeOmnes())
     }
 }

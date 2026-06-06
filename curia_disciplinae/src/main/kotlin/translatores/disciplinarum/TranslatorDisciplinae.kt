@@ -2,7 +2,7 @@ package translatores.disciplinarum
 
 import ars_disciplina.disciplinarum.tabula.Disciplinae
 import ars_disciplina.disciplinarum.valores.DescriptioDisciplinae
-import commune.contractus.responsa.ResponsumDisciplinae
+import commune.contractus.responsa.disciplinarum.ResponsumDisciplinae
 import commune.interfacia.InterfaciaTranslatoris
 
 object TranslatorDisciplinae : InterfaciaTranslatoris<Disciplinae, ResponsumDisciplinae> {

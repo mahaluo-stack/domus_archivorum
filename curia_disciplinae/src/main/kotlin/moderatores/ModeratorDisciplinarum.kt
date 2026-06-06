@@ -1,24 +1,18 @@
 package moderatores
 
-import io.ktor.server.routing.Route
-import io.ktor.server.routing.get
-import io.ktor.server.routing.route
-import moderatores.disciplinarum.disciplinaeModerator
+import io.ktor.server.routing.*
+import moderatores.disciplinarum.*
 
 fun Route.moderatorDisciplinarum() {
 
     route("/disciplinarum") {
 
-        disciplinaeModerator()
+        get("/entia/{identitas}") { }
 
-        motusRoutes()
-
-        variationesRoutes()
-
-        anguliRoutes()
-
-        archetypiRoutes()
+        moderatorDisciplinae()
+        moderatorMotus()
+        moderatorVariationes()
+        moderatorAngulus()
+        moderatorArchetypi()
     }
-
-    get("/disciplinarum/entia/{identitas}") { }
 }

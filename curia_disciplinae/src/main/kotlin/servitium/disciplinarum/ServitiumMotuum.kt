@@ -2,8 +2,8 @@ package servitium.disciplinarum
 
 import ars_disciplina.disciplinarum.tabula.Motus
 import ars_disciplina.disciplinarum.valores.identitas.MotusIdentitas
-import ars_disciplina.registrum.RegistrumMotuum
-import commune.contractus.responsa.ResponsumMotuum
+import ars_disciplina.registrum.disciplinarum.RegistrumMotuum
+import commune.contractus.responsa.disciplinarum.ResponsumMotuum
 import servitium.ServitiumLecturae
 import translatores.disciplinarum.TranslatorMotuum
 
