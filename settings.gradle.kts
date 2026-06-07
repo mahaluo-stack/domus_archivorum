@@ -1,22 +1,22 @@
 rootProject.name = "domus_archivorum"
 
-include(":curia_actarii")
-project(":curia_actarii").projectDir = file("collegium/officina/curia/curia_actarii")
+include(":actarii")
+project(":actarii").projectDir = file("collegium/officina/curia/actarii")
 
-include(":curia_disciplinae")
-project(":curia_disciplinae").projectDir = file("collegium/officina/curia/curia_disciplinae")
+include(":disciplinae")
+project(":disciplinae").projectDir = file("collegium/officina/curia/disciplinae")
 
-include(":scriptorium_depositum")
-project(":scriptorium_depositum").projectDir = file("collegium/officina/scriptorium/scriptorium_depositum")
+include(":depositum")
+project(":depositum").projectDir = file("collegium/officina/scriptorium/depositum")
 
-include(":scriptorium_exemplaria")
-project(":scriptorium_exemplaria").projectDir = file("collegium/officina/scriptorium/scriptorium_exemplaria")
+include(":exemplaria")
+project(":exemplaria").projectDir = file("collegium/officina/scriptorium/exemplaria")
 
-include(":scriptorium_infrastructura")
-project(":scriptorium_infrastructura").projectDir = file("collegium/officina/scriptorium/scriptorium_infrastructura")
+include(":infrastructura")
+project(":infrastructura").projectDir = file("collegium/officina/scriptorium/infrastructura")
 
-include(":scriptorium_ministerium")
-project(":scriptorium_ministerium").projectDir = file("collegium/officina/scriptorium/scriptorium_ministerium")
+include(":ministerium")
+project(":ministerium").projectDir = file("collegium/officina/scriptorium/ministerium")
 
-include(":scriptorium_registrum")
-project(":scriptorium_registrum").projectDir = file("collegium/officina/scriptorium/scriptorium_registrum")
+include(":registrum")
+project(":registrum").projectDir = file("collegium/officina/scriptorium/registrum")

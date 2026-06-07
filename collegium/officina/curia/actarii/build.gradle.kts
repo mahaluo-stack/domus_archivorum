@@ -4,7 +4,7 @@ plugins {
 }
 
 val ktorVersion = "3.1.3"
-group = "org.curia_actarii"
+group = "org.curia"
 version = "1.0-SNAPSHOT"
 
 repositories {
@@ -21,8 +21,8 @@ dependencies {
     implementation("io.ktor:ktor-server-content-negotiation-jvm:${ktorVersion}")
     implementation("io.ktor:ktor-serialization-kotlinx-json-jvm:${ktorVersion}")
 
-    implementation(project(":scriptorium_registrum"))
-    implementation(project(":scriptorium_exemplaria"))
+    implementation(project(":registrum"))
+    implementation(project(":exemplaria"))
 }
 
 tasks.test {

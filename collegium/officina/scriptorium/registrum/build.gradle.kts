@@ -2,7 +2,7 @@ plugins {
     kotlin("jvm") version "2.2.0"
 }
 
-group = "org.registrum"
+group = "org.scriptorium"
 version = "1.0.0"
 
 repositories {
@@ -11,9 +11,9 @@ repositories {
 }
 
 dependencies {
-    implementation(project(":scriptorium_exemplaria"))
-    implementation(project(":scriptorium_depositum"))
-    implementation(project(":scriptorium_ministerium"))
+    implementation(project(":exemplaria"))
+    implementation(project(":depositum"))
+    implementation(project(":ministerium"))
     implementation("org.jetbrains.kotlin:kotlin-reflect")
 
     testImplementation(kotlin("test"))

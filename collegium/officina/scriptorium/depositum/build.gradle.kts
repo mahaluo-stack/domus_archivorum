@@ -2,7 +2,7 @@ plugins {
     kotlin("jvm") version "2.2.0"
 }
 
-group = "org.depositum"
+group = "org.scriptorium"
 version = "1.0.0"
 
 repositories {
@@ -11,8 +11,8 @@ repositories {
 }
 
 dependencies {
-    implementation(project(":scriptorium_infrastructura"))
-    implementation(project(":scriptorium_exemplaria"))
+    implementation(project(":infrastructura"))
+    implementation(project(":exemplaria"))
 
     testImplementation(kotlin("test"))
     testImplementation("org.junit.jupiter:junit-jupiter-api:6.0.1")

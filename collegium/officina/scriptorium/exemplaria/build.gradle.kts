@@ -3,7 +3,7 @@ plugins {
     kotlin("plugin.serialization")
 }
 
-group = "org.exemplaria"
+group = "org.scriptorium"
 version = "1.0.2"
 
 repositories {
