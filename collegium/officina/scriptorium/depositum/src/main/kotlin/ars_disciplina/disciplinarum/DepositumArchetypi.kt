@@ -1,6 +1,6 @@
 package ars_disciplina.disciplinarum
 
-import ars_disciplina.DepositumTabulae
+import ars_disciplina.Depositum
 import ars_disciplina.commune.constantia.ConstantiaNomenColumnae.NOMEN_COLUMNAE_ARCHETYPUS_IDENTITAS
 import ars_disciplina.commune.constantia.ConstantiaNomenColumnae.NOMEN_COLUMNAE_DESCRIPTIO
 import ars_disciplina.commune.constantia.ConstantiaNomenColumnae.NOMEN_COLUMNAE_NOMEN_ARCHETYPI
@@ -13,7 +13,7 @@ import ars_disciplina.disciplinarum.valores.NomenArchetypi
 import ars_disciplina.disciplinarum.valores.identitas.ArchetypusIdentitas
 import java.sql.ResultSet
 
-object DepositumArchetypi : DepositumTabulae<Archetypus>() {
+object DepositumArchetypi : Depositum<Archetypus>() {
     override val nomenSchemata = "$NOMEN_ARCHIVUM_ARS_DISCIPLINA.$NOMEN_SCHEMATA_DISCIPLINARUM"
     override val nomenTabulae = NOMEN_TABULAE_ARCHETYPI
     override fun crea(rs: ResultSet): Archetypus {

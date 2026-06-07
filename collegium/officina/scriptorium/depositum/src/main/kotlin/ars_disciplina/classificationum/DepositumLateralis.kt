@@ -1,6 +1,6 @@
 package org.example.disciplinarum.depositum
 
-import ars_disciplina.DepositumTabulae
+import ars_disciplina.Depositum
 import ars_disciplina.classificationum.tabula.Lateralis
 import ars_disciplina.classificationum.valores.NomenLateralis
 import ars_disciplina.classificationum.valores.identitas.LateralisIdentitas
@@ -11,7 +11,7 @@ import ars_disciplina.commune.constantia.ConstantiaNomenSchemata.NOMEN_SCHEMATA_
 import ars_disciplina.commune.constantia.ConstantiaNomenTabulae.NOMEN_TABULAE_LATERALIS
 import java.sql.ResultSet
 
-object DepositumLateralis : DepositumTabulae<Lateralis>() {
+object DepositumLateralis : Depositum<Lateralis>() {
     override val nomenSchemata = "$NOMEN_ARCHIVUM_ARS_DISCIPLINA.$NOMEN_SCHEMATA_CLASSIFICATIONUM"
     override val nomenTabulae = NOMEN_TABULAE_LATERALIS
     override fun crea(rs: ResultSet): Lateralis {

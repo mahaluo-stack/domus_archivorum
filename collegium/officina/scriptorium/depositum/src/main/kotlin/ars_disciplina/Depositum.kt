@@ -3,7 +3,7 @@ package ars_disciplina
 import ConexioArsDisciplina
 import java.sql.ResultSet
 
-abstract class DepositumTabulae<T> {
+abstract class Depositum<T> {
 
     protected abstract val nomenSchemata: String
     protected abstract val nomenTabulae: String

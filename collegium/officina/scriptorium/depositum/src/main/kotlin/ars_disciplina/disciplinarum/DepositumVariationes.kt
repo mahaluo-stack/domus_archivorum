@@ -1,6 +1,6 @@
 package org.example.disciplinarum.depositum
 
-import ars_disciplina.DepositumTabulae
+import ars_disciplina.Depositum
 import ars_disciplina.commune.constantia.ConstantiaNomenColumnae.NOMEN_COLUMNAE_NOMEN_VARIATIONIS
 import ars_disciplina.commune.constantia.ConstantiaNomenColumnae.NOMEN_COLUMNAE_VARIATIONES_IDENTITAS
 import ars_disciplina.commune.constantia.ConstantiaNomenSchemata.NOMEN_ARCHIVUM_ARS_DISCIPLINA
@@ -11,7 +11,7 @@ import ars_disciplina.disciplinarum.valores.NomenVariatones
 import ars_disciplina.disciplinarum.valores.identitas.VariationesIdentitas
 import java.sql.ResultSet
 
-object DepositumVariationes : DepositumTabulae<Variationes>() {
+object DepositumVariationes : Depositum<Variationes>() {
     override val nomenSchemata = "$NOMEN_ARCHIVUM_ARS_DISCIPLINA.$NOMEN_SCHEMATA_DISCIPLINARUM"
     override val nomenTabulae = NOMEN_TABULAE_VARIATIONES
     override fun crea(rs: ResultSet): Variationes {

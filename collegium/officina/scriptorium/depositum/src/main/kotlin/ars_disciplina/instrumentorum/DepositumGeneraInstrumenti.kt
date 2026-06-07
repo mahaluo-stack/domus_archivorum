@@ -1,6 +1,6 @@
 package org.example.instrumentorum.depositum
 
-import ars_disciplina.DepositumTabulae
+import ars_disciplina.Depositum
 import ars_disciplina.commune.constantia.ConstantiaNomenColumnae.NOMEN_COLUMNAE_GENUS_INSTRUMENTI_IDENTITAS
 import ars_disciplina.commune.constantia.ConstantiaNomenColumnae.NOMEN_COLUMNAE_NOMEN_GENUS_INSTRUMENTI
 import ars_disciplina.commune.constantia.ConstantiaNomenSchemata.NOMEN_ARCHIVUM_ARS_DISCIPLINA
@@ -11,7 +11,7 @@ import ars_disciplina.instrumentorum.valores.NomenGenusInstrumenti
 import ars_disciplina.instrumentorum.valores.identitas.GenusInstrumentiIdentitas
 import java.sql.ResultSet
 
-object DepositumGeneraInstrumenti : DepositumTabulae<GenusInstrumenti>() {
+object DepositumGeneraInstrumenti : Depositum<GenusInstrumenti>() {
     override val nomenSchemata = "$NOMEN_ARCHIVUM_ARS_DISCIPLINA.$NOMEN_SCHEMATA_INSTRUMENTORUM"
     override val nomenTabulae = NOMEN_TABULAE_GENUS_INSTRUMENTI
     override fun crea(rs: ResultSet): GenusInstrumenti {

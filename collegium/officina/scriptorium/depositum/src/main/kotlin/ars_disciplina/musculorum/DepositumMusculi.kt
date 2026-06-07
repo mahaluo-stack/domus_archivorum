@@ -1,6 +1,6 @@
 package ars_disciplina.musculorum
 
-import ars_disciplina.DepositumTabulae
+import ars_disciplina.Depositum
 import ars_disciplina.commune.constantia.ConstantiaNomenColumnae.NOMEN_COLUMNAE_DESCRIPTIO
 import ars_disciplina.commune.constantia.ConstantiaNomenColumnae.NOMEN_COLUMNAE_MUSCULI_IDENTITAS
 import ars_disciplina.commune.constantia.ConstantiaNomenColumnae.NOMEN_COLUMNAE_MUSCULI_REGIO_IDENTITAS
@@ -15,7 +15,7 @@ import ars_disciplina.musculorum.valores.identitas.MusculiRegioIdentitas
 import org.example.exemplaria.tabulae.Musculi
 import java.sql.ResultSet
 
-object DepositumMusculi : DepositumTabulae<Musculi>() {
+object DepositumMusculi : Depositum<Musculi>() {
     override val nomenSchemata = "$NOMEN_ARCHIVUM_ARS_DISCIPLINA.$NOMEN_SCHEMATA_MUSCULORUM"
     override val nomenTabulae = NOMEN_TABULAE_MUSCULI
     override fun crea(rs: ResultSet): Musculi {

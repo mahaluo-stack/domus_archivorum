@@ -1,6 +1,6 @@
 package ars_disciplina.classificationum
 
-import ars_disciplina.DepositumTabulae
+import ars_disciplina.Depositum
 import ars_disciplina.classificationum.tabula.GeneraDisciplinae
 import ars_disciplina.classificationum.valores.DescriptioClassificationum
 import ars_disciplina.classificationum.valores.NomenGeneraDisciplinae
@@ -10,7 +10,7 @@ import ars_disciplina.commune.constantia.ConstantiaNomenSchemata
 import ars_disciplina.commune.constantia.ConstantiaNomenTabulae
 import java.sql.ResultSet
 
-object DepositumGeneraDisciplinae : DepositumTabulae<GeneraDisciplinae>() {
+object DepositumGeneraDisciplinae : Depositum<GeneraDisciplinae>() {
     override val nomenSchemata =
         "${ConstantiaNomenSchemata.NOMEN_ARCHIVUM_ARS_DISCIPLINA}.${ConstantiaNomenSchemata.NOMEN_SCHEMATA_CLASSIFICATIONUM}"
     override val nomenTabulae = ConstantiaNomenTabulae.NOMEN_TABULAE_GENERA_DISCIPLINAE
