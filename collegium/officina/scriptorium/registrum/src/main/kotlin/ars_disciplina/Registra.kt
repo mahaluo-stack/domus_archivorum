@@ -16,9 +16,12 @@ import org.example.disciplinarum.depositum.*
 import org.example.instrumentorum.depositum.DepositumGeneraInstrumenti
 import org.example.instrumentorum.depositum.DepositumInstrumenta
 
+
+//TOOD: rename to nexus
+// rename entire project to nexus
 object Registra {
 
-    // initaliza registrum
+    // rename function to initaliza registrum
     fun initializa() {
 
         // classificationum
