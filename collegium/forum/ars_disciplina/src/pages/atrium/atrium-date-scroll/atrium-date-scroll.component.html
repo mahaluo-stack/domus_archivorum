@@ -1,0 +1,15 @@
+<div #atriumScrollContainer class='atrium-scroll-container' (scroll)='onScroll()'>
+    @for (date of dates; track trackByDate($index, date)) {
+    <div class='atrium-scroll-card-wrapper' [class.active]="selectedIndex === $index">
+
+        <div #atriumScrollCard class='atrium-scroll-card' [class.active]="selectedIndex === $index">
+
+            <div class='atrium-date-content'>
+                {{ date | date:'EEEE' }} {{ date | date:'yyyy-MM-dd' }}
+            </div>
+
+        </div>
+
+    </div>
+    }
+</div>

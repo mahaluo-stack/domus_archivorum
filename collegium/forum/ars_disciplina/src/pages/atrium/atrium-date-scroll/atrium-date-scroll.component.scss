@@ -1,0 +1,78 @@
+.atrium-scroll-container {
+    height: 100vh;
+    overflow-y: auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    scroll-snap-type: y mandatory;
+    scroll-snap-align: center;
+    scroll-behavior: smooth;
+
+}
+
+.atrium-scroll-container::-webkit-scrollbar {
+    display: none;
+}
+
+.atrium-date-content {
+    color: white;
+    text-align: center;
+    font-size: 12px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    margin: 10px;
+}
+
+.atrium-scroll-card-wrapper {
+    background: linear-gradient(-45deg, #f80c12, #ff4422, #ff9933, #faeb36);
+    background-size: 400% 400%;
+    animation: gradient 100s ease infinite;
+
+    width: 400px;
+    height: 100px;
+    max-width: 90%;
+    padding: 1px;
+    display: flex;
+    border-radius: 8px;
+    opacity: 0.6;
+    transform: scale(0.85);
+
+    &.active {
+        background: linear-gradient(-45deg, #442299, #4444dd, #12bdb9, #74ee15, #037d30, #458911);
+        background-size: 400% 400%;
+        animation: gradient 100s ease infinite;
+        height: 450px;
+    }
+}
+
+.atrium-scroll-card {
+    display: flex;
+    flex: 1;
+    flex-shrink: 0;
+    border-radius: 6px;
+
+    background: linear-gradient(0deg, #0D0A0B, #161a1d);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    &.active {
+        height: 450px;
+    }
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
