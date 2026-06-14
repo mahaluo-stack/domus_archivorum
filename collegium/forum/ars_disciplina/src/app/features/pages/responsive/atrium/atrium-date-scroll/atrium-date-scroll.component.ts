@@ -2,7 +2,7 @@ import { DatePipe } from '@angular/common';
 import { Component, ElementRef, ViewChild, AfterViewInit, ViewChildren, QueryList } from '@angular/core';
 
 @Component({
-  selector: 'atrium-date-scroll',
+  selector: 'responsive-atrium-date-scroll',
   standalone: true,
   imports: [DatePipe],
   templateUrl: './atrium-date-scroll.component.html',

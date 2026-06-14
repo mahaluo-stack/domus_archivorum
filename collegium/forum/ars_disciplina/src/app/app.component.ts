@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { UserService } from './core/services/user.service';
 
 @Component({
   selector: 'app-root',
@@ -10,4 +11,10 @@ import { RouterOutlet } from '@angular/router';
 })
 export class AppComponent {
   title = 'ars_disciplina';
+  userService: UserService = inject(UserService);
+
+  constructor() {
+    let current = localStorage.getItem("rememberMe");
+    if (current !== null) { this.userService.currentUser.next({ id: "1", name: current }); }
+  }
 }

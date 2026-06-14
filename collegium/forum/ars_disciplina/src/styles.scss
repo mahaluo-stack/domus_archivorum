@@ -9,9 +9,10 @@
 @include mat.core();
 html,
 body {
-    width: 100vw;
-    max-width: 100%;
-    height: auto;
+    width: 100dvw;
+    max-width: 100dvw;
+    height: 100%;
+    overflow: hidden;
     margin: 0;
     padding: 0;
     background: linear-gradient(0deg, #0D0A0B, #161a1d);

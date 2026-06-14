@@ -1,0 +1,29 @@
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()"
+    style="width: 25%; max-width: 400px; min-width: 250px; height: 60%; max-height: 100%; margin: 30vh auto;">
+
+    <div style="width: 80%; height: 80%; margin: 10% auto; display: flex; flex-direction: column;">
+        <input id="email" placeholder="email" class="loginInput" formControlName="email"
+            [class.invalid]="loginForm.get('email')?.invalid && isSubmitted" />
+
+        <input id="password" placeholder="password" class="loginInput" formControlName="password" type="password"
+            [class.invalid]="loginForm.get('password')?.invalid && isSubmitted" />
+
+        <div (click)="onSubmit()" class="loginBtn">
+            <p>sign in</p>
+        </div>
+
+        <div
+            style="width: 100%; padding: 7px; display: flex; flex-direction: row; justify-content: space-between; align-items: center;">
+            <div style="width: 50%; display: flex; flex-direction: row; align-items: center;">
+                <p style="color: gray; margin: auto 0px auto 5px;">remember me</p>
+                <input formControlName="rememberMe" type="checkbox"
+                    style="margin: auto auto auto 5px; accent-color: gray; cursor: pointer;" />
+            </div>
+            <div
+                style="width: 50%; display: flex; flex-direction: row; justify-content: flex-end; align-items: center;">
+                <p class="forgotPasswordText"> forgot? </p>
+            </div>
+        </div>
+    </div>
+
+</form>
