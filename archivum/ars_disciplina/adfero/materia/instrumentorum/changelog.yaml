@@ -1,0 +1,6 @@
+databaseChangeLog:
+
+  - include:
+      file: genera-instrumenti/changelog.yaml
+  - include:
+      file: instrumenta/changelog.yaml

@@ -1,0 +1,34 @@
+.material-symbols-outlined {
+    color: white;
+    margin-left: 25px;
+}
+
+.curatio-menu-item-title {
+    color: white;
+    margin-inline: 25px;
+}
+
+.curatio-menu-item-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    height: 10dvh;
+    margin-bottom: 5px;
+    position: relative;
+
+    &::after {
+
+        content: '';
+        position: absolute;
+        left: 16px;
+        right: 16px;
+        bottom: 0;
+        height: 1px;
+
+        background: linear-gradient(to right,
+                transparent,
+                rgba(255, 255, 255, .5),
+                transparent);
+    }
+}

@@ -1,0 +1,15 @@
+databaseChangeLog:
+
+  - changeSet:
+      id: adfero-instrumenta
+      author: mhl
+
+      changes:
+
+        - loadData:
+            schemaName: instrumentorum
+            tableName: instrumenta
+            file: ../resource/instrumenta.csv
+            relativeToChangelogFile: true
+            separator: ";"
+            encoding: UTF-8

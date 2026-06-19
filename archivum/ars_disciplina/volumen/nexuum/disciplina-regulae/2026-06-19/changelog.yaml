@@ -1,0 +1,36 @@
+databaseChangeLog:
+
+  - changeSet:
+      id: creata-tabula-disciplina-regulae
+      author: mhl
+
+      changes:
+
+        - createTable:
+            schemaName: nexuum
+            tableName: disciplina_regulae
+
+            columns:
+
+              - column:
+                  name: disciplinae_identitas
+                  type: INTEGER
+
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: disciplina_regulae_clavis_primaria
+
+              - column:
+                  name: regulae_identitas
+                  type: INTEGER
+
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: disciplina_regulae_clavis_primaria
+
+              - column:
+                  name: creatio
+                  type: TIMESTAMP(0)
+                  defaultValueComputed: CURRENT_TIMESTAMP

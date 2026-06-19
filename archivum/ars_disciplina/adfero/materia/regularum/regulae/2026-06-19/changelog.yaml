@@ -1,0 +1,15 @@
+databaseChangeLog:
+
+  - changeSet:
+      id: adfero-regulae
+      author: mhl
+
+      changes:
+
+        - loadData:
+            schemaName: regularum
+            tableName: regulae
+            file: ../resource/regulae.csv
+            relativeToChangelogFile: true
+            separator: ";"
+            encoding: UTF-8

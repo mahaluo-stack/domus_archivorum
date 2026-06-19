@@ -1,0 +1,15 @@
+databaseChangeLog:
+
+  - changeSet:
+      id: adfero-genera-prehensionis
+      author: mhl
+
+      changes:
+
+        - loadData:
+            schemaName: prehensionum
+            tableName: genera_prehensionis
+            file: ../resource/genera_prehensionis.csv
+            relativeToChangelogFile: true
+            separator: ";"
+            encoding: UTF-8

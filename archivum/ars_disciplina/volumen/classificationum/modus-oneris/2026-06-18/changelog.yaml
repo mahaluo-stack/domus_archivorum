@@ -1,0 +1,40 @@
+databaseChangeLog:
+
+  - changeSet:
+      id: creata-tabula-modus-oneris
+      author: mhl
+
+      changes:
+
+        - createTable:
+            schemaName: classificationum
+            tableName: modus_oneris
+
+            columns:
+
+              - column:
+                  name: modus_oneris_identitas
+                  type: INTEGER
+                  autoIncrement: true
+
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+
+              - column:
+                  name: nomen_modus_oneris
+                  type: VARCHAR(50)
+
+                  constraints:
+                    nullable: false
+
+              - column:
+                  name: creatio
+                  type: TIMESTAMP(0)
+                  defaultValueComputed: CURRENT_TIMESTAMP
+
+        - addUniqueConstraint:
+            schemaName: classificationum
+            tableName: modus_oneris
+            columnNames: nomen_modus_oneris
+            constraintName: nomen_modus_oneris_unicum

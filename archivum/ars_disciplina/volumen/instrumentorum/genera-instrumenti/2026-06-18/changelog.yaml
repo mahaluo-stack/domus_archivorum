@@ -1,0 +1,40 @@
+databaseChangeLog:
+
+  - changeSet:
+      id: creata-tabula-genera-instrumenti
+      author: mhl
+
+      changes:
+
+        - createTable:
+            schemaName: instrumentorum
+            tableName: genera_instrumenti
+
+            columns:
+
+              - column:
+                  name: genera_instrumenti_identitas
+                  type: INTEGER
+                  autoIncrement: true
+
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+
+              - column:
+                  name: nomen_genus_instrumenti
+                  type: VARCHAR(50)
+
+                  constraints:
+                    nullable: false
+
+              - column:
+                  name: creatio
+                  type: TIMESTAMP(0)
+                  defaultValueComputed: CURRENT_TIMESTAMP
+
+        - addUniqueConstraint:
+            schemaName: instrumentorum
+            tableName: genera_instrumenti
+            columnNames: nomen_genus_instrumenti
+            constraintName: nomen_genus_instrumenti_unicum

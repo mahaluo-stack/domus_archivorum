@@ -1,0 +1,51 @@
+databaseChangeLog:
+
+  - changeSet:
+      id: creata-tabula-regulae
+      author: mhl
+
+      changes:
+
+        - createTable:
+            schemaName: regularum
+            tableName: regulae
+
+            columns:
+
+              - column:
+                  name: regulae_identitas
+                  type: INTEGER
+                  autoIncrement: true
+
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+
+              - column:
+                  name: nomen_regulae
+                  type: VARCHAR(50)
+
+                  constraints:
+                    nullable: false
+
+              - column:
+                  name: genus_regulae
+                  type: VARCHAR(10)
+
+                  constraints:
+                    nullable: false
+
+              - column:
+                  name: descriptio
+                  type: VARCHAR(4000)
+
+              - column:
+                  name: creatio
+                  type: TIMESTAMP(0)
+                  defaultValueComputed: CURRENT_TIMESTAMP
+
+        - addUniqueConstraint:
+            schemaName: regularum
+            tableName: regulae
+            columnNames: nomen_regulae
+            constraintName: nomen_regulae

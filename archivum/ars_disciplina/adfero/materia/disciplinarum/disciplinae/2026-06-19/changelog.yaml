@@ -1,0 +1,15 @@
+databaseChangeLog:
+
+  - changeSet:
+      id: adfero-disciplinae
+      author: mhl
+
+      changes:
+
+        - loadData:
+            schemaName: disciplinarum
+            tableName: disciplinae
+            file: ../resource/disciplinae.csv
+            relativeToChangelogFile: true
+            separator: ";"
+            encoding: UTF-8

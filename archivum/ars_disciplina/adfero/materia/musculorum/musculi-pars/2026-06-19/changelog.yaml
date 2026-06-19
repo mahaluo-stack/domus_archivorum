@@ -1,0 +1,15 @@
+databaseChangeLog:
+
+  - changeSet:
+      id: adfero-musculi-pars
+      author: mhl
+
+      changes:
+
+        - loadData:
+            schemaName: musculorum
+            tableName: musculi_pars
+            file: ../resource/musculi_pars.csv
+            relativeToChangelogFile: true
+            separator: ";"
+            encoding: UTF-8

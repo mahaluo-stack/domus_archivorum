@@ -1,0 +1,44 @@
+databaseChangeLog:
+
+  - changeSet:
+      id: creata-tabula-motus
+      author: mhl
+
+      changes:
+
+        - createTable:
+            schemaName: disciplinarum
+            tableName: motus
+
+            columns:
+
+              - column:
+                  name: motus_identitas
+                  type: INTEGER
+                  autoIncrement: true
+
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+
+              - column:
+                  name: nomen_motus
+                  type: VARCHAR(50)
+
+                  constraints:
+                    nullable: false
+
+              - column:
+                  name: descriptio
+                  type: VARCHAR(4000)
+
+              - column:
+                  name: creatio
+                  type: TIMESTAMP(0)
+                  defaultValueComputed: CURRENT_TIMESTAMP
+
+        - addUniqueConstraint:
+            schemaName: disciplinarum
+            tableName: motus
+            columnNames: nomen_motus
+            constraintName: nomen_motus_unicum

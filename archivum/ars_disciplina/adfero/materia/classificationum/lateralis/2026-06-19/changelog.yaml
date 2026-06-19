@@ -1,0 +1,15 @@
+databaseChangeLog:
+
+  - changeSet:
+      id: adfero-lateralis
+      author: mhl
+
+      changes:
+
+        - loadData:
+            schemaName: classificationum
+            tableName: lateralis
+            file: ../resource/lateralis.csv
+            relativeToChangelogFile: true
+            separator: ";"
+            encoding: UTF-8

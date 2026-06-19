@@ -1,0 +1,10 @@
+databaseChangeLog:
+
+  - include:
+      file: angulus/changelog.yaml
+  - include:
+      file: disciplinae/changelog.yaml
+  - include:
+      file: motus/changelog.yaml
+  - include:
+      file: variationes/changelog.yaml

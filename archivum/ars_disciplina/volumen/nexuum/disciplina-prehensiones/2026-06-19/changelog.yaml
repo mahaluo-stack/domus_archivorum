@@ -1,0 +1,36 @@
+databaseChangeLog:
+
+  - changeSet:
+      id: creata-tabula-disciplina-prehensiones
+      author: mhl
+
+      changes:
+
+        - createTable:
+            schemaName: nexuum
+            tableName: disciplina_prehensiones
+
+            columns:
+
+              - column:
+                  name: disciplinae_identitas
+                  type: INTEGER
+
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: disciplina_prehensiones_clavis_primaria
+
+              - column:
+                  name: prehensiones_identitas
+                  type: INTEGER
+
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: disciplina_prehensiones_clavis_primaria
+
+              - column:
+                  name: creatio
+                  type: TIMESTAMP(0)
+                  defaultValueComputed: CURRENT_TIMESTAMP

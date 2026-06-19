@@ -12,6 +12,7 @@ repositories {
 
 dependencies {
     implementation("com.microsoft.sqlserver:mssql-jdbc:13.2.1.jre11")
+    implementation("org.postgresql:postgresql:42.7.8")
     implementation("org.slf4j:slf4j-simple:2.0.9")
     implementation("com.zaxxer:HikariCP:7.0.2")
 

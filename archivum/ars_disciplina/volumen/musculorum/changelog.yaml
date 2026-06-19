@@ -1,0 +1,8 @@
+databaseChangeLog:
+
+  - include:
+      file: musculi/changelog.yaml
+  - include:
+      file: musculi-pars/changelog.yaml
+  - include:
+      file: musculi-regio/changelog.yaml

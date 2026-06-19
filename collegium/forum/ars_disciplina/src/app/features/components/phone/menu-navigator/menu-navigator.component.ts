@@ -1,12 +1,15 @@
 import { Component } from '@angular/core';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
-  selector: 'app-menu-navigator',
+  selector: 'menu-navigator',
   standalone: true,
-  imports: [],
+  imports: [
+    RouterLink,
+    RouterLinkActive
+  ],
   templateUrl: './menu-navigator.component.html',
   styleUrl: './menu-navigator.component.scss'
 })
-export class MenuNavigatorComponent {
-
+export class  MenuNavigatorComponent {
 }

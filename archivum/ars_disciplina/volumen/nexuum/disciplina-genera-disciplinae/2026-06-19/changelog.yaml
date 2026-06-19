@@ -1,0 +1,36 @@
+databaseChangeLog:
+
+  - changeSet:
+      id: creata-tabula-disciplina-genera-disciplinae
+      author: mhl
+
+      changes:
+
+        - createTable:
+            schemaName: nexuum
+            tableName: disciplina_genera_disciplinae
+
+            columns:
+
+              - column:
+                  name: disciplinae_identitas
+                  type: INTEGER
+
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: disciplina_genera_disciplinae_clavis_primaria
+
+              - column:
+                  name: genera_disciplinae_identitas
+                  type: INTEGER
+
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: disciplina_genera_disciplinae_clavis_primaria
+
+              - column:
+                  name: creatio
+                  type: TIMESTAMP(0)
+                  defaultValueComputed: CURRENT_TIMESTAMP

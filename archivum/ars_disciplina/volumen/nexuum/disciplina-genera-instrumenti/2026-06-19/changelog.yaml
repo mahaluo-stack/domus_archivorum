@@ -1,0 +1,36 @@
+databaseChangeLog:
+
+  - changeSet:
+      id: creata-tabula-disciplina-genera-instrumenti
+      author: mhl
+
+      changes:
+
+        - createTable:
+            schemaName: nexuum
+            tableName: disciplina_genera_instrumenti
+
+            columns:
+
+              - column:
+                  name: disciplinae_identitas
+                  type: INTEGER
+
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: disciplina_genera_instrumenti_clavis_primaria
+
+              - column:
+                  name: genera_instrumenti_identitas
+                  type: INTEGER
+
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: disciplina_genera_instrumenti_clavis_primaria
+
+              - column:
+                  name: creatio
+                  type: TIMESTAMP(0)
+                  defaultValueComputed: CURRENT_TIMESTAMP

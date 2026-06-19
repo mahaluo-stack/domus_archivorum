@@ -1,0 +1,44 @@
+databaseChangeLog:
+
+  - changeSet:
+      id: creata-tabula-genera-prehensionis
+      author: mhl
+
+      changes:
+
+        - createTable:
+            schemaName: prehensionum
+            tableName: genera_prehensionis
+
+            columns:
+
+              - column:
+                  name: genera_prehensionis_identitas
+                  type: INTEGER
+                  autoIncrement: true
+
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+
+              - column:
+                  name: nomen_genus_prehensionis
+                  type: VARCHAR(50)
+
+                  constraints:
+                    nullable: false
+
+              - column:
+                  name: descriptio
+                  type: VARCHAR(4000)
+
+              - column:
+                  name: creatio
+                  type: TIMESTAMP(0)
+                  defaultValueComputed: CURRENT_TIMESTAMP
+
+        - addUniqueConstraint:
+            schemaName: prehensionum
+            tableName: genera_prehensionis
+            columnNames: nomen_genus_prehensionis
+            constraintName: nomen_genus_prehensionis_unicum

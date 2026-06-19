@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { DatePipe } from '@angular/common';
+import { LongDatePipe } from '../../../../../core/pipes/long-date.pipe';
 
 @Component({
   selector: 'atrium-date-scroll',
   standalone: true,
-  imports: [DatePipe],
+  imports: [DatePipe, LongDatePipe],
   templateUrl: './atrium-date-scroll.component.html',
   styleUrl: './atrium-date-scroll.component.scss'
 })

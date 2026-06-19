@@ -21,7 +21,7 @@ export class RoutingService {
 
   setRoutes(): void {
     if (this.deviceService) {
-      switch (this.deviceService.getDevice().type) {
+      switch (this.deviceService.getDevice().deviceType) {
         case "phone":
           this.routes = phoneRoutes;
         break;

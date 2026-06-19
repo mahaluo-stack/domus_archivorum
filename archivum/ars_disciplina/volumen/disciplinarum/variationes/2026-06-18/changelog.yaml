@@ -1,0 +1,40 @@
+databaseChangeLog:
+
+  - changeSet:
+      id: creata-tabula-variationes
+      author: mhl
+
+      changes:
+
+        - createTable:
+            schemaName: disciplinarum
+            tableName: variationes
+
+            columns:
+
+              - column:
+                  name: variationes_identitas
+                  type: INTEGER
+                  autoIncrement: true
+
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+
+              - column:
+                  name: nomen_variationis
+                  type: VARCHAR(50)
+
+                  constraints:
+                    nullable: false
+
+              - column:
+                  name: creatio
+                  type: TIMESTAMP(0)
+                  defaultValueComputed: CURRENT_TIMESTAMP
+
+        - addUniqueConstraint:
+            schemaName: disciplinarum
+            tableName: variationes
+            columnNames: nomen_variationis
+            constraintName: nomen_variationis_unicum

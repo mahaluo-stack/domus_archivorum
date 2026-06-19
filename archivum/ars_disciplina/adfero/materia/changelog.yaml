@@ -1,0 +1,14 @@
+databaseChangeLog:
+
+  - include:
+      file: classificationum/changelog.yaml
+  - include:
+      file: disciplinarum/changelog.yaml
+  - include:
+      file: instrumentorum/changelog.yaml
+  - include:
+      file: musculorum/changelog.yaml
+  - include:
+      file: prehensionum/changelog.yaml
+  - include:
+      file: regularum/changelog.yaml

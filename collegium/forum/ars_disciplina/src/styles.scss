@@ -1,6 +1,7 @@
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
 @use '@angular/material' as mat;
+
 // Plus imports for other components in your app.
 
 // Include the common styles for Angular Material. We include this here so that you only
@@ -21,6 +22,19 @@ body {
     font-family: 'Inconsolata', monospace !important;
     color: white;
 }
+
+:root {
+    --gradient: linear-gradient(
+        -45deg,
+        #f80c12,
+        #ff4422,
+        #ff9933,
+        #12bdb9,
+        #4444dd,
+        #442299
+    );
+}
+
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
@@ -46,8 +60,3 @@ $ars_disciplina-theme: mat.define-light-theme((
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
 @include mat.all-component-themes($ars_disciplina-theme);
-
-/* You can add global styles to this file, and also import other style files */
-
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

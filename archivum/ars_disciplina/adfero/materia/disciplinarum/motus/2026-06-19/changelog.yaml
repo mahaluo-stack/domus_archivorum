@@ -1,0 +1,15 @@
+databaseChangeLog:
+
+  - changeSet:
+      id: adfero-motus
+      author: mhl
+
+      changes:
+
+        - loadData:
+            schemaName: disciplinarum
+            tableName: motus
+            file: ../resource/motus.csv
+            relativeToChangelogFile: true
+            separator: ";"
+            encoding: UTF-8

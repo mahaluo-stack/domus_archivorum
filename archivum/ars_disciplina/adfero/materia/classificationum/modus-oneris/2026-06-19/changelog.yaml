@@ -1,0 +1,15 @@
+databaseChangeLog:
+
+  - changeSet:
+      id: adfero-modus-oneris
+      author: mhl
+
+      changes:
+
+        - loadData:
+            schemaName: classificationum
+            tableName: modus_oneris
+            file: ../resource/modus_oneris.csv
+            relativeToChangelogFile: true
+            separator: ";"
+            encoding: UTF-8

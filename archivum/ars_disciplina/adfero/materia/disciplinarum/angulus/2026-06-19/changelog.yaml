@@ -1,0 +1,15 @@
+databaseChangeLog:
+
+  - changeSet:
+      id: adfero-angulus
+      author: mhl
+
+      changes:
+
+        - loadData:
+            schemaName: disciplinarum
+            tableName: angulus
+            file: ../resource/angulus.csv
+            relativeToChangelogFile: true
+            separator: ";"
+            encoding: UTF-8

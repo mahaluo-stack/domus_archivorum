@@ -30,7 +30,7 @@ export const responsiveRoutes: Routes = [
   },
   {
     path: 'curia-actarii',
-    component: ResponsivePages.CuriaActariiComponent
+    component: ResponsivePages.ActariumComponent
   },
   {
     path: '404',

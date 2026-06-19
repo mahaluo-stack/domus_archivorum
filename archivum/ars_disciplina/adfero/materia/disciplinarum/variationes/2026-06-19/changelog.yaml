@@ -1,0 +1,15 @@
+databaseChangeLog:
+
+  - changeSet:
+      id: adfero-variationes
+      author: mhl
+
+      changes:
+
+        - loadData:
+            schemaName: disciplinarum
+            tableName: variationes
+            file: ../resource/variationes.csv
+            relativeToChangelogFile: true
+            separator: ";"
+            encoding: UTF-8

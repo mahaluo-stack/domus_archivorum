@@ -10,16 +10,12 @@ object ConexioArsDisciplina {
 
     init {
         val config = HikariConfig().apply {
-            jdbcUrl = "jdbc:sqlserver://localhost:1433;databaseName=ars_disciplina"
-            driverClassName = "com.microsoft.sqlserver.jdbc.SQLServerDriver"
+            jdbcUrl = System.getenv("DB_URL")
+            username = System.getenv("DB_USERNAME")
+            password = System.getenv("DB_PASSWORD")
 
-            // Integrated security / trusted connection
-            addDataSourceProperty("authenticationScheme", "nativeAuthentication")
-            addDataSourceProperty("integratedSecurity", "true")
-            addDataSourceProperty("encrypt", "true")
-            addDataSourceProperty("trustServerCertificate", "true")
+            driverClassName = "org.postgresql.Driver"
 
-            // Hikari settings
             maximumPoolSize = 10
             minimumIdle = 2
             idleTimeout = 30000

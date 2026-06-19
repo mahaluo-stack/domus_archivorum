@@ -1,0 +1,51 @@
+databaseChangeLog:
+
+  - changeSet:
+      id: creata-tabula-musculi
+      author: mhl
+
+      changes:
+
+        - createTable:
+            schemaName: musculorum
+            tableName: musculi
+
+            columns:
+
+              - column:
+                  name: musculi_identitas
+                  type: INTEGER
+                  autoIncrement: true
+
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+
+              - column:
+                  name: musculi_regio_identitas
+                  type: INTEGER
+
+                  constraints:
+                    nullable: false
+
+              - column:
+                  name: nomen_musculi
+                  type: VARCHAR(50)
+
+                  constraints:
+                    nullable: false
+
+              - column:
+                  name: descriptio
+                  type: VARCHAR(4000)
+
+              - column:
+                  name: creatio
+                  type: TIMESTAMP(0)
+                  defaultValueComputed: CURRENT_TIMESTAMP
+
+        - addUniqueConstraint:
+            schemaName: musculorum
+            tableName: musculi
+            columnNames: nomen_musculi, musculi_regio_identitas
+            constraintName: nomen_musculi_unicum

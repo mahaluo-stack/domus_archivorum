@@ -5,12 +5,11 @@
         [style.transform]="'translateY(calc(-100dvh + ' + translateY + 'px))'">
 
         @for (page of pages; track trackByDate($index, page)) {
-        <div class="atrium-card-wrapper">
-            <div class="atrium-card">
-                <div class="atrium-date-content">
 
-                    {{ page | date:'EEEE' }} {{ page | date:'yyyy-MM-dd' }}
-                </div>
+        <div class="atrium-card">
+            <div class="atrium-date-content">
+
+                {{ page | longDate }}
             </div>
         </div>
         }

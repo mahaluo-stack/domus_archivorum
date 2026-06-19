@@ -1,0 +1,44 @@
+databaseChangeLog:
+
+  - changeSet:
+      id: creata-tabula-archetypi
+      author: mhl
+
+      changes:
+
+        - createTable:
+            schemaName: disciplinarum
+            tableName: archetypi
+
+            columns:
+
+              - column:
+                  name: archetypus_identitas
+                  type: INTEGER
+                  autoIncrement: true
+
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+
+              - column:
+                  name: nomen_archetypi
+                  type: VARCHAR(50)
+
+                  constraints:
+                    nullable: false
+
+              - column:
+                  name: descriptio
+                  type: VARCHAR(4000)
+
+              - column:
+                  name: creatio
+                  type: TIMESTAMP(0)
+                  defaultValueComputed: CURRENT_TIMESTAMP
+
+        - addUniqueConstraint:
+            schemaName: disciplinarum
+            tableName: archetypi
+            columnNames: nomen_archetypi
+            constraintName: nomen_archetypi

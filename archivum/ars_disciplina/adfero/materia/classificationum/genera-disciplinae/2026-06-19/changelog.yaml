@@ -1,0 +1,15 @@
+databaseChangeLog:
+
+  - changeSet:
+      id: adfero-genera-disciplinae
+      author: mhl
+
+      changes:
+
+        - loadData:
+            schemaName: classificationum
+            tableName: genera_disciplinae
+            file: ../resource/genera_disciplinae.csv
+            relativeToChangelogFile: true
+            separator: ";"
+            encoding: UTF-8

@@ -1,0 +1,15 @@
+databaseChangeLog:
+
+  - changeSet:
+      id: adfero-musculi-regio
+      author: mhl
+
+      changes:
+
+        - loadData:
+            schemaName: musculorum
+            tableName: musculi_regio
+            file: ../resource/musculi_regio.csv
+            relativeToChangelogFile: true
+            separator: ";"
+            encoding: UTF-8

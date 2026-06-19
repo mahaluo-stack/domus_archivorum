@@ -1,0 +1,40 @@
+databaseChangeLog:
+
+  - changeSet:
+      id: creata-tabula-lateralis
+      author: mhl
+
+      changes:
+
+        - createTable:
+            schemaName: classificationum
+            tableName: lateralis
+
+            columns:
+
+              - column:
+                  name: lateralis_identitas
+                  type: INTEGER
+                  autoIncrement: true
+
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+
+              - column:
+                  name: nomen_lateralis
+                  type: VARCHAR(50)
+
+                  constraints:
+                    nullable: false
+
+              - column:
+                  name: creatio
+                  type: TIMESTAMP(0)
+                  defaultValueComputed: CURRENT_TIMESTAMP
+
+        - addUniqueConstraint:
+            schemaName: classificationum
+            tableName: lateralis
+            columnNames: nomen_lateralis
+            constraintName: nomen_lateralis_unicum

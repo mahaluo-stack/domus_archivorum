@@ -1,0 +1,36 @@
+databaseChangeLog:
+
+  - changeSet:
+      id: creata-tabula-disciplina-modi-oneris
+      author: mhl
+
+      changes:
+
+        - createTable:
+            schemaName: nexuum
+            tableName: disciplina_modi_oneris
+
+            columns:
+
+              - column:
+                  name: disciplinae_identitas
+                  type: INTEGER
+
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: disciplina_modi_oneris_clavis_primaria
+
+              - column:
+                  name: modus_oneris_identitas
+                  type: INTEGER
+
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: disciplina_modi_oneris_clavis_primaria
+
+              - column:
+                  name: creatio
+                  type: TIMESTAMP(0)
+                  defaultValueComputed: CURRENT_TIMESTAMP

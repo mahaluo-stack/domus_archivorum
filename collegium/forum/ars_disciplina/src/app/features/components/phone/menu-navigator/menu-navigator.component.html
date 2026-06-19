@@ -1,1 +1,35 @@
-<p>menu-navigator works!</p>
+<div class="menu-navigator-wrapper">
+    <nav class="menu-navigator">
+
+        <a routerLink="/atrium" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+            <span class="material-symbols-outlined">
+                home
+            </span>
+
+        </a>
+
+        <a routerLink="/consilium" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+            <span class="material-symbols-outlined">
+                edit_calendar
+            </span>
+        </a>
+
+        <a routerLink="actarium" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+            <span class="material-symbols-outlined">
+                upload
+            </span>
+        </a>
+
+        <a routerLink="/analytica" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+            <span class="material-symbols-outlined">
+                query_stats
+            </span>
+        </a>
+
+            <a routerLink="/curatio" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: false }">
+            <span class="material-symbols-outlined">
+                database
+            </span>
+        </a>
+    </nav>
+</div>

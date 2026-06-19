@@ -1,0 +1,16 @@
+<mat-nav-list class='curatio-menu-list'>
+
+    @for(section of sections; track section.route) {
+    <div class='curatio-menu-item-row' [routerLink]="section.route">
+        <div class="material-symbols-outlined">
+            {{ section.icon }}
+        </div>
+
+        <div matListItemTitle class='curatio-menu-item-title'>
+            {{ section.title }}
+        </div>
+    </div>
+
+    }
+
+</mat-nav-list>

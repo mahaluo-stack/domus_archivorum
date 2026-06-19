@@ -1,0 +1,40 @@
+databaseChangeLog:
+
+  - changeSet:
+      id: creata-tabula-angulus
+      author: mhl
+
+      changes:
+
+        - createTable:
+            schemaName: disciplinarum
+            tableName: angulus
+
+            columns:
+
+              - column:
+                  name: angulus_identitas
+                  type: INTEGER
+                  autoIncrement: true
+
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+
+              - column:
+                  name: angulus
+                  type: DOUBLE PRECISION
+
+                  constraints:
+                    nullable: false
+
+              - column:
+                  name: creatio
+                  type: TIMESTAMP(0)
+                  defaultValueComputed: CURRENT_TIMESTAMP
+
+        - addUniqueConstraint:
+            schemaName: disciplinarum
+            tableName: angulus
+            columnNames: angulus
+            constraintName: angulus_unicum

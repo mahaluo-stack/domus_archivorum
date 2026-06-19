@@ -22,20 +22,6 @@
     transition: transform 250ms ease;
 }
 
-
-.atrium-card-wrapper {
-
-    width: calc(100% - 6px);
-    height: calc(100% - 4px);
-    margin: 2px;
-    background: linear-gradient(-45deg, #f80c12, #ff4422, #ff9933, #12bdb9, #4444dd, #442299);
-    background-size: 400% 400%;
-    animation: gradient 100s ease infinite;
-    padding: 1px;
-    display: flex;
-    border-radius: 8px;
-}
-
 .atrium-card {
 
     border-radius: 6px;
@@ -51,18 +37,4 @@
 
 .atrium-date-content {
     margin: 10px;
-}
-
-@keyframes gradient {
-    0% {
-        background-position: 0% 50%;
-    }
-
-    50% {
-        background-position: 100% 50%;
-    }
-
-    100% {
-        background-position: 0% 50%;
-    }
 }
