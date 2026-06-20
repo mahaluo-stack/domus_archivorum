@@ -1,0 +1,38 @@
+databaseChangeLog:
+
+  - changeSet:
+      id: creata-tabula-musculi-pars
+      author: mhl
+
+      changes:
+
+        - createTable:
+            schemaName: musculorum
+            tableName: musculi_pars
+
+            columns:
+
+              - column:
+                  name: musculi_pars_identitas
+                  type: INTEGER
+                  autoIncrement: true
+
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+
+              - column:
+                  name: nomen_musculi_pars
+                  type: VARCHAR(50)
+
+                  constraints:
+                    nullable: false
+
+              - column:
+                  name: descriptio
+                  type: VARCHAR(4000)
+
+              - column:
+                  name: creatio
+                  type: TIMESTAMP(0)
+                  defaultValueComputed: CURRENT_TIMESTAMP

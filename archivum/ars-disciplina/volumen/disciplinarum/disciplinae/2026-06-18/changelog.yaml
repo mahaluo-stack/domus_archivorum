@@ -1,0 +1,44 @@
+databaseChangeLog:
+
+  - changeSet:
+      id: creata-tabula-disciplinae
+      author: mhl
+
+      changes:
+
+        - createTable:
+            schemaName: disciplinarum
+            tableName: disciplinae
+
+            columns:
+
+              - column:
+                  name: disciplinae_identitas
+                  type: INTEGER
+                  autoIncrement: true
+
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+
+              - column:
+                  name: nomen_disciplina
+                  type: VARCHAR(50)
+
+                  constraints:
+                    nullable: false
+
+              - column:
+                  name: descriptio
+                  type: VARCHAR(4000)
+
+              - column:
+                  name: creatio
+                  type: TIMESTAMP(0)
+                  defaultValueComputed: CURRENT_TIMESTAMP
+
+        - addUniqueConstraint:
+            schemaName: disciplinarum
+            tableName: disciplinae
+            columnNames: nomen_disciplina
+            constraintName: nomen_disciplina_unicum

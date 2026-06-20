@@ -1,0 +1,5 @@
+databaseChangeLog:
+
+  - include:
+      file: regulae/changelog.yaml
+      relativeToChangelogFile: true

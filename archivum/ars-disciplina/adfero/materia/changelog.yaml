@@ -1,0 +1,20 @@
+databaseChangeLog:
+
+  - include:
+      file: classificationum/changelog.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: disciplinarum/changelog.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: instrumentorum/changelog.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: musculorum/changelog.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: prehensionum/changelog.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: regularum/changelog.yaml
+      relativeToChangelogFile: true

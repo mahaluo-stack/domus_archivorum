@@ -1,0 +1,14 @@
+databaseChangeLog:
+
+  - include:
+      file: angulus/changelog.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: disciplinae/changelog.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: motus/changelog.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: variationes/changelog.yaml
+      relativeToChangelogFile: true

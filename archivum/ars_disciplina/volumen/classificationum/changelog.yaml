@@ -1,8 +1,0 @@
-databaseChangeLog:
-
-  - include:
-      file: genera-disciplinae/changelog.yaml
-  - include:
-      file: lateralis/changelog.yaml
-  - include:
-      file: modus-oneris/changelog.yaml

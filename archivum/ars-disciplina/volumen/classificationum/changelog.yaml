@@ -1,0 +1,11 @@
+databaseChangeLog:
+
+  - include:
+      file: genera-disciplinae/changelog.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: lateralis/changelog.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: modus-oneris/changelog.yaml
+      relativeToChangelogFile: true

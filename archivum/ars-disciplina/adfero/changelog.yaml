@@ -1,0 +1,5 @@
+databaseChangeLog:
+
+  - include:
+      file: materia/changelog.yaml
+      relativeToChangelogFile: true

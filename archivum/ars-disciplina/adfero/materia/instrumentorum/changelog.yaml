@@ -1,0 +1,8 @@
+databaseChangeLog:
+
+  - include:
+      file: genera-instrumenti/changelog.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: instrumenta/changelog.yaml
+      relativeToChangelogFile: true

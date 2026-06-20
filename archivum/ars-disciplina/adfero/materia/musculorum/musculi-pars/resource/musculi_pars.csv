@@ -1,0 +1,42 @@
+nomen_musculi_pars;descriptio
+anterior;front deltoid
+lateral;side deltoid
+posterior;rear deltoid
+upper;trapz
+lower;trapz
+clavicular head;upper chest
+sternal head;lower chest
+ilicostalis;back, spine
+longissimus;back, spine
+spinalis;back, spine
+long head;bicep peak
+short head;bicep inside
+brachialis;bicep outside, between bicep and tricep
+long head;tricep, big part
+lateral head;tricep side
+medial head;tricep bottom
+radialis;flexes and abducts wrist
+ulnaris;flexes and adducts wrist
+longus;extends and abducts wrist
+brevis;extends and abducts wrist
+ulnaris;extends and adducts wrist
+teres;pronates forearm
+quadratus;deep pronator of forearm
+rectus femoris;quad
+vastus medialis;quad
+vastus lateralis;quad
+vastus intermedius;quad
+biceps femoris;hamstring
+semitendinosus;hamstring
+semimembranosus;hamstring
+adductor longis;hip
+adductor brevis;hip
+adductor magnus;hip
+iliacus;hip
+psoas major;hip
+gluteus maximus;glute
+gluteus medius;glute
+gluteus minimus;glute
+lateral head;calf
+medial head;calf
+psoas minor;hip

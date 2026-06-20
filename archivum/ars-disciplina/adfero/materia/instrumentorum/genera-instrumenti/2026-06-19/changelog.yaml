@@ -1,0 +1,15 @@
+databaseChangeLog:
+
+  - changeSet:
+      id: adfero-genera-instrumenti
+      author: mhl
+
+      changes:
+
+        - loadData:
+            schemaName: instrumentorum
+            tableName: genera_instrumenti
+            file: ../resource/genera_instrumenti.csv
+            relativeToChangelogFile: true
+            separator: ";"
+            encoding: UTF-8

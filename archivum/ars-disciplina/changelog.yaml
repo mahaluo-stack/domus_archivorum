@@ -1,0 +1,11 @@
+databaseChangeLog:
+
+  - include:
+      file: schemata/2026-06-18/changelog.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: volumen/changelog.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: adfero/changelog.yaml
+      relativeToChangelogFile: true

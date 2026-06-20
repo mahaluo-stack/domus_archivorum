@@ -1,6 +1,0 @@
-databaseChangeLog:
-
-  - include:
-      file: genera-prehensionis/changelog.yaml
-  - include:
-      file: prehensiones/changelog.yaml

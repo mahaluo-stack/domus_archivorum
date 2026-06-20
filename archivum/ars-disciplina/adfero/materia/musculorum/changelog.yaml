@@ -1,0 +1,11 @@
+databaseChangeLog:
+
+  - include:
+      file: musculi/changelog.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: musculi-pars/changelog.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: musculi-regio/changelog.yaml
+      relativeToChangelogFile: true

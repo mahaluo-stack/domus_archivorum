@@ -1,8 +1,0 @@
-databaseChangeLog:
-
-  - include:
-      file: schemata/changelog.yaml
-  - include:
-      file: volumen/changelog.yaml
-  - include:
-      file: adfero/changelog.yaml

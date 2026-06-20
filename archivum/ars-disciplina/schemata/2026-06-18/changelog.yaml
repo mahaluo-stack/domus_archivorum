@@ -1,0 +1,31 @@
+databaseChangeLog:
+
+  - changeSet:
+      id: creata-schemata
+      author: mhl
+
+      changes:
+        - sql:
+            sql: |
+              CREATE SCHEMA IF NOT EXISTS musculorum;
+              CREATE SCHEMA IF NOT EXISTS instrumentorum;
+              CREATE SCHEMA IF NOT EXISTS disciplinarum;
+              CREATE SCHEMA IF NOT EXISTS actorum;
+              CREATE SCHEMA IF NOT EXISTS nexuum;
+              CREATE SCHEMA IF NOT EXISTS prehensionum;
+              CREATE SCHEMA IF NOT EXISTS classificationum;
+              CREATE SCHEMA IF NOT EXISTS regularum;
+              CREATE SCHEMA IF NOT EXISTS vocabulorum;
+
+      rollback:
+        - sql:
+            sql: |
+              DROP SCHEMA IF EXISTS vocabulorum CASCADE;
+              DROP SCHEMA IF EXISTS regularum CASCADE;
+              DROP SCHEMA IF EXISTS classificationum CASCADE;
+              DROP SCHEMA IF EXISTS prehensionum CASCADE;
+              DROP SCHEMA IF EXISTS nexuum CASCADE;
+              DROP SCHEMA IF EXISTS actorum CASCADE;
+              DROP SCHEMA IF EXISTS disciplinarum CASCADE;
+              DROP SCHEMA IF EXISTS instrumentorum CASCADE;
+              DROP SCHEMA IF EXISTS musculorum CASCADE;
