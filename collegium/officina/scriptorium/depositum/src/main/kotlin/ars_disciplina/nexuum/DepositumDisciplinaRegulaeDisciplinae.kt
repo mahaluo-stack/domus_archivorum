@@ -6,7 +6,7 @@ import ars_disciplina.disciplinarum.valores.identitas.DisciplinaeIdentitas
 import ars_disciplina.nexuum.tabula.DisciplinaRegulae
 import ars_disciplina.regularum.valores.RegulaeIdentitas
 
-object DepositumDisciplinaRegulae : DepositumNexuum<DisciplinaRegulae>() {
+object DepositumDisciplinaRegulaeDisciplinae : DepositumNexuumDisciplinae<DisciplinaRegulae>() {
     override val nomenTabulae = NOMEN_TABULAE_DISCIPLINA_REGULAE
     override val nomenColumnaeAlterumIdentitas = NOMEN_COLUMNAE_REGULAE_IDENTITAS
     override fun crea(

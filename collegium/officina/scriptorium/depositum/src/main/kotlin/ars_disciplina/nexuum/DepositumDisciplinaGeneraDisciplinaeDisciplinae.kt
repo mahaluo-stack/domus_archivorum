@@ -6,7 +6,7 @@ import ars_disciplina.commune.constantia.ConstantiaNomenTabulae.NOMEN_TABULAE_DI
 import ars_disciplina.disciplinarum.valores.identitas.DisciplinaeIdentitas
 import ars_disciplina.nexuum.tabula.DisciplinaGeneraDisciplinae
 
-object DepositumDisciplinaGeneraDisciplinae : DepositumNexuum<DisciplinaGeneraDisciplinae>() {
+object DepositumDisciplinaGeneraDisciplinaeDisciplinae : DepositumNexuumDisciplinae<DisciplinaGeneraDisciplinae>() {
     override val nomenTabulae = NOMEN_TABULAE_DISCIPLINA_GENERA_DISCIPLINAE
     override val nomenColumnaeAlterumIdentitas = NOMEN_COLUMNAE_NOMEN_GENUS_DISCIPLINAE
     override fun crea(

@@ -33,7 +33,7 @@ object ConstantiaNomenColumnae {
     const val NOMEN_COLUMNAE_NOMEN_MUSCULI_PARS = "nomen_musculi_pars"
     const val NOMEN_COLUMNAE_MUSCULI_REGIO_IDENTITAS = "musculi_regio_identitas"
     const val NOMEN_COLUMNAE_NOMEN_MUSCULI_REGIO = "nomen_musculi_regio"
-    const val NOMEN_COLUMNAE_GENUS_INSTRUMENTI_IDENTITAS = "genus_instrumenti_identitas"
+    const val NOMEN_COLUMNAE_GENERA_INSTRUMENTI_IDENTITAS = "genera_instrumenti_identitas"
     const val NOMEN_COLUMNAE_NOMEN_GENUS_INSTRUMENTI = "nomen_genus_instrumenti"
     const val NOMEN_COLUMNAE_INSTRUMENTA_IDENTITAS = "instrumenta_identitas"
     const val NOMEN_COLUMNAE_NOMEN_INSTRUMENTI = "nomen_instrumenti"

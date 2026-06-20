@@ -21,7 +21,6 @@ object DepositumMusculiPars : Depositum<MusculiPars>() {
     override fun crea(rs: ResultSet): MusculiPars {
         return MusculiPars(
             MusculiParsIdentitas(rs.getInt(NOMEN_COLUMNAE_MUSCULI_PARS_IDENTITAS)),
-            MusculiIdentitas(rs.getInt(NOMEN_COLUMNAE_MUSCULI_IDENTITAS)),
             NomenMusculiPars(rs.getString(NOMEN_COLUMNAE_NOMEN_MUSCULI_PARS)),
             DescriptioMusculi(rs.getString(NOMEN_COLUMNAE_DESCRIPTIO) ?: "")
         )

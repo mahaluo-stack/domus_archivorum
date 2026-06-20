@@ -9,7 +9,6 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class ResponsumMusculiPars(
     val musculiParsIdentitas: MusculiParsIdentitas,
-    val musculiIdentitas: MusculiIdentitas,
     val nomen: NomenMusculiPars,
     val descriptio: DescriptioMusculi
 )

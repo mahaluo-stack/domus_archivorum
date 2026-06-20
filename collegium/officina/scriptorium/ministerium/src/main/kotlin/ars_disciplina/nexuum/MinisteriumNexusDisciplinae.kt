@@ -6,7 +6,7 @@ import ars_disciplina.commune.constantia.ConstantiaNomenSchemata.NOMEN_ARCHIVUM_
 import ars_disciplina.commune.constantia.ConstantiaNomenSchemata.NOMEN_SCHEMATA_NEXUUM
 import ars_disciplina.disciplinarum.valores.identitas.DisciplinaeIdentitas
 
-abstract class MinisteriumNexus<T> {
+abstract class MinisteriumNexusDisciplinae<T> {
 
     private val nomenSchemata = "$NOMEN_ARCHIVUM_ARS_DISCIPLINA.$NOMEN_SCHEMATA_NEXUUM"
     protected abstract val nomenTabulae: String

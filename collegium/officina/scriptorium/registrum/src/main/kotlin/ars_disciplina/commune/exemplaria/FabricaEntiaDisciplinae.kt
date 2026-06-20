@@ -37,16 +37,16 @@ object FabricaEntiaDisciplinae {
             .map { it.generaPrehensionisIdentitas }
             .toSet()
 
-        val musculiRegio = RegistraDisciplinaMusculiRegio.omniaPerClavemNecesse(disciplinaeIdentitas)
-            .map { it.musculiRegioIdentitas }
+        val musculiPars = RegistraDisciplinaMusculiPars.omniaPerClavemNecesse(disciplinaeIdentitas)
+            .map { it.musculiParsIdentitas }
             .toSet()
 
-        val musculi = RegistraDisciplinaMusculi.omniaPerClavemNecesse(disciplinaeIdentitas)
+        val musculi = RegistraMusculiParsMusculi.omniaPerClaves(musculiPars)
             .map {it.musculiIdentitas }
             .toSet()
 
-        val musculiPars = RegistraDisciplinaMusculiPars.omniaPerClavemNecesse(disciplinaeIdentitas)
-            .map { it.musculiParsIdentitas }
+        val musculiRegio = RegistraMusculiMusculiRegio.omniaPerClaves(musculi)
+            .map { it.musculiRegioIdentitas }
             .toSet()
 
         val instrumenti = RegistraDisciplinaInstrumenti.omniaPerClavemNecesse(disciplinaeIdentitas)

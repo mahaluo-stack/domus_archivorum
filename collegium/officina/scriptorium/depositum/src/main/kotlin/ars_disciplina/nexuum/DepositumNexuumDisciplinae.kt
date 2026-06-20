@@ -7,7 +7,7 @@ import ars_disciplina.commune.constantia.ConstantiaNomenSchemata.NOMEN_SCHEMATA_
 import ars_disciplina.disciplinarum.valores.identitas.DisciplinaeIdentitas
 import java.sql.ResultSet
 
-abstract class DepositumNexuum<T> : Depositum<T>() {
+abstract class DepositumNexuumDisciplinae<T> : Depositum<T>() {
 
     final override val nomenSchemata = "$NOMEN_ARCHIVUM_ARS_DISCIPLINA.$NOMEN_SCHEMATA_NEXUUM"
     protected abstract val nomenColumnaeAlterumIdentitas: String

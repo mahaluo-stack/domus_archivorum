@@ -7,7 +7,6 @@ import org.example.exemplaria.tabulae.MusculiPars
 object TranslatorMusculiPars : InterfaciaTranslatoris<MusculiPars, ResponsumMusculiPars> {
     override fun adResponsum(entia: MusculiPars) = ResponsumMusculiPars(
         musculiParsIdentitas = entia.musculiParsIdentitas,
-        musculiIdentitas = entia.musculiIdentitas,
         nomen = entia.nomen,
         descriptio = entia.descriptio
     )

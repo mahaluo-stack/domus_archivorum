@@ -21,7 +21,6 @@ object DepositumMusculi : Depositum<Musculi>() {
     override fun crea(rs: ResultSet): Musculi {
         return Musculi(
             MusculiIdentitas(rs.getInt(NOMEN_COLUMNAE_MUSCULI_IDENTITAS)),
-            MusculiRegioIdentitas(rs.getInt(NOMEN_COLUMNAE_MUSCULI_REGIO_IDENTITAS)),
             NomenMusculi(rs.getString(NOMEN_COLUMNAE_NOMEN_MUSCULI)),
             DescriptioMusculi(rs.getString(NOMEN_COLUMNAE_DESCRIPTIO) ?: "")
         )

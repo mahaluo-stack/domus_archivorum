@@ -22,7 +22,7 @@ databaseChangeLog:
                     nullable: false
 
               - column:
-                  name: nomen_disciplina
+                  name: nomen_disciplinae
                   type: VARCHAR(50)
 
                   constraints:
@@ -40,5 +40,5 @@ databaseChangeLog:
         - addUniqueConstraint:
             schemaName: disciplinarum
             tableName: disciplinae
-            columnNames: nomen_disciplina
-            constraintName: nomen_disciplina_unicum
+            columnNames: nomen_disciplinae
+            constraintName: nomen_disciplinae_unicum

@@ -7,7 +7,7 @@ import ars_disciplina.instrumentorum.valores.identitas.InstrumentaIdentitas
 import ars_disciplina.nexuum.tabula.DisciplinaInstrumenti
 
 
-object DepositumDisciplinaInstrumenti : DepositumNexuum<DisciplinaInstrumenti>() {
+object DepositumDisciplinaInstrumentiDisciplinae : DepositumNexuumDisciplinae<DisciplinaInstrumenti>() {
     override val nomenTabulae = NOMEN_TABULAE_DISCIPLINA_INSTRUMENTI
     override val nomenColumnaeAlterumIdentitas = NOMEN_COLUMNAE_INSTRUMENTA_IDENTITAS
     override fun crea(

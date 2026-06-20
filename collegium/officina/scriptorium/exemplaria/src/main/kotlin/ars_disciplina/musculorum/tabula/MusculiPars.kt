@@ -7,7 +7,6 @@ import ars_disciplina.musculorum.valores.identitas.MusculiParsIdentitas
 
 data class MusculiPars(
     val musculiParsIdentitas: MusculiParsIdentitas,
-    val musculiIdentitas: MusculiIdentitas,
     val nomen: NomenMusculiPars,
     val descriptio: DescriptioMusculi
 )

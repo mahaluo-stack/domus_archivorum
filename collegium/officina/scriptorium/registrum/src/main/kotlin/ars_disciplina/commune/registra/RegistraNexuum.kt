@@ -1,6 +1,8 @@
 package ars_disciplina.commune.registra
 
 import ars_disciplina.disciplinarum.valores.identitas.DisciplinaeIdentitas
+import ars_disciplina.musculorum.valores.identitas.MusculiIdentitas
+import ars_disciplina.musculorum.valores.identitas.MusculiParsIdentitas
 import ars_disciplina.nexuum.tabula.*
 import org.example.commune.registrum.Registra
 
@@ -32,11 +34,13 @@ object RegistraDisciplinaPrehensiones :
 object RegistraDisciplinaRegulae : Registra<DisciplinaeIdentitas, DisciplinaRegulae>({ it.disciplinaeIdentitas })
 
 // muscululorum
-object RegistraDisciplinaMusculi : Registra<DisciplinaeIdentitas, DisciplinaMusculi>({ it.disciplinaeIdentitas })
-object RegistraDisciplinaMusculiRegio :
-    Registra<DisciplinaeIdentitas, DisciplinaMusculiRegio>({ it.disciplinaeIdentitas })
 object RegistraDisciplinaMusculiPars :
     Registra<DisciplinaeIdentitas, DisciplinaMusculiPars>({ it.disciplinaeIdentitas })
+object RegistraMusculiParsMusculi :
+    Registra<MusculiParsIdentitas, MusculiParsMusculi>({ it.musculiParsIdentitas })
+object RegistraMusculiMusculiRegio :
+    Registra<MusculiIdentitas, MusculiMusculiRegio>({ it.musculiIdentitas })
+
 
 // instrumentorum
 object RegistraDisciplinaInstrumenti :
