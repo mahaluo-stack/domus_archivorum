@@ -160,7 +160,6 @@ object FactoriaFictaDisciplinarum {
     fun musculi() = setOf(
         Musculi(
             MusculiIdentitas(1),
-            MusculiRegioIdentitas(1),
             NomenMusculi(FICTUM_NOMEN_MUSCULI),
             DescriptioMusculi(FICTUM_DESCRIPTIO)
         )
@@ -169,7 +168,6 @@ object FactoriaFictaDisciplinarum {
     fun musculiPars() = setOf(
         MusculiPars(
             MusculiParsIdentitas(1),
-            MusculiIdentitas(1),
             NomenMusculiPars(FICTUM_NOMEN_MUSCULI_PARS),
             DescriptioMusculi(FICTUM_DESCRIPTIO)
         )

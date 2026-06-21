@@ -2,18 +2,22 @@ package ars_disciplina.nexuum
 
 import ars_disciplina.musculorum.valores.identitas.MusculiIdentitas
 import ars_disciplina.musculorum.valores.identitas.MusculiParsIdentitas
+import ars_disciplina.musculorum.valores.identitas.MusculiRegioIdentitas
 
-class MinisteriumMusculiParsMusculi {
-    fun inserta(musculiParsIdentitas: MusculiParsIdentitas, musculiIdentitas: MusculiIdentitas): Int =
-        ConexioArsDisciplina.inserta(
+object MinisteriumMusculiParsMusculi {
+    fun ponere(
+        musculiParsIdentitas: MusculiParsIdentitas,
+        musculiIdentitas: MusculiIdentitas
+    ) =
+        ConexioArsDisciplina.renova(
             """
-        INSERT INTO ars_disciplina.nexuum.musculi_pars_musculi(
-            musculi_pars_identitas,
-            musculi_identitas
-        )
-        VALUES (?, ?);
-        SELECT SCOPE_IDENTITY();
-        """.trimIndent()
+            INSERT INTO nexuum.musculi_musculi_regio (
+                musculi_pars_identitas,
+                musculi_identitas
+            )
+            VALUES (?, ?)
+            ON CONFLICT DO NOTHING;
+            """.trimIndent()
         ) {
             setInt(1, musculiParsIdentitas.valor)
             setInt(2, musculiIdentitas.valor)

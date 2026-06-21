@@ -9,7 +9,7 @@ object MinisteriumGenerumInstrumenti {
             """
                 INSERT INTO ars_disciplina.instrumentorum.genus_instrumenti(nomen_genus_instrumenti)
                 VALUES (?);
-                SELECT SCOPE_IDENTITY();
+                ON CONFLICT DO NOTHING;
         """.trimIndent()
         ) {
             setString(1, genusInstrumenti.nomen.valor)

@@ -22,6 +22,7 @@ dependencies {
     implementation("io.ktor:ktor-serialization-kotlinx-json-jvm:${ktorVersion}")
 
     implementation(project(":registrum"))
+    implementation(project(":ministerium"))
     implementation(project(":exemplaria"))
 }
 

@@ -3,13 +3,13 @@ package org.example.disciplinarum.ministeria
 import ConexioArsDisciplina
 import ars_disciplina.prehensionum.tabula.Prehensiones
 
-class MinisteriumPrehensionum {
+object MinisteriumPrehensionum {
     fun inserta(prehensiones: Prehensiones): Int =
         ConexioArsDisciplina.inserta(
             """
                 INSERT INTO ars_disciplina.prehensionum.prehensiones(nomen_prehensionis, descriptio)
                 VALUES (?, ?);
-                SELECT SCOPE_IDENTITY();
+                ON CONFLICT DO NOTHING;
         """.trimIndent()
         ) {
             setString(1, prehensiones.nomen.valor)

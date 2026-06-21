@@ -3,7 +3,7 @@ package ars_disciplina.disciplinarum
 import ConexioArsDisciplina
 import ars_disciplina.disciplinarum.tabula.Archetypus
 
-class MinisteriumArchetypi {
+object MinisteriumArchetypi {
     fun inserta(nomenArchetypi: Archetypus): Int =
         ConexioArsDisciplina.inserta(
             """
@@ -12,7 +12,7 @@ class MinisteriumArchetypi {
             descriptio
         )
         VALUES (?, ?);
-        SELECT SCOPE_IDENTITY();
+        ON CONFLICT DO NOTHING;
         """.trimIndent()
         ) {
             setString(1, nomenArchetypi.nomenArchetypi.valor)

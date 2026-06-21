@@ -4,7 +4,7 @@ import ars_disciplina.commune.constantia.ConstantiaNomenColumnae.NOMEN_COLUMNAE_
 import ars_disciplina.commune.constantia.ConstantiaNomenTabulae.NOMEN_TABULAE_DISCIPLINA_VARIATIONES
 import ars_disciplina.disciplinarum.valores.identitas.VariationesIdentitas
 
-abstract class MinisteriumDisciplinaVariationesDisciplinae : MinisteriumNexusDisciplinae<VariationesIdentitas>() {
+object MinisteriumDisciplinaVariationesDisciplinae : MinisteriumNexusDisciplinae<VariationesIdentitas>() {
     override val nomenTabulae = NOMEN_TABULAE_DISCIPLINA_VARIATIONES
     override val nomenColumnae = NOMEN_COLUMNAE_VARIATIONES_IDENTITAS
     override fun identitas(identitas: VariationesIdentitas): Int = identitas.valor

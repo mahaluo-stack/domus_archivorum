@@ -20,6 +20,7 @@ abstract class MinisteriumNexusDisciplinae<T> {
             $NOMEN_COLUMNAE_DISCIPLINAE_IDENTITAS,
             $nomenColumnae
         FROM $nomenSchemata.$nomenTabulae
+        ON CONFLICT DO NOTHING;
         """.trimIndent()
     ) {
         setInt(1, disciplinaeIdentitas.valor)

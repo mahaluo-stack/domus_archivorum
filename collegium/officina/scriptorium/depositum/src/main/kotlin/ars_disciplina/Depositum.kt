@@ -13,6 +13,7 @@ abstract class Depositum<T> {
         """
             SELECT *
             FROM $nomenSchemata.$nomenTabulae
+            ON CONFLICT DO NOTHING;
         """.trimIndent(),
         structor = ::crea
     )
@@ -21,5 +22,6 @@ abstract class Depositum<T> {
         """
         SELECT *
         FROM $nomenSchemata.$nomenTabulae
+        ON CONFLICT DO NOTHING;
         """.trimIndent()
 }

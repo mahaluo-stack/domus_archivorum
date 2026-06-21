@@ -3,7 +3,7 @@ package org.example.disciplinarum.ministeria
 import ConexioArsDisciplina
 import ars_disciplina.disciplinarum.tabula.Angulus
 
-class MinisteriumAngulorum {
+object MinisteriumAngulorum {
     fun inserta(angulus: Angulus): Int =
         ConexioArsDisciplina.inserta(
             """
@@ -11,7 +11,7 @@ class MinisteriumAngulorum {
             angulus
         )
         VALUES (?);
-        SELECT SCOPE_IDENTITY();
+        ON CONFLICT DO NOTHING;
         """.trimIndent()
         ) {
             setDouble(1, angulus.angulus.valor)
