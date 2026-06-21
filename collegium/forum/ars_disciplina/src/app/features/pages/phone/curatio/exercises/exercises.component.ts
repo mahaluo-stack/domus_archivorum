@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { CuratioMenuItemComponent } from '../../common/curatio-menu-item/curatio-menu-item.component';
+import { PageWrapperComponent } from '../../../../components/phone/page-wrapper/page-wrapper.component';
 
 @Component({
   selector: 'app-exercises',
   standalone: true,
-  imports: [CuratioMenuItemComponent],
+  imports: [PageWrapperComponent],
   templateUrl: './exercises.component.html',
   styleUrl: './exercises.component.scss'
 })

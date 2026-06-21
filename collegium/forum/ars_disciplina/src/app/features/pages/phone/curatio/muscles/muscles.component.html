@@ -1,4 +1,21 @@
-<curatio-menu-item>
-
-    <p>muscles works!</p>
-</curatio-menu-item>
+<page-header />
+<page-wrapper>
+    <div class="muscle-list">
+        @for(muscle of muscles; track muscle.id) {
+        <div class='muscle-menu-item-row'>
+            <div class='muscle-menu-item-text'>
+                <div matListItemTitle class='muscle-menu-item-title'>
+                    {{ muscle.name }}
+                </div>
+                <div matListItemTitle class='muscle-menu-item-description'>
+                    {{ muscle.description }}
+                </div>
+            </div>
+            
+            <div class="material-symbols-outlined settings-icon">
+                settings
+            </div>
+        </div>
+        }
+    </div>
+</page-wrapper>

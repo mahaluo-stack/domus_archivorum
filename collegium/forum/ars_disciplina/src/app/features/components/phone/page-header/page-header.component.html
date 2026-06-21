@@ -1,0 +1,19 @@
+<header class="page-header">
+
+    @if (showBackButton) {
+    <button class="back-button" type="button" (click)="back()">
+
+        <span class="material-symbols-outlined">
+            chevron_backward
+        </span>
+
+    </button>
+    } @else {
+    <div class="back-button-placeholder"></div>
+    }
+
+    <h1>{{ title }}</h1>
+
+    <div class="back-button-placeholder"></div>
+
+</header>

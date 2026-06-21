@@ -1,0 +1,42 @@
+.page-header {
+
+    display: grid;
+    grid-template-columns: 48px 1fr 48px;
+
+    align-items: center;
+
+    height: 64px;
+    padding: 0 16px;
+}
+
+.back-button,
+.back-button-placeholder {
+
+    width: 48px;
+    height: 48px;
+}
+
+.back-button {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: none;
+    border-radius: 50%;
+
+    background: transparent;
+    color: white;
+
+    cursor: pointer;
+}
+
+h1 {
+
+    margin: 0;
+
+    text-align: center;
+
+    font-size: 1.4rem;
+    font-weight: 600;
+}

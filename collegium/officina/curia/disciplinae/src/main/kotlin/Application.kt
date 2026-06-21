@@ -1,6 +1,9 @@
 package org.curia_disciplinae
 
 import ars_disciplina.Registra
+import configureHTTP
+import configureRouting
+import configureSerialization
 import io.ktor.serialization.kotlinx.json.*
 import io.ktor.server.application.*
 import io.ktor.server.plugins.contentnegotiation.*
@@ -11,7 +14,7 @@ fun Application.module() {
 
     Registra.initializa()
 
-    install(ContentNegotiation) { json() }
-
-    routing { moderatorDisciplinarum() }
+    configureHTTP()
+    configureSerialization()
+    configureRouting()
 }

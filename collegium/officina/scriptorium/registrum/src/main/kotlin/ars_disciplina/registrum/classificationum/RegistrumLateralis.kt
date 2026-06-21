@@ -1,11 +1,14 @@
 package ars_disciplina.registrum.classificationum
 
+import ars_disciplina.classificationum.tabula.GeneraDisciplinae
 import ars_disciplina.classificationum.tabula.Lateralis
+import ars_disciplina.classificationum.valores.identitas.GeneraDisciplinaeIdentitas
 import ars_disciplina.classificationum.valores.identitas.LateralisIdentitas
 import ars_disciplina.commune.registra.RegistraLateralis
+import ars_disciplina.registrum.Registrum
 
-object RegistrumLateralis {
+object RegistrumLateralis : Registrum<LateralisIdentitas, Lateralis>() {
 
-    fun omnia(): Collection<Lateralis> = RegistraLateralis.omnia()
-    fun invenire(identitas: LateralisIdentitas): Lateralis = RegistraLateralis.invenirePerClavemNecesse(identitas)
+    override fun omnia(): Collection<Lateralis> = RegistraLateralis.omnia()
+    override fun invenire(identitas: LateralisIdentitas): Lateralis = RegistraLateralis.invenirePerClavemNecesse(identitas)
 }

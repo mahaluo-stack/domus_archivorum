@@ -20,6 +20,9 @@ const routes: Routes = [
     component: AtriumComponent,
     canActivate: [AuthGuard],
     runGuardsAndResolvers: 'always',
+    data: {
+      root: true
+    }
   },
   {
     title: 'consilium',
@@ -27,6 +30,9 @@ const routes: Routes = [
     component: ConsiliumComponent,
     canActivate: [AuthGuard],
     runGuardsAndResolvers: 'always',
+    data: {
+      root: true
+    }
   },
   {
     title: 'actarium',
@@ -34,6 +40,9 @@ const routes: Routes = [
     component: ActariumComponent,
     canActivate: [AuthGuard],
     runGuardsAndResolvers: 'always',
+    data: {
+      root: true
+    }
   },
   {
     title: 'analytica',
@@ -41,13 +50,19 @@ const routes: Routes = [
     component: AnalyticaComponent,
     canActivate: [AuthGuard],
     runGuardsAndResolvers: 'always',
+    data: {
+      root: true
+    }
   },
   {
     title: 'curatio',
     path: 'curatio',
     component: CuratioComponent,
     canActivate: [AuthGuard, AdminGuard],
-    runGuardsAndResolvers: 'always'
+    runGuardsAndResolvers: 'always',
+    data: {
+      root: true
+    }
   },
   {
     title: 'archetypes',

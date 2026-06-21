@@ -1,11 +1,14 @@
 package ars_disciplina.registrum.prehensionum
 
 import ars_disciplina.commune.registra.RegistraGeneraPrehensionis
+import ars_disciplina.disciplinarum.tabula.Motus
+import ars_disciplina.disciplinarum.valores.identitas.MotusIdentitas
 import ars_disciplina.prehensionum.tabula.GeneraPrehensionis
 import ars_disciplina.prehensionum.valores.identitas.GeneraPrehensionisIdentitas
+import ars_disciplina.registrum.Registrum
 
-object RegistrumGeneraPrehensionis {
+object RegistrumGeneraPrehensionis : Registrum<GeneraPrehensionisIdentitas, GeneraPrehensionis>()  {
 
-    fun omnia(): Collection<GeneraPrehensionis> = RegistraGeneraPrehensionis.omnia()
-    fun invenire(identitas: GeneraPrehensionisIdentitas): GeneraPrehensionis = RegistraGeneraPrehensionis.invenirePerClavemNecesse(identitas)
+    override fun omnia() = RegistraGeneraPrehensionis.omnia()
+    override fun invenire(identitas: GeneraPrehensionisIdentitas): GeneraPrehensionis = RegistraGeneraPrehensionis.invenirePerClavemNecesse(identitas)
 }

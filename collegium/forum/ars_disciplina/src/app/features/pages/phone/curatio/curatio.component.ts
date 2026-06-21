@@ -2,13 +2,15 @@ import { Component } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
+import { PageTitleComponent } from "../../../components/phone/page-title/page-title.component";
+import { PageHeaderComponent } from "../../../components/phone/page-header/page-header.component";
 
 @Component({
   selector: 'app-curatio',
   standalone: true,
-  imports: [ RouterLink,
+  imports: [RouterLink,
     MatListModule,
-    MatIconModule],
+    MatIconModule, PageTitleComponent, RouterOutlet, PageHeaderComponent],
   templateUrl: './curatio.component.html',
   styleUrl: './curatio.component.scss'
 })
