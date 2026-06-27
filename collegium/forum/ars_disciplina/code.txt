@@ -1,0 +1,198 @@
+regions.ts:
+import maleFrontRaw from "@/assets/anatomy/male-front.svg?raw";
+import maleBackRaw from "@/assets/anatomy/male-back.svg?raw";
+import femaleFrontRaw from "@/assets/anatomy/female-front.svg?raw";
+import femaleBackRaw from "@/assets/anatomy/female-back.svg?raw";
+
+export type ViewKey = "male-front" | "male-back" | "female-front" | "female-back";
+
+export type Region = {
+  id: string;
+  name: string;
+  points: string; // "x,y x,y x,y ..." for <polygon>
+  bbox: { x: number; y: number; w: number; h: number };
+};
+
+// Optional human-friendly names keyed by region id (e.g. "r-12").
+// Fill these in to label specific paths. Anything unnamed falls back to its id.
+export const regionNames: Partial<Record<ViewKey, Record<string, string>>> = {
+  "male-front": {},
+  "male-back": {},
+  "female-front": {},
+  "female-back": {},
+};
+
+const sources: Record<ViewKey, string> = {
+  "male-front": maleFrontRaw,
+  "male-back": maleBackRaw,
+  "female-front": femaleFrontRaw,
+  "female-back": femaleBackRaw,
+};
+
+function parseViewBox(svg: string): { w: number; h: number } {
+  const m = svg.match(/viewBox="0 0 (\d+(?:\.\d+)?) (\d+(?:\.\d+)?)"/);
+  return m ? { w: parseFloat(m[1]), h: parseFloat(m[2]) } : { w: 0, h: 0 };
+}
+
+function extractPaths(svg: string): string[] {
+  const out: string[] = [];
+  const re = /<path[^>]*\sd="([^"]+)"/g;
+  let m: RegExpExecArray | null;
+  while ((m = re.exec(svg)) !== null) out.push(m[1]);
+  return out;
+}
+
+// Convert an "M x y L x y L x y ..." path string into [x,y] pairs.
+// The provided traces only use absolute M/L commands.
+function pathToPoints(d: string): Array<[number, number]> {
+  const tokens = d.split(/[\s,]+/).filter(Boolean);
+  const pts: Array<[number, number]> = [];
+  let i = 0;
+  while (i < tokens.length) {
+    const t = tokens[i];
+    if (t === "M" || t === "L") {
+      const x = parseFloat(tokens[i + 1]);
+      const y = parseFloat(tokens[i + 2]);
+      if (!Number.isNaN(x) && !Number.isNaN(y)) pts.push([x, y]);
+      i += 3;
+    } else if (/^-?\d/.test(t)) {
+      // Implicit continuation of previous command
+      const x = parseFloat(tokens[i]);
+      const y = parseFloat(tokens[i + 1]);
+      if (!Number.isNaN(x) && !Number.isNaN(y)) pts.push([x, y]);
+      i += 2;
+    } else {
+      i += 1;
+    }
+  }
+  return pts;
+}
+
+function bbox(pts: Array<[number, number]>) {
+  let minX = Infinity,
+    minY = Infinity,
+    maxX = -Infinity,
+    maxY = -Infinity;
+  for (const [x, y] of pts) {
+    if (x < minX) minX = x;
+    if (y < minY) minY = y;
+    if (x > maxX) maxX = x;
+    if (y > maxY) maxY = y;
+  }
+  return { x: minX, y: minY, w: maxX - minX, h: maxY - minY };
+}
+
+function buildRegions(view: ViewKey): Region[] {
+  const svg = sources[view];
+  const vb = parseViewBox(svg);
+  const paths = extractPaths(svg);
+  const names = regionNames[view] ?? {};
+  const regions: Region[] = [];
+
+  paths.forEach((d, idx) => {
+    const pts = pathToPoints(d);
+    if (pts.length < 3) return;
+    const bb = bbox(pts);
+
+    // Filter edge ruler/trim marks: tiny shapes hugging the left edge.
+    if (bb.x < 15 && bb.w < 12) return;
+    // Filter degenerate paths.
+    if (bb.w < 2 || bb.h < 2) return;
+    // Filter the full-body outline path (covers most of the viewBox).
+    // Anything taller than 60% of the canvas is the silhouette outline,
+    // not a muscle region.
+    if (bb.h > vb.h * 0.6) return;
+
+    const id = `r-${idx}`;
+    regions.push({
+      id,
+      name: names[id] ?? id,
+      points: pts.map(([x, y]) => `${x},${y}`).join(" "),
+      bbox: bb,
+    });
+  });
+
+  // Render smaller regions last so they sit on top and receive clicks first.
+  regions.sort((a, b) => b.bbox.w * b.bbox.h - a.bbox.w * a.bbox.h);
+  return regions;
+}
+
+export const viewBoxes: Record<ViewKey, { w: number; h: number }> = {
+  "male-front": parseViewBox(sources["male-front"]),
+  "male-back": parseViewBox(sources["male-back"]),
+  "female-front": parseViewBox(sources["female-front"]),
+  "female-back": parseViewBox(sources["female-back"]),
+};
+
+export const regions: Record<ViewKey, Region[]> = {
+  "male-front": buildRegions("male-front"),
+  "male-back": buildRegions("male-back"),
+  "female-front": buildRegions("female-front"),
+  "female-back": buildRegions("female-back"),
+};
+
+---
+anatomyview.tsx
+import { useState } from "react";
+import maleFrontUrl from "@/assets/anatomy/male-front.svg?url";
+import maleBackUrl from "@/assets/anatomy/male-back.svg?url";
+import femaleFrontUrl from "@/assets/anatomy/female-front.svg?url";
+import femaleBackUrl from "@/assets/anatomy/female-back.svg?url";
+import { regions, viewBoxes, type ViewKey } from "./regions";
+
+const svgUrls: Record<ViewKey, string> = {
+  "male-front": maleFrontUrl,
+  "male-back": maleBackUrl,
+  "female-front": femaleFrontUrl,
+  "female-back": femaleBackUrl,
+};
+
+type Props = {
+  view: ViewKey;
+  selected?: string | null;
+  onSelect?: (regionId: string, regionName: string) => void;
+  showOutline?: boolean;
+};
+
+export function AnatomyViewer({ view, selected, onSelect, showOutline = true }: Props) {
+  const { w, h } = viewBoxes[view];
+  const [hovered, setHovered] = useState<string | null>(null);
+
+  return (
+    <svg
+      viewBox={`0 0 ${w} ${h}`}
+      xmlns="http://www.w3.org/2000/svg"
+      className="h-full w-auto select-none"
+      role="img"
+      aria-label={`Anatomy ${view}`}
+    >
+      {showOutline && <image href={svgUrls[view]} x={0} y={0} width={w} height={h} />}
+      <g>
+        {regions[view].map((r) => {
+          const isSelected = selected === r.id;
+          const isHovered = hovered === r.id;
+          const fill = isSelected
+            ? "rgba(220, 38, 38, 0.55)"
+            : isHovered
+              ? "rgba(59, 130, 246, 0.35)"
+              : "rgba(0, 0, 0, 0)";
+          return (
+            <polygon
+              key={r.id}
+              points={r.points}
+              fill={fill}
+              stroke={isSelected || isHovered ? "rgba(0,0,0,0.6)" : "none"}
+              strokeWidth={0.6}
+              style={{ cursor: "pointer", transition: "fill 120ms" }}
+              onMouseEnter={() => setHovered(r.id)}
+              onMouseLeave={() => setHovered(null)}
+              onClick={() => onSelect?.(r.id, r.name)}
+            >
+              <title>{r.name}</title>
+            </polygon>
+          );
+        })}
+      </g>
+    </svg>
+  );
+}

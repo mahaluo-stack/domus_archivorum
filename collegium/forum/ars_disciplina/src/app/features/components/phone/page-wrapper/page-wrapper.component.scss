@@ -3,6 +3,18 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 89dvh;
-    margin-bottom: 11dvh;
+    height: 100dvh;
+}
+
+.page-content {
+    flex: 1;
+    min-height: 0;  
+    overflow: hidden;
+}
+
+
+.menu-navigator-container {
+    align-self: flex-end;
+    margin: auto;
+    margin-bottom: 1dvh;
 }

@@ -1,0 +1,135 @@
+:host {
+
+    display: block;
+    width: 100%;
+}
+
+.editor-select {
+
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: .45rem;
+}
+
+.editor-select-label {
+
+    font-size: .72rem;
+    font-weight: 600;
+    letter-spacing: .08em;
+    text-transform: lowercase;
+    color: rgba(255, 255, 255, .55);
+    user-select: none;
+}
+
+.editor-select-button {
+
+    width: 100%;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-inline: 1rem;
+    background: rgba(255, 255, 255, .03);
+    border: 1px solid rgba(90, 170, 255, .18);
+    border-radius: .8rem;
+    color: white;
+    cursor: pointer;
+
+    transition:
+        background .15s ease,
+        border-color .15s ease,
+        box-shadow .15s ease;
+}
+
+.editor-select-button:hover {
+
+    background: rgba(90, 170, 255, .08);
+    border-color: rgba(90, 170, 255, .45);
+    box-shadow: 0 0 14px rgba(90, 170, 255, .10);
+}
+
+.editor-select-button.expanded {
+
+    border-color: rgba(90, 170, 255, .65);
+    box-shadow: 0 0 16px rgba(90, 170, 255, .18);
+}
+
+.editor-select-value {
+
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: white;
+    font-size: .95rem;
+}
+
+.editor-select-icon {
+
+    color: rgba(90, 170, 255, .85);
+    transition: transform .2s ease;
+}
+
+.editor-select-button.expanded .editor-select-icon {
+
+    transform: rotate(180deg);
+}
+
+.editor-select-dropdown {
+
+    position: absolute;
+    top: calc(100% + .45rem);
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    padding: .35rem;
+    background: rgba(20, 23, 28, .98);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(90, 170, 255, .22);
+    border-radius: .8rem;
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, .45),
+        0 0 20px rgba(90, 170, 255, .08);
+    z-index: 1000;
+    animation: dropdown-enter .16s ease;
+}
+
+.editor-select-option {
+
+    display: flex;
+    align-items: center;
+    min-height: 2.6rem;
+    padding-inline: .9rem;
+    border: none;
+    border-radius: .55rem;
+    background: transparent;
+    color: rgba(255, 255, 255, .88);
+    cursor: pointer;
+    text-align: left;
+    transition: background .15s ease, color .15s ease;
+}
+
+.editor-select-option:hover {
+
+    background: rgba(90, 170, 255, .12);
+    color: white;
+}
+
+.editor-select-option.selected {
+
+    background: rgba(90, 170, 255, .18);
+    color: white;
+}
+
+@keyframes dropdown-enter {
+    from {
+        opacity: 0;
+        transform: translateY(-6px) scale(.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}

@@ -11,5 +11,5 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   templateUrl: './menu-navigator.component.html',
   styleUrl: './menu-navigator.component.scss'
 })
-export class  MenuNavigatorComponent {
+export class MenuNavigatorComponent {
 }

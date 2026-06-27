@@ -1,8 +1,8 @@
-<div class="atrium-date-swipe-container" (touchstart)="onTouchStart($event)" (touchmove)="onTouchMove($event)"
+<div #atriumDateSwipeContainer class="atrium-date-swipe-container" (touchstart)="onTouchStart($event)" (touchmove)="onTouchMove($event)"
     (touchend)="onTouchEnd()">
 
     <div class="atrium-card-stack" [class.animating]="isAnimating"
-        [style.transform]="'translateY(calc(-100dvh + ' + translateY + 'px))'">
+        [style.transform]="stackTransform">
 
         @for (page of pages; track trackByDate($index, page)) {
 

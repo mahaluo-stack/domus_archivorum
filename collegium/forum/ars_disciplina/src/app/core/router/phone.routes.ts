@@ -8,10 +8,13 @@ import { ActariumComponent } from "../../features/pages/phone/actarium/actarium.
 import { ConsiliumComponent } from "../../features/pages/phone/consilium/consilium.component";
 import { AtriumComponent } from "../../features/pages/phone/atrium/atrium.component";
 import { AdminGuard } from "../guards/admin.guard";
-import { MusclesComponent } from "../../features/pages/phone/curatio/muscles/muscles.component";
 import { ExercisesComponent } from "../../features/pages/phone/curatio/exercises/exercises.component";
 import { ArchetypesComponent } from "../../features/pages/phone/curatio/archetypes/archetypes.component";
 import { EquipmentComponent } from "../../features/pages/phone/curatio/equipment/equipment.component";
+import { AnatomiaComponent } from "../../features/components/responsive/anatomia/anatomia.component";
+import { EditMuscleComponent } from "../../features/pages/phone/curatio/muscle/edit-muscle/edit-muscle.component";
+import { MuscleComponent } from "../../features/pages/phone/curatio/muscle/muscle.component";
+import { AnatomiaWrapperComponent } from "../../features/pages/phone/curatio/anatomia-wrapper/anatomia-wrapper.component";
 
 const routes: Routes = [
   {
@@ -78,12 +81,26 @@ const routes: Routes = [
     canActivate: [AuthGuard],
     runGuardsAndResolvers: 'always'
   },
+   {
+    title: 'anatomia',
+    path: 'curatio/anatomia',
+    component: AnatomiaWrapperComponent,
+    canActivate: [AuthGuard],
+    runGuardsAndResolvers: 'always'
+  },
   {
     title: 'muscles',
     path: 'curatio/muscles',
-    component: MusclesComponent,
+    component: MuscleComponent,
     canActivate: [AuthGuard],
     runGuardsAndResolvers: 'always'
+  },
+  {
+    title: 'edit muscle',
+    path: 'curatio/muscles/edit-muscle/:id',
+    component: EditMuscleComponent,
+    canActivate: [AuthGuard],
+    runGuardsAndResolvers: 'always',
   },
   {
     title: 'equipment',

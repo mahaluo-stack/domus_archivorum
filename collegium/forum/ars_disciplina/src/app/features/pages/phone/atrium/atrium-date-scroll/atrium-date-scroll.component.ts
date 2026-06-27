@@ -1,15 +1,20 @@
-import { Component } from '@angular/core';
-import { DatePipe } from '@angular/common';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  OnDestroy,
+  ViewChild
+} from '@angular/core';
 import { LongDatePipe } from '../../../../../core/pipes/long-date.pipe';
 
 @Component({
   selector: 'atrium-date-scroll',
   standalone: true,
-  imports: [DatePipe, LongDatePipe],
+  imports: [LongDatePipe],
   templateUrl: './atrium-date-scroll.component.html',
   styleUrl: './atrium-date-scroll.component.scss'
 })
-export class AtriumDateScrollComponent {
+export class AtriumDateScrollComponent implements AfterViewInit, OnDestroy {
 
   selectedDate = new Date();
 
@@ -17,6 +22,33 @@ export class AtriumDateScrollComponent {
   translateY = 0;
 
   isAnimating = false;
+  containerHeight = 0;
+
+  private resizeObserver?: ResizeObserver;
+
+  @ViewChild('atriumDateSwipeContainer')
+  private swipeContainer!: ElementRef<HTMLDivElement>;
+
+  ngAfterViewInit(): void {
+
+    this.updateContainerHeight();
+
+    this.resizeObserver = new ResizeObserver(() => {
+      this.updateContainerHeight();
+    });
+
+    this.resizeObserver.observe(
+      this.swipeContainer.nativeElement
+    );
+  }
+
+  ngOnDestroy(): void {
+    this.resizeObserver?.disconnect();
+  }
+
+  get stackTransform(): string {
+    return `translateY(calc(-100% + ${this.translateY}px))`;
+  }
 
   get pages(): Date[] {
 
@@ -44,8 +76,7 @@ export class AtriumDateScrollComponent {
 
     const currentY = event.touches[0].clientY;
 
-    this.translateY =
-      currentY - this.touchStartY;
+    this.translateY = currentY - this.touchStartY;
   }
 
   onTouchEnd(): void {
@@ -54,7 +85,7 @@ export class AtriumDateScrollComponent {
       return;
     }
 
-    const threshold = window.innerHeight * 0.15;
+    const threshold = this.containerHeight * 0.15;
 
     if (this.translateY > threshold) {
       this.animatePreviousDay();
@@ -73,7 +104,7 @@ export class AtriumDateScrollComponent {
 
     this.isAnimating = true;
 
-    this.translateY = window.innerHeight;
+    this.translateY = this.containerHeight;
 
     setTimeout(() => {
 
@@ -81,7 +112,6 @@ export class AtriumDateScrollComponent {
         this.addDays(this.selectedDate, -1);
 
       this.translateY = 0;
-
       this.isAnimating = false;
 
     }, 250);
@@ -91,7 +121,7 @@ export class AtriumDateScrollComponent {
 
     this.isAnimating = true;
 
-    this.translateY = -window.innerHeight;
+    this.translateY = -this.containerHeight;
 
     setTimeout(() => {
 
@@ -99,10 +129,15 @@ export class AtriumDateScrollComponent {
         this.addDays(this.selectedDate, 1);
 
       this.translateY = 0;
-
       this.isAnimating = false;
 
     }, 250);
+  }
+
+  private updateContainerHeight(): void {
+
+    this.containerHeight =
+      this.swipeContainer.nativeElement.clientHeight;
   }
 
   private addDays(

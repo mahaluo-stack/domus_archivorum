@@ -1,0 +1,8 @@
+@if (regions.length) {
+<svg class="anatomy-svg" [attr.viewBox]="viewBox" preserveAspectRatio="xMidYMid meet">
+    <g [attr.transform]="'translate(' + transform.x + ' ' + transform.y +') scale(' + transform.scale +')'">
+        @for (region of regions; track region.id) {
+        <polygon [attr.points]="region.points" [class.selected]="selectedIds.has(region.id)" (click)="click(region)" />
+        }
+    </g>
+</svg>}

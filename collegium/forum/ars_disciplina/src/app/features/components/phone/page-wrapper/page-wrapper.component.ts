@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
-import { ReturnButtonComponent } from '../return-button/return-button.component';
-import { PageTitleComponent } from "../page-title/page-title.component";
+import { MenuNavigatorComponent } from "../menu-navigator/menu-navigator.component";
+import { PageHeaderComponent } from "../page-header/page-header.component";
 
 @Component({
   selector: 'page-wrapper',
   standalone: true,
-  imports: [ReturnButtonComponent, PageTitleComponent],
+  imports: [MenuNavigatorComponent, PageHeaderComponent],
   templateUrl: './page-wrapper.component.html',
   styleUrl: './page-wrapper.component.scss'
 })

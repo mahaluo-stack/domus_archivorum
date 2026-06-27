@@ -1,12 +1,14 @@
 .page-header {
 
+    height: 48px;
+    width: 100dvw;
+    
     display: grid;
-    grid-template-columns: 48px 1fr 48px;
+    grid-template-columns: auto auto auto;
+}
 
-    align-items: center;
-
-    height: 64px;
-    padding: 0 16px;
+.title-container {
+    align-self: center;
 }
 
 .back-button,

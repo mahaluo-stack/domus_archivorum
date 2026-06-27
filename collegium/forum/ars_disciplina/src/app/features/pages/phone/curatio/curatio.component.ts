@@ -1,16 +1,18 @@
 import { Component } from '@angular/core';
-import { RouterLink, RouterOutlet } from '@angular/router';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
-import { PageTitleComponent } from "../../../components/phone/page-title/page-title.component";
-import { PageHeaderComponent } from "../../../components/phone/page-header/page-header.component";
+import { PageWrapperComponent } from "../../../components/phone/page-wrapper/page-wrapper.component";
 
 @Component({
   selector: 'app-curatio',
   standalone: true,
-  imports: [RouterLink,
+  imports: [
+    RouterLink,
+    RouterLinkActive,
     MatListModule,
-    MatIconModule, PageTitleComponent, RouterOutlet, PageHeaderComponent],
+    MatIconModule,
+    PageWrapperComponent],
   templateUrl: './curatio.component.html',
   styleUrl: './curatio.component.scss'
 })
@@ -22,9 +24,9 @@ export class CuratioComponent {
       route: '/curatio/exercises'
     },
     {
-      title: 'muscles',
+      title: 'anatomia',
       icon: 'accessibility_new',
-      route: '/curatio/muscles'
+      route: '/curatio/anatomia'
     },
     {
       title: 'equipment',

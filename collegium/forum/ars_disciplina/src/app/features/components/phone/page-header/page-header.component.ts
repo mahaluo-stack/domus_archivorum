@@ -1,7 +1,17 @@
 import { Location } from '@angular/common';
-import { Component, inject } from '@angular/core';
-import { Router, NavigationEnd } from '@angular/router';
+import {
+  Component,
+  computed,
+  inject,
+  signal
+} from '@angular/core';
+import {
+  ActivatedRoute,
+  NavigationEnd,
+  Router
+} from '@angular/router';
 import { filter } from 'rxjs';
+import { PageHeaderService } from '../../../../core/services/page-header.service';
 
 @Component({
   selector: 'page-header',
@@ -13,10 +23,17 @@ import { filter } from 'rxjs';
 export class PageHeaderComponent {
 
   private readonly router = inject(Router);
+  private readonly activatedRoute = inject(ActivatedRoute);
   private readonly location = inject(Location);
 
-  title = '';
-  showBackButton = false;
+  readonly header = inject(PageHeaderService);
+
+  private readonly routeTitle = signal('');
+  readonly showBackButton = signal(false);
+
+  readonly title = computed(() =>
+    this.header.titleOverride() ?? this.routeTitle()
+  );
 
   constructor() {
 
@@ -24,20 +41,36 @@ export class PageHeaderComponent {
       .pipe(
         filter(event => event instanceof NavigationEnd)
       )
-      .subscribe(() => this.updateHeader());
+      .subscribe(() => {
 
-    this.updateHeader();
+        this.header.clearTitle();
+        this.updateRouteData();
+
+      });
+
+    this.updateRouteData();
   }
 
   back(): void {
     this.location.back();
   }
 
-  private updateHeader(): void {
+  private updateRouteData(): void {
 
-    const route = this.router.config.find(r => r.path === this.router.url.substring(1));
+    let route = this.activatedRoute;
 
-    this.title = route?.title?.toString() ?? '';
-    this.showBackButton = route?.data?.['root'] !== true;
+    while (route.firstChild) {
+      route = route.firstChild;
+    }
+
+    const routeConfig = route.snapshot.routeConfig;
+
+    this.routeTitle.set(
+      routeConfig?.title?.toString() ?? ''
+    );
+
+    this.showBackButton.set(
+      routeConfig?.data?.['root'] !== true
+    );
   }
 }

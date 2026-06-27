@@ -1,9 +1,6 @@
 .menu-navigator-wrapper {
 
-    position: fixed;
-    left: 50%;
-    bottom: 16px;
-    transform: translateX(-50%);
+    margin: auto;
     width: min(90vw, 500px);
     height: 64px;
     padding: 1px;
@@ -17,7 +14,7 @@
             #442299);
     background-size: 400% 400%;
     animation: gradient 100s ease infinite;
-
+    align-self: flex-end;
     z-index: 1000;
 }
 
