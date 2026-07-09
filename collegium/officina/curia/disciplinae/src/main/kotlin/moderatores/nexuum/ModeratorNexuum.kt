@@ -13,6 +13,14 @@ fun Route.moderatorNexuum() {
 
     route("/nexuum/musculi") {
 
+        get("/regio") {
+            call.respond(ServitiumNexuumMusculiRegio.omnia())
+        }
+
+        get("/pars") {
+            call.respond(ServitiumMusculiParsMusculi.omnia())
+        }
+
         put("/regio/{musculiIdentitas}/{regioIdentitas}") {
             ServitiumNexuumMusculiRegio.ponere(
                 call.musculiIdentitas(),
