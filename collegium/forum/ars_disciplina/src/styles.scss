@@ -1,7 +1,10 @@
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
 @use '@angular/material' as mat;
-
+@use './styles/variables';
+@use './styles/typography';
+@use './styles/utilities';
+@use './styles/mixins';
 // Plus imports for other components in your app.
 
 // Include the common styles for Angular Material. We include this here so that you only
@@ -9,7 +12,8 @@
 // Be sure that you only ever include this mixin once!
 @include mat.core();
 html,
-body {
+body,
+input {
     width: 100dvw;
     max-width: 100dvw;
     height: 100%;
@@ -29,6 +33,8 @@ body {
         #f80c12,
         #ff4422,
         #ff9933,
+        #FFFF00,
+        #35d535,
         #12bdb9,
         #4444dd,
         #442299

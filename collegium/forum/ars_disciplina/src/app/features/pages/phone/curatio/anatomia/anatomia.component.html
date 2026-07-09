@@ -1,0 +1,41 @@
+<div #blueprint class='flex-column page-wrapper' (pointerdown)="pointerDown($event)" (pointerup)="pointerUp($event)">
+    <page-header />
+
+    <div class="flex-column anatomia-wrapper">
+        <anatomia-svg [regions]="regions" [viewBox]="viewBox" [transform]="transform" [selectedIds]="selectedRegions"
+            (regionClicked)="onRegionClicked($event)" />
+    </div>
+
+    <div class="workspace-container">
+        <editor-overlay class="workspace" [class.workspace-left]="currentWorkspace !== Workspace.Editor" />
+
+        <registry-overlay class="workspace" [class.workspace-active]="currentWorkspace === Workspace.Registry" />
+
+    </div>
+    <div class="workspace-indicator">
+
+        <div [class.active]="currentWorkspace === Workspace.Editor"></div>
+
+        <div [class.active]="currentWorkspace === Workspace.Registry"></div>
+
+    </div>
+    <div class="flex-row toolbar">
+
+        <div (click)="toggleSide()">
+            <span class="material-symbols-outlined menu-item">360</span>
+        </div>
+
+        <div (click)="toggleSex()">
+            <span class="material-symbols-outlined menu-item">
+                {{ currentSex === 'male' ? 'female' : 'male' }}
+            </span>
+        </div>
+
+        <div (click)="toggleRegionSelection()">
+            <span class="material-symbols-outlined menu-item">
+                {{ allRegionsSelected ? 'deselect' : 'select_all' }}
+            </span>
+        </div>
+
+    </div>
+</div>

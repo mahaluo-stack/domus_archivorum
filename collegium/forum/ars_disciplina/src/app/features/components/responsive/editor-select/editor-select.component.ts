@@ -7,7 +7,7 @@ import {
   Output,
   ViewChild,
 } from '@angular/core';
-import { EditorOption } from '../../../../core/models/interfaces/ui/editor.option.interface';
+import { EditorSelectOption } from '../../../../core/models/interfaces/ui/editor.select.option.interface';
 
 @Component({
   selector: 'editor-select',
@@ -20,43 +20,46 @@ export class EditorSelectComponent<T = unknown> {
   @ViewChild('container', { static: true })
   protected container!: ElementRef<HTMLDivElement>;
 
-  @Input({ required: true })
-  label = '';
+  @Input({ required: false })
+  disabled = false;
 
   @Input()
-  placeholder = 'Select...';
+  placeholder = 'select...';
 
   @Input({ required: true })
-  options: EditorOption<T>[] = [];
+  options: EditorSelectOption[] = [];
 
   @Input()
-  value?: T;
+  value?: number;
 
   @Output()
-  valueChange = new EventEmitter<T>();
+  valueChange = new EventEmitter<number>();
 
   protected expanded = false;
 
   protected toggle(): void {
-    this.expanded = !this.expanded;
+    this.expanded = this.disabled ? false : !this.expanded;
   }
 
-  protected select(option: EditorOption<T>): void {
+  get hasValue(): boolean {
+    return this.value !== null && this.selectedLabel !== this.placeholder;
+  }
 
-    this.value = option.value;
+  protected select(option: EditorSelectOption): void {
+
+    this.value = option.id;
     this.expanded = false;
 
-    this.valueChange.emit(option.value);
+    this.valueChange.emit(option.id);
   }
 
   protected get selectedLabel(): string {
-
-    const option = this.options.find(o => o.value === this.value);
+    const option = this.options.find(o => o.id === this.value);
     return option?.label ?? this.placeholder;
   }
 
-  protected isSelected(option: EditorOption<T>): boolean {
-    return option.value === this.value;
+  protected isSelected(option: EditorSelectOption): boolean {
+    return option.id === this.value;
   }
 
   @HostListener('document:click', ['$event'])

@@ -1,0 +1,33 @@
+@if (snackbar(); as snackbar) {
+
+<div class="snackbar" [class.loading]="snackbar.state === 'loading'" [class.success]="snackbar.state === 'success'"
+    [class.error]="snackbar.state === 'error'" [class.warning]="snackbar.state === 'warning'"
+    [class.info]="snackbar.state === 'info'">
+
+    <span class="label message">
+        {{ snackbar.message }}
+    </span>
+
+    @if (snackbar.state === 'loading') {
+    <div class="spinner"></div>
+    }
+
+    @if (snackbar.state === 'success') {
+    <span class="material-symbols-outlined success">check_circle</span>
+    }
+
+    @if (snackbar.state === 'error') {
+    <span class="material-symbols-outlined error">error</span>
+    }
+
+    @if (snackbar.state === 'warning') {
+    <span class="material-symbols-outlined warning">warning</span>
+    }
+
+    @if (snackbar.state === 'info') {
+    <span class="material-symbols-outlined info">info</span>
+    }
+
+</div>
+
+}

@@ -1,0 +1,73 @@
+:root {
+
+    --surface: linear-gradient(0deg, #0D0A0B, #161a1d);
+    --blueprint-surface: #14171c;
+    --rainbow-gradient: linear-gradient(-45deg,
+            #f80c12,
+            #ff4422,
+            #ff9933,
+            #FFFF00,
+            #35d535,
+            #12bdb9,
+            #4444dd,
+            #442299);
+
+    --accent-success: rgba(53, 213, 53, .06);
+    --accent-success-border: rgba(53, 213, 53, .45);
+    --accent-error: rgba(248, 12, 18, .06);
+    --accent-error-border: rgba(248, 12, 18, .45);
+    --accent-info: rgba(18, 189, 185, .06);
+    --accent-info-border: rgba(18, 189, 185, .45);
+    --accent-warning: rgba(255, 153, 51, .06);
+    --accent-warning-border: rgba(255, 153, 5, .45);
+
+    --surface-hover: rgba(90, 170, 255, .05);
+
+    --background: rgba(90, 170, 255, .03);
+    --background-disabled: rgba(255, 255, 255, .025);
+    --background-active: rgba(90, 170, 255, .06);
+
+    --backdrop-filter: blur(3px);
+
+    --border-color: rgba(90, 170, 255, .18);
+    --border-color-disabled: rgba(90, 170, 255, .18);
+    --border-color-active: rgba(90, 170, 255, .45);
+
+    --border-width: 1px;
+    --border-style: solid;
+    --border-radius: .8rem;
+
+    --accent: rgba(90, 170, 255, .3);
+    --accent-active: rgba(90, 170, 255, .9);
+    --accent-disabled: rgba(90, 170, 255, .18);
+
+    --icon-font-size: 1.25rem;
+
+    --menu-nav-margin: 8dvh;
+    --padding: 0.75rem;
+    --small-gap: 0.35rem;
+
+    --shadow-accent:
+        inset 0 0 12px rgba(90, 170, 255, .05),
+        0 0 10px rgba(90, 170, 255, .08);
+
+    --button-transition:
+        background .15s ease,
+        border-color .15s ease,
+        box-shadow .15s ease;
+    --button-letter-spacing: .02em;
+    --button-pointer: pointer;
+
+    --text-primary: white;
+    --text-secondary: rgba(255, 255, 255, .75);
+    --text-disabled: rgba(255, 255, 255, .3);
+
+    --title-font-size: 1.4rem;
+    --title-font-weight: 600;
+
+    --text-font-size: 0.95rem;
+    --text-font-weight: 200;
+
+    --label-font-size: 0.72rem;
+    --letter-spacing: 0.09em;
+}

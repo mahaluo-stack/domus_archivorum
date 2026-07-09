@@ -5,14 +5,15 @@ import {
   Output
 } from '@angular/core';
 import { Region } from '../../../../core/models/types/anatomy.types';
+import { MusclePart } from '../../../../core/models/interfaces/muscle/muscle.part.interface';
 
 @Component({
-  selector: 'anatomia',
+  selector: 'anatomia-svg',
   standalone: true,
-  templateUrl: './anatomia.component.html',
-  styleUrls: ['./anatomia.component.scss']
+  templateUrl: './anatomia-svg.component.html',
+  styleUrls: ['./anatomia-svg.component.scss']
 })
-export class AnatomiaComponent {
+export class AnatomiaSvgComponent {
 
   @Input({ required: true }) regions: Region[] = [];
   @Input({ required: true }) viewBox = '';
@@ -22,9 +23,11 @@ export class AnatomiaComponent {
     scale: 1
   };
   @Input() selectedIds = new Set<string>();
+  @Input() muscleParts = new Set<MusclePart>();
   @Output() regionClicked = new EventEmitter<Region>();
 
   click(region: Region) {
+    console.log('region:', region)
     this.regionClicked.emit(region);
   }
 

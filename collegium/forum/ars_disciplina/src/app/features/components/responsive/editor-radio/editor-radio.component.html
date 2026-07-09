@@ -1,0 +1,25 @@
+<div class="flex-column">
+    <span class="text">
+        {{ label }}
+    </span>
+    <div class="flex-row">
+
+        @for (option of options; track option.value) {
+        <div class="flex-column editor-radio-button" [class.selected]="selectedValue() === option.value"
+            (click)="select(option)">
+            <span class="label" [class.selected]="selectedValue() === option.value">
+                {{ option.source }}
+            </span>
+
+            @if (option.target) {
+            <span class="material-symbols-outlined" [class.active]="selectedValue() === option.value">
+                arrow_downward_alt
+            </span>
+            <span class="label" [class.selected]="selectedValue() === option.value">
+                {{ option.target }}
+            </span>
+            }
+        </div>
+        }
+    </div>
+</div>

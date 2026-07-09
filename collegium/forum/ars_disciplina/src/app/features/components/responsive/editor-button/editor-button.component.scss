@@ -1,0 +1,22 @@
+@use 'mixins' as m;
+
+.editor-button {
+
+    @include m.editor-button;
+    @include m.editor-surface;
+    @include m.editor-border;
+
+    text-align: center;
+}
+
+.editor-button.active {
+
+    @include m.editor-surface-active;
+    @include m.editor-border-active;
+}
+
+.editor-button.disabled {
+
+    @include m.editor-surface-disabled;
+    @include m.editor-border-disabled;
+}

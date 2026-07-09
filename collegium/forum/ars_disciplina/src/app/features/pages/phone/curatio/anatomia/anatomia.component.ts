@@ -1,55 +1,64 @@
-import { Component, DestroyRef, ElementRef, inject, OnInit, ViewChild } from '@angular/core';
+import { Component, DestroyRef, ElementRef, inject, OnInit, signal, ViewChild } from '@angular/core';
 import { PageHeaderComponent } from "../../../../components/phone/page-header/page-header.component";
-import { AnatomiaComponent } from "../../../../components/responsive/anatomia/anatomia.component";
+import { AnatomiaSvgComponent } from "../../../../components/responsive/anatomia-svg/anatomia-svg.component";
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { Region, AnatomyView } from '../../../../../core/models/types/anatomy.types';
 import { AnatomyService } from '../../../../../core/services/anatomy.service';
 import { EditorOverlayComponent } from "./editor-overlay/editor-overlay.component";
-import { EditorOption } from '../../../../../core/models/interfaces/ui/editor.option.interface';
+import { RegistryOverlayComponent } from "./registry-overlay/registry-overlay.component";
+
+enum Workspace {
+  Editor = 0,
+  Registry = 1
+}
 
 @Component({
-  selector: 'app-anatomia-wrapper',
+  selector: 'app-anatomia',
   standalone: true,
-  imports: [PageHeaderComponent, AnatomiaComponent, EditorOverlayComponent],
-  templateUrl: './anatomia-wrapper.component.html',
-  styleUrl: './anatomia-wrapper.component.scss'
+  imports: [PageHeaderComponent, AnatomiaSvgComponent, EditorOverlayComponent, RegistryOverlayComponent],
+  templateUrl: './anatomia.component.html',
+  styleUrl: './anatomia.component.scss'
 })
-export class AnatomiaWrapperComponent implements OnInit {
-  saveRelationships() {
-  }
+export class AnatomiaComponent implements OnInit {
+
+  protected readonly Workspace = Workspace;
+
+
   protected editorExpanded = false;
   @ViewChild('blueprint', { static: true })
   blueprint!: ElementRef<HTMLDivElement>;
-  protected sourceOptions: EditorOption<string>[] = [
-    {
-      value: 'pec-major',
-      label: 'Pectoralis Major'
-    },
-    {
-      value: 'lat',
-      label: 'Latissimus Dorsi'
-    },
-    {
-      value: 'trap',
-      label: 'Trapezius'
+
+
+  currentWorkspace = Workspace.Editor;
+  private startX = 0;
+
+  pointerDown(event: PointerEvent) {
+    this.startX = event.clientX;
+  }
+
+  pointerUp(event: PointerEvent) {
+
+    const delta = event.clientX - this.startX;
+
+    if (delta > 75) {
+      this.previousWorkspace();
     }
-  ];
-  protected relationshipOptions: EditorOption<string>[] = [
-    {
-      value: 'muscle-group',
-      label: 'muscle → muscle group'
-    },
-    {
-      value: 'part-muscle',
-      label: 'muscle parts → muscle'
-    },
-    {
-      value: 'part-exercise',
-      label: 'muscle parts → exercise'
+
+    if (delta < -75) {
+      this.nextWorkspace();
     }
-  ];
+  }
+
+  nextWorkspace() {
+    this.currentWorkspace = 1;
+  }
+
+  previousWorkspace() {
+    this.currentWorkspace = 0;
+  }
 
   ngOnInit(): void {
+
     this.updateGridOffset();
     this.loadSvg();
   }
@@ -99,7 +108,6 @@ export class AnatomiaWrapperComponent implements OnInit {
         this.transform = anatomy.transform;
 
       });
-
   }
 
   protected onRegionClicked(region: Region): void {
@@ -157,5 +165,4 @@ export class AnatomiaWrapperComponent implements OnInit {
 
     }
   }
-
 }

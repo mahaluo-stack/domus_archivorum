@@ -1,0 +1,79 @@
+@mixin editor-button {
+
+    letter-spacing: var(--button-letter-spacing);
+    padding: var(--padding);
+    background: var(--background);
+
+    color: var(--text-secondary);
+    font-weight: var(--label-font-weight);
+    transition: var(--button-transition);
+
+    cursor: var(--button-pointer);
+}
+
+@mixin editor-border {
+    border-width: var(--border-width);
+    border-style: var(--border-style);
+    border-color: var(--border-color);
+    border-radius: var(--border-radius);
+}
+
+@mixin editor-border-active {
+    @include editor-border;
+
+    border-color: var(--border-color-active);
+}
+
+@mixin editor-border-disabled {
+    @include editor-border;
+
+    border-color: var(--border-color-disabled);
+}
+
+
+@mixin editor-surface {
+    background: var(--background);
+    color: var(--text-secondary);
+    cursor: pointer;
+}
+
+@mixin editor-surface-active {
+
+    @include editor-surface;
+    
+    background: var(--background-active);
+    color: var(--text-primary);
+    box-shadow: var(--shadow-accent);
+}
+
+@mixin editor-surface-disabled {
+
+    background: var(--background-disabled);
+    color: var(--text-disabled);
+    box-shadow: none;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+@mixin editor-label {
+
+    font-size: var(--label-font-size);
+    font-weight: var(--label-font-weight);
+    color: var(--text-secondary);
+    letter-spacing: var(--letter-spacing);
+    text-transform: lowercase;
+}
+
+@mixin editor-label-active {
+
+    @include editor-label;
+
+    color: var(--text-primary);
+}
+
+@mixin editor-label-disabled {
+
+    @include editor-label;
+
+    color: var(--text-disabled);
+}

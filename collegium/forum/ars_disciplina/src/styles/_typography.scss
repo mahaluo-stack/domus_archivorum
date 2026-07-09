@@ -1,0 +1,34 @@
+.label {
+
+    font-size: var(--label-font-size);
+    font-weight: var(--label-font-weight);
+    color: var(--text-secondary);
+    letter-spacing: var(--label-letter-spacing);
+    text-transform: lowercase;
+}
+
+.label.selected {
+      color: var(--text-primary);
+}
+
+.option {
+    font-style: italic;
+}
+
+.text {
+
+    font-size: var(--text-font-size);
+    font-weight: var(--text-font-weight);
+    letter-spacing: var(--letter-spacing);
+    color: var(--text-primary);
+    text-transform: lowercase;
+}
+
+.title {
+
+    font-size: var(--title-font-size);
+    font-weight: var(--title-font-weight);
+    letter-spacing: var(--letter-spacing);
+    text-align: center;
+    text-transform: lowercase;
+}

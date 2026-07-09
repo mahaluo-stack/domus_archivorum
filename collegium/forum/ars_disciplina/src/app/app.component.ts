@@ -3,11 +3,12 @@ import { RouterOutlet } from '@angular/router';
 import { UserService } from './core/services/user.service';
 import { DeviceService } from './core/services/device.service';
 import { Role } from './core/models/constants/roles.enum';
+import { EditorSnackbarComponent } from "./features/components/responsive/editor-snackbar/editor-snackbar.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, EditorSnackbarComponent],
   providers: [DeviceService],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'

@@ -2,13 +2,10 @@
 
     height: 48px;
     width: 100dvw;
-    
+    position: relative;
+    z-index: 300;
     display: grid;
     grid-template-columns: auto auto auto;
-}
-
-.title-container {
-    align-self: center;
 }
 
 .back-button,
@@ -23,22 +20,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
     border: none;
     border-radius: 50%;
-
     background: transparent;
-    color: white;
-
+    color: var(--text-primary);
     cursor: pointer;
-}
-
-h1 {
-
-    margin: 0;
-
-    text-align: center;
-
-    font-size: 1.4rem;
-    font-weight: 600;
 }

@@ -1,0 +1,26 @@
+@use 'mixins' as m;
+
+.icon-button {
+
+    @include m.editor-button;
+    @include m.editor-surface;
+    @include m.editor-border;
+
+    text-align: center;
+    height: var(--icon-font-size);
+    width: var(--icon-font-size);
+}
+
+.icon-button.active {
+
+    @include m.editor-surface-active;
+    @include m.editor-border-active;
+
+    backdrop-filter: var(--backdrop-filter);
+}
+
+.icon-button.disabled {
+
+    @include m.editor-surface-disabled;
+    @include m.editor-border-disabled;
+}

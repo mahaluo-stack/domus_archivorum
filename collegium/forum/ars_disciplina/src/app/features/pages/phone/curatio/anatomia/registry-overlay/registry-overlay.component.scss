@@ -1,0 +1,21 @@
+.editor-overlay {
+
+    position: absolute;
+    margin-top: 48px;
+    inset: 0;
+    pointer-events: none;
+    z-index: 100;
+}
+
+.editor-content {
+
+    padding: var(--padding);
+    pointer-events: auto;
+    height: 100%;
+    justify-content: space-between;
+}
+
+.editor-button-container {
+    margin-bottom: var(--menu-nav-margin);
+    justify-content: space-between;
+}

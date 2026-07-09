@@ -11,7 +11,7 @@ import {
   Router
 } from '@angular/router';
 import { filter } from 'rxjs';
-import { PageHeaderService } from '../../../../core/services/page-header.service';
+import { PageHeaderService } from '../../../../core/services/page.header.service';
 
 @Component({
   selector: 'page-header',

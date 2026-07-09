@@ -1,0 +1,29 @@
+@use 'mixins' as m;
+
+.textfield-input {
+
+    @include m.editor-surface-active;
+    @include m.editor-border-active;
+    @include m.editor-label-active;
+
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    height: 2.25rem;
+    padding: var(--padding);
+    outline: none;
+    transition: var(--button-transition);
+}
+
+.textfield-input::placeholder {
+
+    @include m.editor-label-disabled;
+}
+
+.textfield-input:disabled {
+
+    @include m.editor-surface-disabled;
+    @include m.editor-border-disabled;
+    @include m.editor-label-disabled;
+    opacity: 1;
+}

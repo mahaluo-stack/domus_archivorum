@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { map } from 'rxjs';
 import { MusculorumService } from '../../../../../../core/services/api/musculorum.service';
-import { PageHeaderService } from '../../../../../../core/services/page-header.service';
+import { PageHeaderService } from '../../../../../../core/services/page.header.service';
 import { PageWrapperComponent } from '../../../../../components/phone/page-wrapper/page-wrapper.component';
 
 @Component({

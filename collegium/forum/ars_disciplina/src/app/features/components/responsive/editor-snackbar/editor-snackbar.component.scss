@@ -1,0 +1,136 @@
+@use 'mixins' as m;
+
+.snackbar {
+
+    @include m.editor-border-active;
+    @include m.editor-surface-active;
+
+    position: fixed;
+    left: 50%;
+    bottom: 2rem;
+    transform: translateX(-50%);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    gap: var(--small-gap);
+    min-width: 18rem;
+    max-width: 32rem;
+    padding: var(--padding);
+    backdrop-filter: var(--backdrop-filter);
+    transition: var(--button-transition);
+    z-index: 10000;
+    cursor: none;
+    pointer-events: none;
+}
+
+.snackbar.loading {
+    @include m.editor-border-active;
+    @include m.editor-surface-active;
+}
+
+.snackbar.success {
+    @include m.editor-border-active;
+    @include m.editor-surface-active;
+
+    background: var(--accent-success);
+    border-color: var(--accent-success-border);
+}
+
+.snackbar.error {
+    @include m.editor-border-active;
+    @include m.editor-surface-active;
+
+    background: var(--accent-error);
+    border-color: var(--accent-error-border);
+}
+
+.snackbar.warning {
+    @include m.editor-border-active;
+    @include m.editor-surface-active;
+
+    background: var(--accent-warning);
+    border-color: var(--accent-warning-border);
+}
+
+.snackbar.info {
+    @include m.editor-border-active;
+    @include m.editor-surface-active;
+
+    background: var(--accent-info);
+    border-color: var(--accent-info-border);
+}
+
+.snackbar::after {
+    content: '';
+
+    @include m.editor-surface-active;
+
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    width: 100%;
+    height: 2px;
+
+    transform-origin: left;
+    animation: snackbar-progress 750ms linear forwards;
+}
+
+@keyframes snackbar-progress {
+    from {
+        transform: scaleX(1);
+    }
+
+    to {
+        transform: scaleX(0);
+    }
+}
+
+@keyframes snackbar-in {
+    from {
+        opacity: 0;
+        transform: translate(-50%, 1rem);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+}
+
+.snackbar {
+    animation: snackbar-in .2s ease-out;
+}
+
+.spinner {
+    width: 1rem;
+    height: 1rem;
+
+    border-radius: 50%;
+    border: 2px solid var(--border-color-active);
+    border-right-color: transparent;
+
+    animation: snackbar-spin .8s linear infinite;
+
+    flex-shrink: 0;
+}
+
+@keyframes snackbar-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.icon {
+    width: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-weight: var(--text-font-weight);
+    flex-shrink: 0;
+}
+
+.message {
+    flex: 1;
+}

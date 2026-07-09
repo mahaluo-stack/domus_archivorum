@@ -30,7 +30,7 @@ export class AnatomySvgParser {
 
         const viewBox = this.parseViewBox(svg);
 
-        const paths = this.extractPaths(svg);
+        const paths = this.extractPaths(svg);        
 
         const regions: Region[] = [];
 

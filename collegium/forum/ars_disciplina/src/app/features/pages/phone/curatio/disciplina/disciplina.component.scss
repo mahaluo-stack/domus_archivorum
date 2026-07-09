@@ -1,0 +1,52 @@
+.page-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100dvh;
+    width: 100%;
+    overflow: hidden;
+    background: #14171c;
+}
+
+.page-wrapper::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+
+    background:
+        /* Minor grid */
+        linear-gradient(rgba(90, 170, 255, 0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(90, 170, 255, 0.025) 1px, transparent 1px),
+
+        /* Major grid */
+        linear-gradient(rgba(90, 170, 255, 0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(90, 170, 255, 0.06) 1px, transparent 1px);
+
+    background-size:
+        16px 16px,
+        16px 16px,
+        64px 64px,
+        64px 64px;
+
+    background-position:
+        var(--grid-x) var(--grid-y),
+        var(--grid-x) var(--grid-y),
+        calc(var(--grid-x) - 1px) calc(var(--grid-y) - 1px),
+        calc(var(--grid-x) - 1px) calc(var(--grid-y) - 1px);
+}
+
+.page-wrapper::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+
+    background:
+        radial-gradient(circle at 50% 35%,
+            rgba(0, 170, 255, 0.02),
+            transparent 70%),
+        radial-gradient(circle,
+            transparent 60%,
+            rgba(0, 0, 0, 0.28) 100%);
+}

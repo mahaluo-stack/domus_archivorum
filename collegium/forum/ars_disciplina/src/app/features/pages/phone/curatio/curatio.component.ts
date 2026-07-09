@@ -19,9 +19,9 @@ import { PageWrapperComponent } from "../../../components/phone/page-wrapper/pag
 export class CuratioComponent {
   sections = [
     {
-      title: 'exercises',
+      title: 'disciplina',
       icon: 'physical_therapy',
-      route: '/curatio/exercises'
+      route: '/curatio/disciplina'
     },
     {
       title: 'anatomia',

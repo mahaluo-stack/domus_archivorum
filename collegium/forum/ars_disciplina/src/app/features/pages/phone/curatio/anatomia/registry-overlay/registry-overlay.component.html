@@ -1,0 +1,41 @@
+<div class="flex-column editor-overlay">
+    <div class="flex-column editor-content">
+        <div class="flex-column">
+
+            <div class="flex-row">
+                <editor-radio label="registry" [selectedValue]="selectedRadioOption" [options]="radioOptions"
+                    (clicked)="onRadioEvent($event)" />
+            </div>
+            <div class="flex-column">
+                <editor-select [disabled]="getDisabledSourceSelect()" [placeholder]="sourcePlaceholder" [options]="sourceOptions"
+                    [value]="selectedSource" (valueChange)="onSourceChange($event)">
+                </editor-select>
+            </div>
+
+            <div class="flex-column">
+                <editor-text-field [disabled]="getDisabledNameTextField()" [value]="nameTextFieldValue" placeholder="name"
+                    (valueChange)="handleNameValueChange($event)" />
+                <editor-text-field [disabled]="getDisabledDescriptionTextField()" [value]="descriptionTextFieldValue"
+                    placeholder="description" (valueChange)="handleDescriptionValueChange($event)" />
+            </div>
+        </div>
+
+        <div class="flex-row editor-button-container">
+            <div class="flex-row">
+                <editor-icon-button label="add_circle" [active]="getActiveAddButton()"
+                    [disabled]="!getActiveAddButton()" (clicked)="toggleAddPanel()" />
+
+                <editor-icon-button label="save" [active]="getActiveSaveButton()" [disabled]="!getActiveSaveButton()"
+                    (clicked)="onSave()" />
+            </div>
+
+            <div class="flex-row">
+                <editor-icon-button label="cancel" [active]="getActiveCancelButton()"
+                    [disabled]="!getActiveCancelButton()" (clicked)="clearSelection()" />
+
+                <editor-icon-button label="delete" [active]="!!selectedSource" [disabled]="!selectedSource"
+                    (clicked)="clearSelection()" />
+            </div>
+        </div>
+    </div>
+</div>

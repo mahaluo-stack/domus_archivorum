@@ -4,14 +4,8 @@
     width: min(90vw, 500px);
     height: 64px;
     padding: 1px;
-    border-radius: 32px;
-    background: linear-gradient(-45deg,
-            #f80c12,
-            #ff4422,
-            #ff9933,
-            #12bdb9,
-            #4444dd,
-            #442299);
+    border-radius: var(--border-radius);
+    background: var(--rainbow-gradient);
     background-size: 400% 400%;
     animation: gradient 100s ease infinite;
     align-self: flex-end;
@@ -26,8 +20,8 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    border-radius: 31px;
-    background: linear-gradient(0deg, #0D0A0B, #161a1d);
+    border-radius: var(--border-radius);
+    background: var(--surface);
     backdrop-filter: blur(16px);
 }
 
@@ -39,7 +33,7 @@
     justify-content: center;
     align-items: center;
     border-radius: 50%;
-    color: #8a8f98;
+    color: var(--text-secondary);
     text-decoration: none;
     transition:
         color 200ms ease,
@@ -48,15 +42,14 @@
 
 .menu-navigator a.active {
 
-    color: #ffffff;
+    color: var(--text-primary);
     transform: scale(1.1);
-
     text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
 }
 
 .menu-navigator a i {
 
-    font-size: 1.4rem;
+    font-size: var(--title-font-size);
 }
 
 @keyframes gradient {

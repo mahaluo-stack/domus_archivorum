@@ -1,11 +1,19 @@
+@use 'mixins' as m;
+
 .page-wrapper {
     position: relative;
-    display: flex;
-    flex-direction: column;
     height: 100dvh;
     width: 100%;
     overflow: hidden;
-    background: #14171c;
+    background: var(--blueprint-surface);
+}
+
+.anatomia-wrapper {
+    position: relative;
+    height: 100dvh;
+    width: 100%;
+    pointer-events: none;
+    overflow: hidden;
 }
 
 .page-wrapper::before {
@@ -51,24 +59,17 @@
             rgba(0, 0, 0, 0.28) 100%);
 }
 
-
-
 .menu-navigator-container {
     align-self: flex-end;
     margin: auto;
     margin-bottom: 1dvh;
 }
 
-
 .toolbar {
     position: absolute;
-    top: 1rem;
-    right: 1rem;
-
-    display: flex;
-    flex-direction: column;
-    gap: .75rem;
-
+    bottom: 1rem;
+    left: 1rem;
+    pointer-events: auto;
     z-index: 100;
 }
 
@@ -77,17 +78,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
-
     padding: 0;
-
     cursor: pointer;
-
-    transition:
-        background .15s ease,
-        border-color .15s ease,
-        color .15s ease,
-        transform .15s ease,
-        box-shadow .15s ease;
+    transition: var(--button-transition)
 }
 
 .toolbar div:active {
@@ -97,4 +90,68 @@
 .toolbar div .material-symbols-outlined {
     margin-bottom: 12px;
     user-select: none;
+}
+
+.workspace-container {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 100;
+}
+
+.workspace {
+    position: absolute;
+    inset: 0;
+    transition: transform .3s ease;
+    pointer-events: auto;
+}
+
+editor-overlay.workspace {
+    transform: translateX(0%);
+}
+
+registry-overlay.workspace {
+    transform: translateX(100%);
+}
+
+editor-overlay.workspace.workspace-left {
+    transform: translateX(-100%);
+}
+
+registry-overlay.workspace.workspace-active {
+    transform: translateX(0%);
+}
+
+.workspace-indicator {
+
+    position: absolute;
+    left: 50%;
+    bottom: 1.25rem;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    pointer-events: none;
+    z-index: 200;
+}
+
+.workspace-indicator div {
+
+    @include m.editor-surface-disabled;
+    @include m.editor-border-disabled;
+
+    width: 2rem;
+    height: .25rem;
+    transition:
+        background .2s ease,
+        box-shadow .2s ease,
+        transform .2s ease;
+}
+
+.workspace-indicator div.active {
+
+    @include m.editor-surface-active;
+    @include m.editor-border-active;
+    transform: scaleX(1.2);
 }

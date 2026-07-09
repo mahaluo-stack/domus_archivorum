@@ -1,5 +1,5 @@
 export interface MusculiRegioDTO {
-    musculiRegioIdentitas: number;
+    musculiRegioIdentitas?: number;
     nomen: string;
     descriptio: string;
 }

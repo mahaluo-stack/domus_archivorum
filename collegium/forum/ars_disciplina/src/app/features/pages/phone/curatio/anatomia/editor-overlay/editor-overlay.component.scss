@@ -1,0 +1,71 @@
+@use 'mixins' as m;
+
+.editor-overlay {
+
+    position: absolute;
+    margin-top: 48px;
+    inset: 0;
+    pointer-events: none;
+    z-index: 100;
+}
+
+.editor-content {
+
+    padding: var(--padding);
+    pointer-events: auto;
+    height: 100%;
+    justify-content: space-between;
+}
+
+.editor-chip-container {
+    width: 100%;
+    min-width: 0;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chip-container-row {
+    width: 100%;
+    min-width: 0;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.chip-container-column {
+    width: 100%;
+    min-width: 0;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.editor-chip {
+
+    @include m.editor-surface-active;
+    @include m.editor-border-active;
+
+    align-items: center;
+    width: 100%;
+    min-width: 0;
+    font-size: var(--text-font-size);
+    height: 2rem;
+    padding-inline: .85rem .55rem;
+    transition: var(--button-transition);
+}
+
+.editor-chip-text {
+    flex: 1;
+    min-width: 0;
+
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.editor-chip .material-symbols-outlined {
+    flex-shrink: 0;
+}
+
+.editor-button-container {
+    margin-bottom: var(--menu-nav-margin);
+    justify-content: space-between;
+}

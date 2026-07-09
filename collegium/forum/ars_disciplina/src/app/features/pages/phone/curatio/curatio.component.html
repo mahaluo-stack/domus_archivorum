@@ -3,7 +3,7 @@
     <mat-nav-list class='curatio-menu-list'>
 
         @for(section of sections; track section.route) {
-        <div class='curatio-menu-item-row' routerLinkActive="active" [routerLink]="section.route"
+        <div class='flex-row curatio-menu-item-row' routerLinkActive="active" [routerLink]="section.route"
             [routerLinkActiveOptions]="{ exact: false }">
             <div class="material-symbols-outlined">
                 {{ section.icon }}

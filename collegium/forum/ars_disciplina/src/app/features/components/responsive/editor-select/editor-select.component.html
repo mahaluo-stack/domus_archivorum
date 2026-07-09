@@ -1,22 +1,26 @@
-<div #container class="editor-select">
-    <label class="editor-select-label">
-        {{ label }}
-    </label>
-    <button type="button" class="editor-select-button" [class.expanded]="expanded" (click)="toggle()">
-        <span class="editor-select-value">
+<div #container class="flex-column" style="position: relative;">
+    <div class="editor-select-button flex-row" [class.expanded]="expanded" [class.disabled]="disabled"
+        (click)="toggle()">
+        <span class="editor-select-value" [class.disabled]="disabled">
             {{ selectedLabel }}
         </span>
-        <span class="material-symbols-outlined editor-select-icon">
+        <div class="material-symbols-outlined editor-select-icon" [class.active]="!disabled" [class.disabled]="disabled">
             keyboard_arrow_down
-        </span>
-    </button>
+        </div>
+    </div>
     @if (expanded) {
-    <div class="editor-select-dropdown">
-        @for (option of options; track option.value) {
-        <button type="button" class="editor-select-option" [class.selected]="isSelected(option)"
+    <div class="flex-column editor-select-dropdown">
+        @for (option of options; track option.id) {
+        <div class="flex-column editor-select-option" [class.selected]="isSelected(option)"
             (click)="select(option)">
             {{ option.label }}
-        </button>
+
+            @if (option.description !== '') {
+            <div class="label option">
+                {{ option.description }}
+            </div>
+            }
+        </div>
         }
     </div>
     }

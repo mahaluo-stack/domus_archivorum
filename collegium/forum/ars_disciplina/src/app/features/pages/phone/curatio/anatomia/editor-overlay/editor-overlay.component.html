@@ -1,0 +1,64 @@
+<div class="flex-column editor-overlay">
+    <div class="flex-column editor-content">
+
+        <div class="flex-column">
+            <div class="flex-row">
+                <editor-radio [selectedValue]="selectedRadioOption" label="configuration" [options]="radioOptions"
+                    (clicked)="onRadioEvent($event)" />
+            </div>
+
+            <div class="flex-column">
+                <editor-select [disabled]="sourceLock" [placeholder]="sourcePlaceholder" [options]="sourceOptions"
+                    [value]="selectedSource" (valueChange)="onSourceChange($event)">
+                </editor-select>
+
+                <editor-select [disabled]="targetLock" [placeholder]="targetPlaceholder" [options]="targetOptions"
+                    [value]="selectedTarget" (valueChange)="targetSelected($event)">
+                </editor-select>
+            </div>
+
+            <div class="flex-row editor-chip-container">
+                <div class="flex-row chip-container-row">
+                    @if (selectedSource) {
+                    <div class="flex-row editor-chip">
+                        <span class="label selected editor-chip-text">
+                            {{ getSourceLabel() }}
+                        </span>
+                        <span class="material-symbols-outlined active" (click)="removeSource()">
+                            close_small
+                        </span>
+                    </div>
+                    }
+                </div>
+                <div class="flex-column chip-container-column">
+                    @for (target of selectedTargets; track target) {
+                    <div class="flex-row chip-container-row">
+                        <div class="flex-row editor-chip">
+                            <span class="label selected editor-chip-text">
+                                {{ getTargetLabel(target) }}
+                            </span>
+                            <span class="material-symbols-outlined active" (click)="removeTarget(target)">
+                                close_small
+                            </span>
+                        </div>
+                    </div>
+                    }
+                </div>
+            </div>
+        </div>
+        <div class="flex-row editor-button-container">
+            <div class="flex-row">
+                <editor-icon-button label="save" [active]="getActiveSaveButton()" [disabled]="!getActiveSaveButton()"
+                    (clicked)="onSave()" />
+            </div>
+
+            <div class="flex-row">
+                <editor-icon-button label="cancel" [active]="!sourceLock" [disabled]="sourceLock"
+                    (clicked)="clearSelection()" />
+
+                <editor-icon-button label="delete" [active]="!!selectedSource" [disabled]="!selectedSource"
+                    (clicked)="onDelete()" />
+            </div>
+        </div>
+    </div>
+</div>

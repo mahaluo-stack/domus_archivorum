@@ -1,0 +1,22 @@
+@use 'mixins' as m;
+
+.editor-radio-button {
+
+    @include m.editor-surface;
+    @include m.editor-border;
+    @include m.editor-label-disabled;
+
+    align-items: center;
+    justify-content: center;
+    min-height: 2.75rem;
+    min-width: 5.5rem;
+    padding: var(--padding);
+    transition: .15s;
+}
+
+.editor-radio-button.selected {
+
+    @include m.editor-surface-active;
+    @include m.editor-border-active;
+    @include m.editor-label-active;
+}

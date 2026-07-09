@@ -1,21 +1,20 @@
 .material-symbols-outlined {
-    color: white;
+    color: var(--text-primary);
     margin-left: 25px;
 }
 
 .curatio-menu-item-title {
-    color: white;
+    color: var(--text-primary);
     margin-inline: 25px;
 }
 
 .curatio-menu-item-row {
-    display: flex;
-    flex-direction: row;
     justify-content: flex-start;
     align-items: center;
     height: 10dvh;
     margin-bottom: 5px;
     position: relative;
+    cursor: pointer;
 
     &::after {
 
