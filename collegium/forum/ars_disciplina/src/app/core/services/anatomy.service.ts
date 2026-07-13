@@ -5,7 +5,7 @@ import { map, Observable } from 'rxjs';
 
 
 import { AnatomySvgParser } from '../util/anatomy.svg.parser';
-import { AnatomyModel, AnatomyView } from '../models/types/anatomy.types';
+import { AnatomyModel, AnatomyView } from '../models/anatomy.types';
 
 @Injectable({
     providedIn: 'root'

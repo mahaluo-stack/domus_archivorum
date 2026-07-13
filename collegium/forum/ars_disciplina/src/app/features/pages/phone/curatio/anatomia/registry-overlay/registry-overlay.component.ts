@@ -1,8 +1,8 @@
-import { Component, computed, inject, OnInit } from '@angular/core';
-import { EditorSelectOption } from '../../../../../../core/models/interfaces/ui/editor.select.option.interface';
+import { Component, computed, inject, input, OnInit } from '@angular/core';
+import { EditorSelectOption } from '../../../../../../core/models/ui/editor-select-option.interface';
 import { EditorSelectComponent } from "../../../../../components/responsive/editor-select/editor-select.component";
 import { EditorRadioComponent } from "../../../../../components/responsive/editor-radio/editor-radio.component";
-import { EditorRadioOption } from '../../../../../../core/models/interfaces/ui/editor.radio.option.interface';
+import { EditorRadioOption } from '../../../../../../core/models/ui/editor-radio-option.interface';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { MusculorumService } from '../../../../../../core/services/api/musculorum.service';
 import { EditorTextFieldComponent } from "../../../../../components/responsive/editor-text-field/editor-text-field.component";
@@ -11,6 +11,8 @@ import { MusculiDTO } from '../../../../../../core/models/dto/musculorum/musculi
 import { MusculiParsDTO } from '../../../../../../core/models/dto/musculorum/musculi-pars.dto.interface';
 import { MusculiRegioDTO } from '../../../../../../core/models/dto/musculorum/musculi-regio.dto.interface';
 import { SnackbarService } from '../../../../../../core/services/snackbar.service';
+import { Muscle } from '../../../../../../core/models/muscle/muscle.interface';
+import { MuscleGroup } from '../../../../../../core/models/muscle/muscle-group.interface';
 
 @Component({
   selector: 'registry-overlay',
@@ -65,41 +67,9 @@ export class RegistryOverlayComponent implements OnInit {
   protected modifiedMuscles: MusculiDTO[] = [];
   protected modifiedMuscleGroups: MusculiRegioDTO[] = [];
 
-  readonly muscles = toSignal(
-    this.musculorumService.muscles$,
-    { initialValue: [] }
-  );
-  readonly muscleOptions = computed<EditorSelectOption[]>(() =>
-    this.muscles().map(muscle => ({
-      id: muscle.id!,
-      label: muscle.name,
-      description: muscle.description
-    }))
-  );
-
-  readonly muscleGroups = toSignal(
-    this.musculorumService.muscleGroups$,
-    { initialValue: [] }
-  );
-  readonly muscleGroupOptions = computed<EditorSelectOption[]>(() =>
-    this.muscleGroups().map(group => ({
-      id: group.id!,
-      label: group.name,
-      description: group.description
-    }))
-  );
-
-  readonly muscleParts = toSignal(
-    this.musculorumService.muscleParts$,
-    { initialValue: [] }
-  );
-  readonly musclePartOptions = computed<EditorSelectOption[]>(() =>
-    this.muscleParts().map(part => ({
-      id: part.id!,
-      label: part.name,
-      description: part.description
-    }))
-  );
+  readonly muscleOptions = input<EditorSelectOption[]>([]);
+  readonly muscleGroupOptions = input<EditorSelectOption[]>([]);
+  readonly musclePartOptions = input<EditorSelectOption[]>([]);
 
   protected selectedRadioOption: number | undefined;
   protected selectedSource?: number;
@@ -124,7 +94,7 @@ export class RegistryOverlayComponent implements OnInit {
 
     let source = this.sourceOptions[$event - 1];
 
-    this.nameTextFieldValue = source.label;
+    this.nameTextFieldValue = source.name;
     this.descriptionTextFieldValue = source.description;
   }
 
@@ -148,9 +118,8 @@ export class RegistryOverlayComponent implements OnInit {
   }
 
   protected getSourceName(): string {
-
-    if (this.selectedSource !== undefined) {
-      return this.sourceOptions[this.selectedSource - 1].label;
+    if (this.selectedSource) {
+      return this.sourceOptions[this.selectedSource].name
     }
     return '';
   }
@@ -169,14 +138,14 @@ export class RegistryOverlayComponent implements OnInit {
 
   protected getSourceDescription(): string {
     if (this.selectedSource) {
-      return this.sourceOptions[this.selectedSource - 1].description;
+      return this.sourceOptions[this.selectedSource].description;
     }
     return '';
   }
 
   protected onSave(): void {
     console.log('selected source: ', this.selectedSource);
-    console.log('selected sourceoption:', this.sourceOptions[this.selectedSource! - 1]);
+    console.log('selected sourceoption:', this.sourceOptions[this.selectedSource!]);
   }
 
   protected clearSelection(): void {
@@ -201,8 +170,8 @@ export class RegistryOverlayComponent implements OnInit {
     let existingSource = this.selectedSource;
 
     if (existingSource) {
-      let modifiedSource = this.sourceOptions[existingSource - 1];
-      modifiedSource.label = $value;
+      let modifiedSource = this.sourceOptions[existingSource];
+      modifiedSource.name = $value;
 
       if (this.selectedRadioOption === 1) {
         this.modifiedMuscleParts.push({
@@ -260,7 +229,7 @@ export class RegistryOverlayComponent implements OnInit {
   }
 
   protected handleDescriptionValueChange($value: string) {
-    this.sourceOptions[this.selectedSource! - 1].description = $value;
+    this.sourceOptions[this.selectedSource!].description = $value;
     this.activeSaveButton = true;
     this.descriptionTextFieldValue = $value;
   }

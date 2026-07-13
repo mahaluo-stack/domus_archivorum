@@ -1,4 +1,4 @@
-import { Region, regionNames, AnatomyView } from "../../../../core/models/types/anatomy.types";
+import { Region, regionNames, AnatomyView } from "../../../../core/models/anatomy.types";
 
 export function parseViewBox(svg: string): { w: number; h: number } {
 

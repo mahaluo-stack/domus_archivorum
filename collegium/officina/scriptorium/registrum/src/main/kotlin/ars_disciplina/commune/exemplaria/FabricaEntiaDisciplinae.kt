@@ -41,18 +41,19 @@ object FabricaEntiaDisciplinae {
             .map { it.musculiParsIdentitas }
             .toSet()
 
-        val musculi = RegistraMusculiParsMusculi.omniaPerClaves(musculiPars)
-            .map {it.musculiIdentitas }
+        val musculi = RegistraMusculiMusculiPars.omnia()
+            .filter { musculiPars.contains(it.musculiParsIdentitas) }
+            .map { it.musculiIdentitas }
             .toSet()
 
-        val musculiRegio = RegistraMusculiMusculiRegio.omniaPerClaves(musculi)
+        val musculiRegio = RegistraMusculiRegioMusculi.omnia()
+            .filter { musculi.contains(it.musculiIdentitas) }
             .map { it.musculiRegioIdentitas }
             .toSet()
 
         val instrumenti = RegistraDisciplinaInstrumenti.omniaPerClavemNecesse(disciplinaeIdentitas)
             .map { it.instrumentaIdentitas }
             .toSet()
-
         val genusInstrumenti = RegistraDisciplinaGeneraInstrumenti.omniaPerClavemNecesse(disciplinaeIdentitas)
             .map { it.genusInstrumentiIdentitas }
             .toSet()

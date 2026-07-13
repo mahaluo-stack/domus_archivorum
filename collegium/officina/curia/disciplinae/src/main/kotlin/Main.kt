@@ -1,4 +1,3 @@
-import ars_disciplina.Registra
 import io.ktor.server.netty.*
 
 

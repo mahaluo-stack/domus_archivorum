@@ -1,9 +1,9 @@
 import { MusculiParsDTO } from "../models/dto/musculorum/musculi-pars.dto.interface";
 import { MusculiRegioDTO } from "../models/dto/musculorum/musculi-regio.dto.interface";
 import { MusculiDTO } from "../models/dto/musculorum/musculi.dto.interface";
-import { MuscleGroup } from "../models/interfaces/muscle/muscle.group.interface";
-import { Muscle } from "../models/interfaces/muscle/muscle.interface";
-import { MusclePart } from "../models/interfaces/muscle/muscle.part.interface";
+import { MuscleGroup } from "../models/muscle/muscle-group.interface";
+import { Muscle } from "../models/muscle/muscle.interface";
+import { MusclePart } from "../models/muscle/muscle-part.interface";
 
 export class MuscleMapper {
 

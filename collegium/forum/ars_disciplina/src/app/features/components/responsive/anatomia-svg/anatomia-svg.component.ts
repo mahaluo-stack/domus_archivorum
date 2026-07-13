@@ -4,8 +4,8 @@ import {
   Input,
   Output
 } from '@angular/core';
-import { Region } from '../../../../core/models/types/anatomy.types';
-import { MusclePart } from '../../../../core/models/interfaces/muscle/muscle.part.interface';
+import { Region } from '../../../../core/models/anatomy.types';
+import { MusclePart } from '../../../../core/models/muscle/muscle-part.interface';
 
 @Component({
   selector: 'anatomia-svg',

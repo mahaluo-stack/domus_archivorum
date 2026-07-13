@@ -7,9 +7,11 @@
     </div>
 
     <div class="workspace-container">
-        <editor-overlay class="workspace" [class.workspace-left]="currentWorkspace !== Workspace.Editor" />
+        <editor-overlay [muscleOptions]="muscleOptions()" [muscleGroupOptions]="muscleGroupOptions()" [musclePartOptions]="musclePartOptions()"
+            class="workspace" [class.workspace-left]="currentWorkspace !== Workspace.Editor" />
 
-        <registry-overlay class="workspace" [class.workspace-active]="currentWorkspace === Workspace.Registry" />
+        <registry-overlay [muscleOptions]="muscleOptions()" [muscleGroupOptions]="muscleGroupOptions()" [musclePartOptions]="musclePartOptions()"
+            class="workspace" [class.workspace-active]="currentWorkspace === Workspace.Registry" />
 
     </div>
     <div class="workspace-indicator">

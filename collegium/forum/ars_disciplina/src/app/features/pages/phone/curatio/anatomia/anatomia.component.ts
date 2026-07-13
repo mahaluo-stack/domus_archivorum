@@ -1,11 +1,14 @@
-import { Component, DestroyRef, ElementRef, inject, OnInit, signal, ViewChild } from '@angular/core';
+import { Component, computed, DestroyRef, ElementRef, inject, OnInit, signal, ViewChild } from '@angular/core';
 import { PageHeaderComponent } from "../../../../components/phone/page-header/page-header.component";
 import { AnatomiaSvgComponent } from "../../../../components/responsive/anatomia-svg/anatomia-svg.component";
-import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
-import { Region, AnatomyView } from '../../../../../core/models/types/anatomy.types';
+import { takeUntilDestroyed, toSignal } from '@angular/core/rxjs-interop';
+import { Region, AnatomyView } from '../../../../../core/models/anatomy.types';
 import { AnatomyService } from '../../../../../core/services/anatomy.service';
 import { EditorOverlayComponent } from "./editor-overlay/editor-overlay.component";
 import { RegistryOverlayComponent } from "./registry-overlay/registry-overlay.component";
+import { MusculorumService } from '../../../../../core/services/api/musculorum.service';
+import { EditorSelectOption } from '../../../../../core/models/ui/editor-select-option.interface';
+import { NexuumService } from '../../../../../core/services/api/nexuum.service';
 
 enum Workspace {
   Editor = 0,
@@ -23,11 +26,48 @@ export class AnatomiaComponent implements OnInit {
 
   protected readonly Workspace = Workspace;
 
+  private readonly musculorumService = inject(MusculorumService);
+  private readonly nexuumService = inject(NexuumService);
+
+  readonly muscles = toSignal(
+    this.musculorumService.muscles$,
+    { initialValue: [] }
+  );
+  readonly muscleOptions = computed<EditorSelectOption[]>(() =>
+    this.muscles().map(muscle => ({
+      id: muscle.id!,
+      name: muscle.name,
+      description: muscle.description
+    }))
+  );
+
+  readonly muscleGroups = toSignal(
+    this.musculorumService.muscleGroups$,
+    { initialValue: [] }
+  );
+  readonly muscleGroupOptions = computed<EditorSelectOption[]>(() =>
+    this.muscleGroups().map(group => ({
+      id: group.id,
+      name: group.name,
+      description: group.description
+    }))
+  );
+
+  readonly muscleParts = toSignal(
+    this.musculorumService.muscleParts$,
+    { initialValue: [] }
+  );
+  readonly musclePartOptions = computed<EditorSelectOption[]>(() =>
+    this.muscleParts().map(part => ({
+      id: part.id,
+      name: part.name,
+      description: part.description
+    }))
+  );
 
   protected editorExpanded = false;
   @ViewChild('blueprint', { static: true })
   blueprint!: ElementRef<HTMLDivElement>;
-
 
   currentWorkspace = Workspace.Editor;
   private startX = 0;
@@ -61,6 +101,8 @@ export class AnatomiaComponent implements OnInit {
 
     this.updateGridOffset();
     this.loadSvg();
+    this.musculorumService.loadMusculorum();
+    this.nexuumService.loadMuscleNexus();
   }
 
   private updateGridOffset(): void {
@@ -162,7 +204,6 @@ export class AnatomiaComponent implements OnInit {
       this.selectedRegions = new Set(
         this.regions.map(r => r.id)
       );
-
     }
   }
 }

@@ -7,7 +7,7 @@ import {
   Output,
   ViewChild,
 } from '@angular/core';
-import { EditorSelectOption } from '../../../../core/models/interfaces/ui/editor.select.option.interface';
+import { EditorSelectOption } from '../../../../core/models/ui/editor-select-option.interface';
 
 @Component({
   selector: 'editor-select',
@@ -55,7 +55,7 @@ export class EditorSelectComponent<T = unknown> {
 
   protected get selectedLabel(): string {
     const option = this.options.find(o => o.id === this.value);
-    return option?.label ?? this.placeholder;
+    return option?.name ?? this.placeholder;
   }
 
   protected isSelected(option: EditorSelectOption): boolean {

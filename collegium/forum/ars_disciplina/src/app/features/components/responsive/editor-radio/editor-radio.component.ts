@@ -1,5 +1,5 @@
 import { Component, EventEmitter, input, Input, Output } from '@angular/core';
-import { EditorRadioOption } from '../../../../core/models/interfaces/ui/editor.radio.option.interface';
+import { EditorRadioOption } from '../../../../core/models/ui/editor-radio-option.interface';
 
 @Component({
   selector: 'editor-radio',

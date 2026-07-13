@@ -1,11 +1,8 @@
 package servitium.musculorum
 
 import ars_disciplina.musculorum.valores.identitas.MusculiIdentitas
-import ars_disciplina.musculorum.valores.identitas.MusculiParsIdentitas
-import ars_disciplina.nexuum.MinisteriumMusculiParsMusculi
 import ars_disciplina.registrum.musculorum.RegistrumMusculi
 import commune.contractus.responsa.musculorum.ResponsumMusculi
-import org.example.disciplinarum.ministeria.MinisteriumAngulorum
 import org.example.exemplaria.tabulae.Musculi
 import servitium.ServitiumLecturae
 import translatores.musculorum.TranslatorMusculi

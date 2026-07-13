@@ -2,7 +2,7 @@ import { inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserService } from '../services/user.service';
 import { filter, map } from 'rxjs';
-import { User } from '../models/interfaces/user.interface';
+import { User } from '../models/user.interface';
 
 export const AuthGuard = () => {
 

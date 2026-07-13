@@ -32,6 +32,6 @@ object ConstantiaNomenTabulae {
     const val NOMEN_TABULAE_DISCIPLINA_INSTRUMENTI = "disciplina_instrumenti"
     const val NOMEN_TABULAE_DISCIPLINA_GENERA_INSTRUMENTI = "disciplina_genera_instrumenti"
     const val NOMEN_TABULAE_DISCIPLINA_MUSCULI_PARS = "disciplina_musculi_pars"
-    const val NOMEN_TABULAE_MUSCULI_PARS_MUSCULI = "musculi_pars_musculi"
-    const val NOMEN_TABULAE_MUSCULI_MUSCULI_REGIO = "musculi_musculi_regio"
+    const val NOMEN_TABULAE_MUSCULI_MUSCULI_PARS = "musculi_musculi_pars"
+    const val NOMEN_TABULAE_MUSCULI_REGIO_MUSCULI = "musculi_regio_musculi"
 }

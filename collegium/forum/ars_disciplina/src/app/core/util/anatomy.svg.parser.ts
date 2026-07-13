@@ -1,7 +1,7 @@
 import svgpath from 'svgpath';
 import { svgPathProperties } from 'svg-path-properties';
 
-import { Region, ViewBox } from '../models/types/anatomy.types';
+import { Region, ViewBox } from '../models/anatomy.types';
 
 export interface AnatomyParseResult {
 

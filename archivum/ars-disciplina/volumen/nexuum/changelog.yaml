@@ -40,8 +40,8 @@ databaseChangeLog:
       file: disciplina-variationes/changelog.yaml
       relativeToChangelogFile: true
   - include:
-      file: musculi-musculi-regio/changelog.yaml
+      file: musculi-regio-musculi/changelog.yaml
       relativeToChangelogFile: true
   - include:
-      file: musculi-pars-musculi/changelog.yaml
+      file: musculi-musculi-pars/changelog.yaml
       relativeToChangelogFile: true

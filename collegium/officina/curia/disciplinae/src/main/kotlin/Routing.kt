@@ -6,6 +6,7 @@ import moderatores.moderatorInstrumentorum
 import moderatores.moderatorMusculorum
 import moderatores.moderatorPrehensionum
 import moderatores.moderatorRegularum
+import moderatores.nexuum.moderatorNexuum
 
 fun Application.configureRouting() {
 
@@ -15,4 +16,5 @@ fun Application.configureRouting() {
     routing { moderatorInstrumentorum() }
     routing { moderatorPrehensionum() }
     routing { moderatorRegularum() }
+    routing { moderatorNexuum() }
 }

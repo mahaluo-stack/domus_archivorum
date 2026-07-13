@@ -1,12 +1,12 @@
 import { Injectable, Signal, computed, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, forkJoin, map, Observable, tap } from 'rxjs';
-import { Muscle } from '../../models/interfaces/muscle/muscle.interface';
+import { Muscle } from '../../models/muscle/muscle.interface';
 import { apiUrl } from '../../models/constants/api.constants'
 import { MusculiDTO } from '../../models/dto/musculorum/musculi.dto.interface';
 import { MuscleGroupMapper, MuscleMapper, MusclePartMapper } from '../../mapping/musculorum.mapper';
-import { MuscleGroup } from '../../models/interfaces/muscle/muscle.group.interface';
-import { MusclePart } from '../../models/interfaces/muscle/muscle.part.interface';
+import { MuscleGroup } from '../../models/muscle/muscle-group.interface';
+import { MusclePart } from '../../models/muscle/muscle-part.interface';
 import { MusculiRegioDTO } from '../../models/dto/musculorum/musculi-regio.dto.interface';
 import { MusculiParsDTO } from '../../models/dto/musculorum/musculi-pars.dto.interface';
 import { toSignal } from '@angular/core/rxjs-interop';

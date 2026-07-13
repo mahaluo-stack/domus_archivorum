@@ -1,18 +1,14 @@
 package org.curia_disciplinae
 
-import ars_disciplina.Registra
+import ars_disciplina.RenovatorRegistrorum
 import configureHTTP
 import configureRouting
 import configureSerialization
-import io.ktor.serialization.kotlinx.json.*
 import io.ktor.server.application.*
-import io.ktor.server.plugins.contentnegotiation.*
-import io.ktor.server.routing.*
-import moderatores.moderatorDisciplinarum
 
 fun Application.module() {
 
-    Registra.initializa()
+    RenovatorRegistrorum.initializaRegistrum();
 
     configureHTTP()
     configureSerialization()

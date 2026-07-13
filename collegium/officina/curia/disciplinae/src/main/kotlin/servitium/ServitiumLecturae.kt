@@ -11,4 +11,6 @@ abstract class ServitiumLecturae<I, E, R> {
     fun omnia(): Collection<R> = omniaEntia().map(::adResponsum)
 
     fun invenire(identitas: I): R = adResponsum(invenireEntia(identitas))
+
+    fun omniaPerClavem(identitas: I): Collection<R> = omniaEntia().map(::adResponsum)
 }
