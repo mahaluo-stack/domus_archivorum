@@ -1,4 +1,4 @@
-package ars_disciplina.commune.registra
+package ars_disciplina.commune.registra.catalogus
 
 import ars_disciplina.instrumentorum.tabula.GenusInstrumenti
 import ars_disciplina.instrumentorum.tabula.Instrumenta

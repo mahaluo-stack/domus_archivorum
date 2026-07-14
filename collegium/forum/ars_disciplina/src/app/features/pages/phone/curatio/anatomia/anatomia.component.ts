@@ -102,7 +102,7 @@ export class AnatomiaComponent implements OnInit {
     this.updateGridOffset();
     this.loadSvg();
     this.musculorumService.loadMusculorum();
-    this.nexuumService.loadMuscleNexus();
+    this.nexuumService.loadMuscleConfig();
   }
 
   private updateGridOffset(): void {

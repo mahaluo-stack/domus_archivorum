@@ -1,6 +1,6 @@
 package ars_disciplina.registrum.musculorum
 
-import ars_disciplina.commune.registra.RegistraMusculiRegio
+import ars_disciplina.commune.registra.catalogus.RegistraMusculiRegio
 import ars_disciplina.musculorum.valores.identitas.MusculiRegioIdentitas
 import ars_disciplina.registrum.Registrum
 import org.example.exemplaria.tabulae.MusculiRegio

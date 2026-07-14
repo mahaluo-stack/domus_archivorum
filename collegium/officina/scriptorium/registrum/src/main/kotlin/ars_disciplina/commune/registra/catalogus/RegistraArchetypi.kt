@@ -1,4 +1,4 @@
-package ars_disciplina.commune.registra
+package ars_disciplina.commune.registra.catalogus
 
 import ars_disciplina.disciplinarum.tabula.Archetypus
 import ars_disciplina.disciplinarum.valores.identitas.ArchetypusIdentitas

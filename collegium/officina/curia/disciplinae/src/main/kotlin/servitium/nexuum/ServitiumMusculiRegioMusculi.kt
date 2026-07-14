@@ -1,7 +1,7 @@
 package servitium.nexuum
 
 import ars_disciplina.RenovatorRegistrorum
-import ars_disciplina.commune.registra.RegistraMusculiRegioMusculi
+import ars_disciplina.commune.registra.catalogus.RegistraMusculiRegioMusculi
 import ars_disciplina.musculorum.valores.identitas.MusculiIdentitas
 import ars_disciplina.musculorum.valores.identitas.MusculiRegioIdentitas
 import ars_disciplina.nexuum.MinisteriumMusculiRegioMusculi

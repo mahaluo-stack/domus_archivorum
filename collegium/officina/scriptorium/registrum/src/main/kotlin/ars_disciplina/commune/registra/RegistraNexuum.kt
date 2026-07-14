@@ -1,49 +1,31 @@
 package ars_disciplina.commune.registra
 
-import ars_disciplina.disciplinarum.valores.identitas.DisciplinaeIdentitas
-import ars_disciplina.musculorum.valores.identitas.MusculiIdentitas
-import ars_disciplina.musculorum.valores.identitas.MusculiRegioIdentitas
-import ars_disciplina.nexuum.tabula.*
-import org.example.commune.registrum.Registra
+import FabricaExceptionumRegistra.clavisNonInventum
 
-// disciplinarum
-object RegistraDisciplinaAnguli :
-    Registra<DisciplinaeIdentitas, DisciplinaAnguli>({ it.disciplinaeIdentitas })
-object RegistraDisciplinaArchetypi :
-        Registra<DisciplinaeIdentitas, DisciplinaArchetypi>({ it.disciplinaeIdentitas })
-object RegistraDisciplinaMotus :
-    Registra<DisciplinaeIdentitas, DisciplinaMotus>({ it.disciplinaeIdentitas })
-object RegistraDisciplinaVariationes :
-    Registra<DisciplinaeIdentitas, DisciplinaVariationes>({ it.disciplinaeIdentitas })
+abstract class RegistraNexuum<K, T>(
+    private val selectorClavis: (T) -> K
+) : InterfaciaRegistri<T> {
 
-// classificationum
-object RegistraDisciplinaGeneraDisciplinae :
-    Registra<DisciplinaeIdentitas, DisciplinaGeneraDisciplinae>({ it.disciplinaeIdentitas })
-object RegistraDisciplinaLateralitates :
-    Registra<DisciplinaeIdentitas, DisciplinaLateralitates>({ it.disciplinaeIdentitas })
-object RegistraDisciplinaModiOneris :
-    Registra<DisciplinaeIdentitas, DisciplinaModiOneris>({ it.disciplinaeIdentitas })
+    private val perClavem = mutableMapOf<K, MutableSet<T>>()
 
-// prehensionum
-object RegistraDisciplinaGeneraPrehensionis :
-    Registra<DisciplinaeIdentitas, DisciplinaGeneraPrehensionis>({ it.disciplinaeIdentitas })
-object RegistraDisciplinaPrehensiones :
-    Registra<DisciplinaeIdentitas, DisciplinaPrehensiones>({ it.disciplinaeIdentitas })
+    override fun initializa(res: Collection<T>) {
 
-// regularum
-object RegistraDisciplinaRegulae : Registra<DisciplinaeIdentitas, DisciplinaRegulae>({ it.disciplinaeIdentitas })
+        perClavem.clear()
 
-// muscululorum
-object RegistraDisciplinaMusculiPars :
-    Registra<DisciplinaeIdentitas, DisciplinaMusculiPars>({ it.disciplinaeIdentitas })
-object RegistraMusculiMusculiPars :
-    Registra<MusculiIdentitas, MusculiMusculiPars>({ it.musculiIdentitas })
-object RegistraMusculiRegioMusculi :
-    Registra<MusculiRegioIdentitas, MusculiRegioMusculi>({ it.musculiRegioIdentitas })
+        res.forEach {
 
+            perClavem.getOrPut(selectorClavis(it)) { mutableSetOf() }.add(it)
 
-// instrumentorum
-object RegistraDisciplinaInstrumenti :
-    Registra<DisciplinaeIdentitas, DisciplinaInstrumenti>({ it.disciplinaeIdentitas })
-object RegistraDisciplinaGeneraInstrumenti :
-    Registra<DisciplinaeIdentitas, DisciplinaGeneraInstrumenti>({ it.disciplinaeIdentitas })
+        }
+    }
+
+    fun omniaPerClavem(clavis: K): Set<T> = perClavem[clavis] ?: emptySet()
+
+    fun omnia(): Collection<T> = perClavem.values.flatten()
+
+    fun omniaPerClavemNecesse(clavis: K): Set<T> = omniaPerClavem(clavis)
+        .takeIf { it.isNotEmpty() }
+        ?: throw clavisNonInventum(
+            "Clavis: '$clavis' non inventa in registro."
+        )
+}

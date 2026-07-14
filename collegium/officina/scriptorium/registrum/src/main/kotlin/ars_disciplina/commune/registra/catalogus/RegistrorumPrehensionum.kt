@@ -1,4 +1,4 @@
-package ars_disciplina.commune.registra
+package ars_disciplina.commune.registra.catalogus
 
 import ars_disciplina.prehensionum.tabula.GeneraPrehensionis
 import ars_disciplina.prehensionum.tabula.Prehensiones

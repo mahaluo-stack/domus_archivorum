@@ -1,8 +1,6 @@
 package ars_disciplina.registrum.prehensionum
 
-import ars_disciplina.commune.registra.RegistraGeneraPrehensionis
-import ars_disciplina.disciplinarum.tabula.Motus
-import ars_disciplina.disciplinarum.valores.identitas.MotusIdentitas
+import ars_disciplina.commune.registra.catalogus.RegistraGeneraPrehensionis
 import ars_disciplina.prehensionum.tabula.GeneraPrehensionis
 import ars_disciplina.prehensionum.valores.identitas.GeneraPrehensionisIdentitas
 import ars_disciplina.registrum.Registrum

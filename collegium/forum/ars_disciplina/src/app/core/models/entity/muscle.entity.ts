@@ -3,7 +3,7 @@ import { Muscle } from "../muscle/muscle.interface"
 import { MusclePart } from "../muscle/muscle-part.interface"
 
 export type MuscleEntity = {
-    muscleGroup: MuscleGroup,
     muscle: Muscle,
+    muscleGroup: MuscleGroup,
     muscleParts: MusclePart[]
 }

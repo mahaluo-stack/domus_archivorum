@@ -1,34 +1,35 @@
 package ars_disciplina
 
-import ars_disciplina.RenovatorRegistrorum.renova
 import ars_disciplina.classificationum.DepositumGeneraDisciplinae
-import ars_disciplina.commune.registra.RegistraArchetypi
-import ars_disciplina.commune.registra.RegistraDisciplinaAnguli
-import ars_disciplina.commune.registra.RegistraDisciplinaArchetypi
-import ars_disciplina.commune.registra.RegistraDisciplinaGeneraDisciplinae
-import ars_disciplina.commune.registra.RegistraDisciplinaGeneraInstrumenti
-import ars_disciplina.commune.registra.RegistraDisciplinaGeneraPrehensionis
-import ars_disciplina.commune.registra.RegistraDisciplinaInstrumenti
-import ars_disciplina.commune.registra.RegistraDisciplinaLateralitates
-import ars_disciplina.commune.registra.RegistraDisciplinaModiOneris
-import ars_disciplina.commune.registra.RegistraDisciplinaMotus
-import ars_disciplina.commune.registra.RegistraDisciplinaMusculiPars
-import ars_disciplina.commune.registra.RegistraDisciplinaPrehensiones
-import ars_disciplina.commune.registra.RegistraDisciplinaRegulae
-import ars_disciplina.commune.registra.RegistraDisciplinaVariationes
-import ars_disciplina.commune.registra.RegistraGeneraDisciplinae
-import ars_disciplina.commune.registra.RegistraGeneraInstrumenti
-import ars_disciplina.commune.registra.RegistraGeneraPrehensionis
-import ars_disciplina.commune.registra.RegistraInstrumenti
-import ars_disciplina.commune.registra.RegistraLateralis
-import ars_disciplina.commune.registra.RegistraModusOneris
-import ars_disciplina.commune.registra.RegistraMusculi
-import ars_disciplina.commune.registra.RegistraMusculiMusculiPars
-import ars_disciplina.commune.registra.RegistraMusculiPars
-import ars_disciplina.commune.registra.RegistraMusculiRegio
-import ars_disciplina.commune.registra.RegistraMusculiRegioMusculi
-import ars_disciplina.commune.registra.RegistraPrehensiones
-import ars_disciplina.commune.registra.RegistraRegulae
+import ars_disciplina.commune.registra.InterfaciaRegistri
+import ars_disciplina.commune.registra.RegistraNexuum
+import ars_disciplina.commune.registra.catalogus.RegistraArchetypi
+import ars_disciplina.commune.registra.catalogus.RegistraDisciplinaAnguli
+import ars_disciplina.commune.registra.catalogus.RegistraDisciplinaArchetypi
+import ars_disciplina.commune.registra.catalogus.RegistraDisciplinaGeneraDisciplinae
+import ars_disciplina.commune.registra.catalogus.RegistraDisciplinaGeneraInstrumenti
+import ars_disciplina.commune.registra.catalogus.RegistraDisciplinaGeneraPrehensionis
+import ars_disciplina.commune.registra.catalogus.RegistraDisciplinaInstrumenti
+import ars_disciplina.commune.registra.catalogus.RegistraDisciplinaLateralitates
+import ars_disciplina.commune.registra.catalogus.RegistraDisciplinaModiOneris
+import ars_disciplina.commune.registra.catalogus.RegistraDisciplinaMotus
+import ars_disciplina.commune.registra.catalogus.RegistraDisciplinaMusculiPars
+import ars_disciplina.commune.registra.catalogus.RegistraDisciplinaPrehensiones
+import ars_disciplina.commune.registra.catalogus.RegistraDisciplinaRegulae
+import ars_disciplina.commune.registra.catalogus.RegistraDisciplinaVariationes
+import ars_disciplina.commune.registra.catalogus.RegistraGeneraDisciplinae
+import ars_disciplina.commune.registra.catalogus.RegistraGeneraInstrumenti
+import ars_disciplina.commune.registra.catalogus.RegistraGeneraPrehensionis
+import ars_disciplina.commune.registra.catalogus.RegistraInstrumenti
+import ars_disciplina.commune.registra.catalogus.RegistraLateralis
+import ars_disciplina.commune.registra.catalogus.RegistraModusOneris
+import ars_disciplina.commune.registra.catalogus.RegistraMusculi
+import ars_disciplina.commune.registra.catalogus.RegistraMusculiMusculiPars
+import ars_disciplina.commune.registra.catalogus.RegistraMusculiPars
+import ars_disciplina.commune.registra.catalogus.RegistraMusculiRegio
+import ars_disciplina.commune.registra.catalogus.RegistraMusculiRegioMusculi
+import ars_disciplina.commune.registra.catalogus.RegistraPrehensiones
+import ars_disciplina.commune.registra.catalogus.RegistraRegulae
 import ars_disciplina.disciplinarum.DepositumArchetypi
 import ars_disciplina.musculorum.DepositumMusculi
 import ars_disciplina.musculorum.DepositumMusculiPars
@@ -68,7 +69,7 @@ import org.example.instrumentorum.depositum.DepositumInstrumenta
 object RenovatorRegistrorum {
 
     private data class Renovatio<T>(
-        val registra: Registra<*, T>,
+        val registra: InterfaciaRegistri<T>,
         val depositum: Depositum<T>
     )
 
@@ -112,10 +113,10 @@ object RenovatorRegistrorum {
         }
     }
 
-    fun <T> renova(registra: Registra<*, T>) {
+    fun <T> renova(registra: InterfaciaRegistri<T>) {
 
         val renovatio = renovationes
-            .first { it.registra === registra } as Renovatio<T>
+            .first { it.registra == registra } as Renovatio<T>
 
         renova(renovatio)
     }

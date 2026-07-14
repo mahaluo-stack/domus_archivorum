@@ -1,6 +1,5 @@
 package org.example.commune.registrum
 
-import ars_disciplina.disciplinarum.entia.EntiaDisciplina
 import ars_disciplina.disciplinarum.tabula.Angulus
 import ars_disciplina.disciplinarum.tabula.Disciplinae
 import ars_disciplina.disciplinarum.tabula.Motus
@@ -14,4 +13,3 @@ object RegistraDisciplinae : Registra<DisciplinaeIdentitas, Disciplinae>({ it.di
 object RegistraVariationes : Registra<VariationesIdentitas, Variationes>({ it.variationesIdentitas })
 object RegistraMotus : Registra<MotusIdentitas, Motus>({ it.motusIdentitas })
 object RegistraAngulus : Registra<AngulusIdentitas, Angulus>({ it.angulusIdentitas })
-object RegistraEntiaDisciplinae : Registra<DisciplinaeIdentitas, EntiaDisciplina>({ it.disciplinae.disciplinaeIdentitas })

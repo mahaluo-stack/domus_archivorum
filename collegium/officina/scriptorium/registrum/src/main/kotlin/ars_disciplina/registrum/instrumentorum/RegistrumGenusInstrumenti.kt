@@ -1,8 +1,6 @@
 package ars_disciplina.registrum.instrumentorum
 
-import ars_disciplina.commune.registra.RegistraGeneraInstrumenti
-import ars_disciplina.disciplinarum.tabula.Motus
-import ars_disciplina.disciplinarum.valores.identitas.MotusIdentitas
+import ars_disciplina.commune.registra.catalogus.RegistraGeneraInstrumenti
 import ars_disciplina.instrumentorum.tabula.GenusInstrumenti
 import ars_disciplina.instrumentorum.valores.identitas.GenusInstrumentiIdentitas
 import ars_disciplina.registrum.Registrum

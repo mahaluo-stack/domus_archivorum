@@ -1,10 +1,8 @@
 package ars_disciplina.registrum.classificationum
 
-import ars_disciplina.classificationum.tabula.GeneraDisciplinae
 import ars_disciplina.classificationum.tabula.Lateralis
-import ars_disciplina.classificationum.valores.identitas.GeneraDisciplinaeIdentitas
 import ars_disciplina.classificationum.valores.identitas.LateralisIdentitas
-import ars_disciplina.commune.registra.RegistraLateralis
+import ars_disciplina.commune.registra.catalogus.RegistraLateralis
 import ars_disciplina.registrum.Registrum
 
 object RegistrumLateralis : Registrum<LateralisIdentitas, Lateralis>() {

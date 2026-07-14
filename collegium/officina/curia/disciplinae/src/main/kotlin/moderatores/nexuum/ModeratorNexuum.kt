@@ -56,7 +56,7 @@ fun Route.moderatorNexuum() {
             )
         }
 
-        delete("/musculi-regio/{musculiRegioIdentitas}") {
+        delete("/musculi-regio/{identitas}") {
 
             val exitus = ServitiumMusculiRegioMusculi.delere(
                 call.musculiRegioIdentitas()
@@ -77,7 +77,7 @@ fun Route.moderatorNexuum() {
         get("/musculi") {
             call.respond(
                 HttpStatusCode.OK, Responsum(
-                    true, "Muscle Part configuration retrieved.", ServitiumMusculiMusculiPars.omnia()
+                    true, "Muscle configuration retrieved.", ServitiumMusculiMusculiPars.omnia()
                 )
             )
         }
@@ -99,17 +99,17 @@ fun Route.moderatorNexuum() {
                     )
 
                     ConstantiaResponsumPonere.UNCHANGED -> Responsum(
-                        false, "Muscle configuration not changed."
+                        false, "Muscle configuration unchanged."
                     )
 
                     ConstantiaResponsumPonere.UPDATED -> Responsum(
-                        false, "Muscle configuration updated."
+                        true, "Muscle configuration updated."
                     )
                 }
             )
         }
 
-        delete("/musculi/{musculiIdentitas}") {
+        delete("/musculi/{identitas}") {
             val exitus = ServitiumMusculiMusculiPars.delere(
                 call.musculiIdentitas()
             )

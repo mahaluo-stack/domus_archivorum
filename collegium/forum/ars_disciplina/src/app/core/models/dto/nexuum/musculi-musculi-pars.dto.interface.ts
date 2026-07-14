@@ -1,4 +1,4 @@
 export interface MusculiRegioMusculiDTO {
     musculiRegioIdentitas: number;
-    musculiIdentitas: number[];
+    musculiIdentitates: number[];
 }

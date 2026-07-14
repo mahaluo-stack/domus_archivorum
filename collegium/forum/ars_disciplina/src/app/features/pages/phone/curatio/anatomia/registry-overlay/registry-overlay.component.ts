@@ -21,7 +21,7 @@ import { MuscleGroup } from '../../../../../../core/models/muscle/muscle-group.i
   templateUrl: './registry-overlay.component.html',
   styleUrl: './registry-overlay.component.scss'
 })
-export class RegistryOverlayComponent implements OnInit {
+export class RegistryOverlayComponent {
 
   private readonly musculorumService = inject(MusculorumService);
   private readonly snackbar = inject(SnackbarService);
@@ -159,10 +159,6 @@ export class RegistryOverlayComponent implements OnInit {
     this.activeSaveButton = false;
     this.nameTextFieldValue = '';
     this.descriptionTextFieldValue = '';
-  }
-
-  ngOnInit(): void {
-    this.musculorumService.loadMusculorum();
   }
 
   protected handleNameValueChange($value: string) {

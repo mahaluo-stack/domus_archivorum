@@ -1,6 +1,5 @@
 import {
   Component,
-  computed,
   inject,
   input,
   OnInit
@@ -8,15 +7,12 @@ import {
 import { EditorSelectOption } from '../../../../../../core/models/ui/editor-select-option.interface';
 import { EditorSelectComponent } from '../../../../../components/responsive/editor-select/editor-select.component';
 import { EditorRadioOption } from '../../../../../../core/models/ui/editor-radio-option.interface';
-import { MusculorumService } from '../../../../../../core/services/api/musculorum.service';
 import { EditorRadioComponent } from "../../../../../components/responsive/editor-radio/editor-radio.component";
 import { EditorIconButtonComponent } from "../../../../../components/responsive/editor-icon-button/editor-icon-button.component";
 import { SnackbarService } from '../../../../../../core/services/snackbar.service';
-import { MusclePart } from '../../../../../../core/models/muscle/muscle-part.interface';
-import { MuscleGroup } from '../../../../../../core/models/muscle/muscle-group.interface';
-import { Muscle } from '../../../../../../core/models/muscle/muscle.interface';
 import { NexuumService } from '../../../../../../core/services/api/nexuum.service';
 import { PetitioConfiguratioMusculi } from '../../../../../../core/models/dto/petitio/petitio-configuratio-musculi.interface';
+import { MuscleConfig } from '../../../../../../core/models/muscle/muscle-config.interface';
 
 @Component({
   selector: 'editor-overlay',
@@ -88,6 +84,12 @@ export class EditorOverlayComponent {
   readonly muscleOptions = input<EditorSelectOption[]>([]);
   readonly muscleGroupOptions = input<EditorSelectOption[]>([]);
   readonly musclePartOptions = input<EditorSelectOption[]>([]);
+  readonly muscleConfig = this.nexuumService.muscleConfig;
+  readonly muscleGroupConfig = this.nexuumService.muscleGroupConfig;
+
+  protected getMuscleConfiguration(muscleId: number): MuscleConfig | null {
+    return this.muscleConfig().find(it => muscleId === it.muscleId) ?? null
+  }
 
   protected onRadioEvent(value: number): void {
 
@@ -177,7 +179,22 @@ export class EditorOverlayComponent {
   }
 
   protected onDelete(): void {
-    this.snackbar.loading('deleting configuration..');
+
+    if (!this.selectedSource) {
+      this.snackbar.info('select a configuration to delete first')
+    }
+    else {
+
+      if (this.selectedRadioOption === 1) {
+        this.snackbar
+          .track(
+            this.nexuumService.deleteMuscleConfiguration(this.selectedSource),
+            'deleting muscle configuration...'
+          )
+          .subscribe();
+      }
+
+    }
   }
 
   protected clearSelection(): void {
