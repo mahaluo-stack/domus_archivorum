@@ -9,6 +9,7 @@ import { PetitioConfiguratioMusculi } from '../../models/dto/petitio/petitio-con
 import { MuscleConfig } from '../../models/muscle/muscle-config.interface';
 import { MuscleGroupConfig } from '../../models/muscle/muscle-group-config.interface';
 import { MuscleConfigMapper, MuscleGroupConfigMapper } from '../../mapping/muscle-config.mapper';
+import { PetitioConfiguratioMusculiRegio } from '../../models/dto/petitio/petitio-configuratio-musculi-regio.interface';
 
 @Injectable({
     providedIn: 'root'
@@ -47,6 +48,16 @@ export class NexuumService {
             {
                 musculiIdentitas: muscleConfig.musculiIdentitas,
                 musculiParsIdentitates: muscleConfig.musculiParsIdentitates
+            }
+        )
+    }
+
+      updateMuscleGroupConfiguration(muscleConfig: PetitioConfiguratioMusculiRegio): Observable<Responsum<void>> {
+        return this.http.put<Responsum<void>>(
+            `${apiUrl}/${this.schema}/musculi-regio`,
+            {
+                musculiRegioIdentitas: muscleConfig.musculiRegioIdentitas,
+                musculiIdentitates: muscleConfig.musculiIdentitates
             }
         )
     }

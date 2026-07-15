@@ -1,9 +1,10 @@
 import { MuscleGroup } from "../muscle/muscle-group.interface"
-import { Muscle } from "../muscle/muscle.interface"
 import { MusclePart } from "../muscle/muscle-part.interface"
 
 export type MuscleEntity = {
-    muscle: Muscle,
+    muscleId: number,
+    muscleName: string,
+    muscleDescription: string,
     muscleGroup: MuscleGroup,
     muscleParts: MusclePart[]
 }

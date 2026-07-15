@@ -7,5 +7,5 @@ import ars_disciplina.registrum.RegistrumNexuum
 
 object RegistrumMusculiRegioMusculi : RegistrumNexuum<MusculiRegioIdentitas, MusculiRegioMusculi>()  {
     override fun omnia(): Collection<MusculiRegioMusculi> = RegistraMusculiRegioMusculi.omnia()
-    override fun omniaPerClavem(identitas: MusculiRegioIdentitas): Collection<MusculiRegioMusculi> = RegistraMusculiRegioMusculi.omniaPerClavemNecesse(identitas)
+    override fun omniaPerClavem(identitas: MusculiRegioIdentitas): Collection<MusculiRegioMusculi> = RegistraMusculiRegioMusculi.omniaPerClavem(identitas)
 }

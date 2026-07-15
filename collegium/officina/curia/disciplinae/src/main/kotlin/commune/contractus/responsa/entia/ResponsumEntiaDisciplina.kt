@@ -1,4 +1,4 @@
-package commune.contractus.responsa
+package commune.contractus.responsa.entia
 
 import ars_disciplina.classificationum.valores.NomenGeneraDisciplinae
 import ars_disciplina.classificationum.valores.NomenLateralis
@@ -18,7 +18,7 @@ import ars_disciplina.prehensionum.valores.NomenPrehensionis
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class EntiaDisciplinaResponsum(
+data class ResponsumEntiaDisciplina(
 
     val disciplinaeIdentitas: DisciplinaeIdentitas,
     val disciplinae: NomenDisciplinae,

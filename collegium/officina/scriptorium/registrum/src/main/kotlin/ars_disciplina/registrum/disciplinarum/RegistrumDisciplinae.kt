@@ -1,6 +1,6 @@
 package ars_disciplina.registrum.disciplinarum
 
-import ars_disciplina.commune.exemplaria.FabricaEntiaDisciplinae
+import ars_disciplina.commune.fabrica.FabricaEntiaDisciplinae
 import ars_disciplina.disciplinarum.entia.EntiaDisciplina
 import ars_disciplina.disciplinarum.tabula.Disciplinae
 import ars_disciplina.disciplinarum.valores.identitas.DisciplinaeIdentitas

@@ -1,6 +1,5 @@
-package ars_disciplina.commune.exemplaria
+package ars_disciplina.commune.fabrica
 
-import ars_disciplina.commune.registra.*
 import ars_disciplina.commune.registra.catalogus.RegistraDisciplinaAnguli
 import ars_disciplina.commune.registra.catalogus.RegistraDisciplinaGeneraDisciplinae
 import ars_disciplina.commune.registra.catalogus.RegistraDisciplinaGeneraInstrumenti

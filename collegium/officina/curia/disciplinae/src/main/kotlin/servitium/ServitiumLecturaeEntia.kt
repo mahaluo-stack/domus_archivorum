@@ -1,6 +1,6 @@
 package servitium
 
-abstract class ServitiumLecturae<I, E, R> {
+abstract class ServitiumLecturaeEntia<I, E, R> {
 
     protected abstract fun omniaEntia(): Collection<E>
     protected abstract fun invenireEntia(identitas: I): E

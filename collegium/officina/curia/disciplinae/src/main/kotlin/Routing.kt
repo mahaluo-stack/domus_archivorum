@@ -1,5 +1,6 @@
 import io.ktor.server.application.Application
 import io.ktor.server.routing.routing
+import moderatores.entia.moderatorEntia
 import moderatores.moderatorClassificationum
 import moderatores.moderatorDisciplinarum
 import moderatores.moderatorInstrumentorum
@@ -17,4 +18,5 @@ fun Application.configureRouting() {
     routing { moderatorPrehensionum() }
     routing { moderatorRegularum() }
     routing { moderatorNexuum() }
+    routing { moderatorEntia() }
 }

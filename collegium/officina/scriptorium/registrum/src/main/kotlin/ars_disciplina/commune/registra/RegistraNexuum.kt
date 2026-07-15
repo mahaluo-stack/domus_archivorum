@@ -13,9 +13,7 @@ abstract class RegistraNexuum<K, T>(
         perClavem.clear()
 
         res.forEach {
-
             perClavem.getOrPut(selectorClavis(it)) { mutableSetOf() }.add(it)
-
         }
     }
 

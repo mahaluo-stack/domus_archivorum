@@ -13,6 +13,8 @@ import { SnackbarService } from '../../../../../../core/services/snackbar.servic
 import { NexuumService } from '../../../../../../core/services/api/nexuum.service';
 import { PetitioConfiguratioMusculi } from '../../../../../../core/models/dto/petitio/petitio-configuratio-musculi.interface';
 import { MuscleConfig } from '../../../../../../core/models/muscle/muscle-config.interface';
+import { EntiaService } from '../../../../../../core/services/api/entia.service';
+import { PetitioConfiguratioMusculiRegio } from '../../../../../../core/models/dto/petitio/petitio-configuratio-musculi-regio.interface';
 
 @Component({
   selector: 'editor-overlay',
@@ -25,10 +27,11 @@ import { MuscleConfig } from '../../../../../../core/models/muscle/muscle-config
   templateUrl: './editor-overlay.component.html',
   styleUrls: ['./editor-overlay.component.scss']
 })
-export class EditorOverlayComponent {
+export class EditorOverlayComponent implements OnInit {
 
   private readonly snackbar = inject(SnackbarService);
   private readonly nexuumService = inject(NexuumService);
+  private readonly entiaService = inject(EntiaService);
 
   protected sourceLabel = 'select configuration';
 
@@ -86,6 +89,15 @@ export class EditorOverlayComponent {
   readonly musclePartOptions = input<EditorSelectOption[]>([]);
   readonly muscleConfig = this.nexuumService.muscleConfig;
   readonly muscleGroupConfig = this.nexuumService.muscleGroupConfig;
+
+  ngOnInit(): void {
+    this.snackbar
+      .track(
+        this.entiaService.loadMuscleEntities(),
+        'loading entities...'
+      )
+      .subscribe();
+  }
 
   protected getMuscleConfiguration(muscleId: number): MuscleConfig | null {
     return this.muscleConfig().find(it => muscleId === it.muscleId) ?? null
@@ -146,7 +158,8 @@ export class EditorOverlayComponent {
   }
 
   protected onSave(): void {
-
+    console.log('selected radio option:', this.selectedRadioOption);
+    
     if (!this.selectedRadioOption) {
       this.snackbar.info('select a configuration type first')
       return
@@ -176,6 +189,20 @@ export class EditorOverlayComponent {
         )
         .subscribe();
     }
+
+    if (this.selectedRadioOption === 2) {
+      let muscleGroupConfig: PetitioConfiguratioMusculiRegio = {
+        musculiRegioIdentitas: this.selectedSource!,
+        musculiIdentitates: [...this.selectedTargets]
+      }
+
+      this.snackbar
+        .track(
+          this.nexuumService.updateMuscleGroupConfiguration(muscleGroupConfig),
+          'saving muscle group configuration...'
+        )
+        .subscribe();
+    }
   }
 
   protected onDelete(): void {
@@ -190,6 +217,15 @@ export class EditorOverlayComponent {
           .track(
             this.nexuumService.deleteMuscleConfiguration(this.selectedSource),
             'deleting muscle configuration...'
+          )
+          .subscribe();
+      }
+
+      if (this.selectedRadioOption === 2) {
+        this.snackbar
+          .track(
+            this.nexuumService.deleteMuscleGroupConfiguration(this.selectedSource),
+            'deleting muscle group configuration...'
           )
           .subscribe();
       }

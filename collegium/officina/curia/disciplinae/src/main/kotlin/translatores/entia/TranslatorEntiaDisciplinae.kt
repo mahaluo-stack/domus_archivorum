@@ -1,14 +1,14 @@
 package translatores.entia
 
 import ars_disciplina.disciplinarum.entia.EntiaDisciplina
-import commune.contractus.responsa.EntiaDisciplinaResponsum
+import commune.contractus.responsa.entia.ResponsumEntiaDisciplina
 
 object TranslatorEntiaDisciplinae {
 
     fun adResponsum(
         entia: EntiaDisciplina
-    ): EntiaDisciplinaResponsum {
-        return EntiaDisciplinaResponsum(
+    ): ResponsumEntiaDisciplina {
+        return ResponsumEntiaDisciplina(
             disciplinaeIdentitas = entia.disciplinae.disciplinaeIdentitas,
             disciplinae = entia.disciplinae.nomen,
 

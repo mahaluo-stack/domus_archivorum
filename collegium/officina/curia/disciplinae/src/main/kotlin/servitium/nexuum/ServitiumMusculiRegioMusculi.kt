@@ -38,8 +38,7 @@ object ServitiumMusculiRegioMusculi :
         musculiRegioIdentitas: MusculiRegioIdentitas, musculiIdentitates: Set<MusculiIdentitas>
     ): ConstantiaResponsumPonere {
 
-        val actuales =
-            RegistrumMusculiRegioMusculi.omniaPerClavem(musculiRegioIdentitas).map { it.musculiIdentitas }.toSet()
+        val actuales = RegistrumMusculiRegioMusculi.omniaPerClavem(musculiRegioIdentitas).map { it.musculiIdentitas }.toSet()
 
         MinisteriumMusculiRegioMusculi.delerePerClavem(musculiRegioIdentitas)
 
