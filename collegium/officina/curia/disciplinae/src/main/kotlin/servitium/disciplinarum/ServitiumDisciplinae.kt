@@ -9,7 +9,7 @@ import translatores.disciplinarum.TranslatorDisciplinae
 
 object ServitiumDisciplinae : ServitiumLecturae<DisciplinaeIdentitas, Disciplinae, ResponsumDisciplinae>() {
 
-    override fun omniaEntia() = RegistrumDisciplinae.omniaDisciplinae()
-    override fun invenireEntia(identitas: DisciplinaeIdentitas) = RegistrumDisciplinae.invenireDisciplinae(identitas)
+    override fun omniaEntia() = RegistrumDisciplinae.omnia()
+    override fun invenireEntia(identitas: DisciplinaeIdentitas) = RegistrumDisciplinae.invenirePerClavemNecesse(identitas)
     override fun adResponsum(entia: Disciplinae): ResponsumDisciplinae = TranslatorDisciplinae.adResponsum(entia)
 }

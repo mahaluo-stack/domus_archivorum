@@ -7,7 +7,7 @@ import ars_disciplina.musculorum.valores.identitas.MusculiParsIdentitas
 import ars_disciplina.nexuum.MinisteriumMusculiMusculiPars
 import ars_disciplina.nexuum.tabula.MusculiMusculiPars
 import ars_disciplina.registrum.nexuum.RegistrumMusculiMusculiPars
-import commune.constantia.ConstantiaResponsumDelere
+import commune.constantia.ConstantiaResponsumDelereNexus
 import commune.constantia.ConstantiaResponsumPonere
 import commune.contractus.responsa.nexuum.ResponsumMusculiMusculiPars
 import servitium.ServitiumLecturaeNexuum
@@ -58,8 +58,8 @@ object ServitiumMusculiMusculiPars :
         return responsum
     }
 
-    fun delere(musculiIdentitas: MusculiIdentitas): ConstantiaResponsumDelere =
-        if (MinisteriumMusculiMusculiPars.delerePerClavem(musculiIdentitas) > 0) ConstantiaResponsumDelere.SUCCESS
-        else ConstantiaResponsumDelere.NOT_FOUND
+    fun delere(musculiIdentitas: MusculiIdentitas): ConstantiaResponsumDelereNexus =
+        if (MinisteriumMusculiMusculiPars.delerePerClavem(musculiIdentitas) > 0) ConstantiaResponsumDelereNexus.SUCCESS
+        else ConstantiaResponsumDelereNexus.NOT_FOUND
 
 }

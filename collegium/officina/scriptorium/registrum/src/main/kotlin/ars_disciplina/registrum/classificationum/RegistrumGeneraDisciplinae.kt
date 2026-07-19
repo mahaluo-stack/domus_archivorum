@@ -8,5 +8,6 @@ import ars_disciplina.registrum.Registrum
 object RegistrumGeneraDisciplinae : Registrum<GeneraDisciplinaeIdentitas, GeneraDisciplinae>()  {
 
     override fun omnia(): Collection<GeneraDisciplinae> = RegistraGeneraDisciplinae.omnia()
-    override fun invenire(identitas: GeneraDisciplinaeIdentitas): GeneraDisciplinae = RegistraGeneraDisciplinae.invenirePerClavemNecesse(identitas)
+    override fun invenirePerClavemNecesse(identitas: GeneraDisciplinaeIdentitas): GeneraDisciplinae = RegistraGeneraDisciplinae.invenirePerClavemNecesse(identitas)
+    override fun invenireSiAdest(identitas: GeneraDisciplinaeIdentitas): GeneraDisciplinae? = RegistraGeneraDisciplinae.invenireSiAdest(identitas)
 }

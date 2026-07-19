@@ -19,6 +19,8 @@ open class Registra<K, T>(
     fun continet(clavis: K): Boolean =
         perClavem.containsKey(clavis)
 
+    fun invenireSiAdest(clavis: K): T? = perClavem[clavis]
+
     fun omniaPerClaves(claves: Set<K>): Set<T> = claves.mapTo(mutableSetOf()) { invenirePerClavemNecesse(it) }
 
     fun omnia(): Collection<T> = perClavem.values

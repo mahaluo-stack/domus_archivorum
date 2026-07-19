@@ -8,5 +8,6 @@ import ars_disciplina.registrum.Registrum
 object RegistrumArchetypi : Registrum<ArchetypusIdentitas, Archetypus>() {
 
     override fun omnia(): Collection<Archetypus> = RegistraArchetypi.omnia()
-    override fun invenire(identitas: ArchetypusIdentitas): Archetypus = RegistraArchetypi.invenirePerClavemNecesse(identitas)
+    override fun invenirePerClavemNecesse(identitas: ArchetypusIdentitas): Archetypus = RegistraArchetypi.invenirePerClavemNecesse(identitas)
+    override fun invenireSiAdest(identitas: ArchetypusIdentitas): Archetypus? = RegistraArchetypi.invenireSiAdest(identitas)
 }

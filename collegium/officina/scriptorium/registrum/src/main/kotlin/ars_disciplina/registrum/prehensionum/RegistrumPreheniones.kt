@@ -8,5 +8,6 @@ import ars_disciplina.registrum.Registrum
 object RegistrumPreheniones : Registrum<PrehensionesIdentitas, Prehensiones>()  {
 
     override fun omnia(): Collection<Prehensiones> = RegistraPrehensiones.omnia()
-    override fun invenire(identitas: PrehensionesIdentitas): Prehensiones = RegistraPrehensiones.invenirePerClavemNecesse(identitas)
+    override fun invenirePerClavemNecesse(identitas: PrehensionesIdentitas): Prehensiones = RegistraPrehensiones.invenirePerClavemNecesse(identitas)
+    override fun invenireSiAdest(identitas: PrehensionesIdentitas): Prehensiones? = RegistraPrehensiones.invenireSiAdest(identitas)
 }

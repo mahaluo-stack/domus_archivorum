@@ -8,5 +8,6 @@ import org.example.exemplaria.tabulae.MusculiRegio
 object RegistrumMusculiRegio : Registrum<MusculiRegioIdentitas, MusculiRegio>() {
 
     override fun omnia(): Collection<MusculiRegio> = RegistraMusculiRegio.omnia()
-    override fun invenire(identitas: MusculiRegioIdentitas): MusculiRegio = RegistraMusculiRegio.invenirePerClavemNecesse(identitas)
+    override fun invenirePerClavemNecesse(identitas: MusculiRegioIdentitas): MusculiRegio = RegistraMusculiRegio.invenirePerClavemNecesse(identitas)
+    override fun invenireSiAdest(identitas: MusculiRegioIdentitas): MusculiRegio? = RegistraMusculiRegio.invenireSiAdest(identitas)
 }

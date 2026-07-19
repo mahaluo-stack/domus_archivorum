@@ -8,5 +8,6 @@ import org.example.commune.registrum.RegistraMotus
 object RegistrumMotuum : Registrum<MotusIdentitas, Motus>() {
 
     override fun omnia() = RegistraMotus.omnia()
-    override fun invenire(identitas: MotusIdentitas) = RegistraMotus.invenirePerClavemNecesse(identitas)
+    override fun invenirePerClavemNecesse(identitas: MotusIdentitas) = RegistraMotus.invenirePerClavemNecesse(identitas)
+    override fun invenireSiAdest(identitas: MotusIdentitas): Motus? = RegistraMotus.invenireSiAdest(identitas)
 }

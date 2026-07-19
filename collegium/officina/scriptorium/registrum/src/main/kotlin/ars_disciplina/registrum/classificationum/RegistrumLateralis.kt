@@ -8,5 +8,6 @@ import ars_disciplina.registrum.Registrum
 object RegistrumLateralis : Registrum<LateralisIdentitas, Lateralis>() {
 
     override fun omnia(): Collection<Lateralis> = RegistraLateralis.omnia()
-    override fun invenire(identitas: LateralisIdentitas): Lateralis = RegistraLateralis.invenirePerClavemNecesse(identitas)
+    override fun invenirePerClavemNecesse(identitas: LateralisIdentitas): Lateralis = RegistraLateralis.invenirePerClavemNecesse(identitas)
+    override fun invenireSiAdest(identitas: LateralisIdentitas): Lateralis? = RegistraLateralis.invenireSiAdest(identitas)
 }

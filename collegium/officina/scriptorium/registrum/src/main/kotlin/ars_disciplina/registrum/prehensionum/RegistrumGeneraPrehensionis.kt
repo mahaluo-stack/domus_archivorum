@@ -5,8 +5,11 @@ import ars_disciplina.prehensionum.tabula.GeneraPrehensionis
 import ars_disciplina.prehensionum.valores.identitas.GeneraPrehensionisIdentitas
 import ars_disciplina.registrum.Registrum
 
-object RegistrumGeneraPrehensionis : Registrum<GeneraPrehensionisIdentitas, GeneraPrehensionis>()  {
+object RegistrumGeneraPrehensionis : Registrum<GeneraPrehensionisIdentitas, GeneraPrehensionis>() {
 
     override fun omnia() = RegistraGeneraPrehensionis.omnia()
-    override fun invenire(identitas: GeneraPrehensionisIdentitas): GeneraPrehensionis = RegistraGeneraPrehensionis.invenirePerClavemNecesse(identitas)
+    override fun invenirePerClavemNecesse(identitas: GeneraPrehensionisIdentitas): GeneraPrehensionis =
+        RegistraGeneraPrehensionis.invenirePerClavemNecesse(identitas)
+    override fun invenireSiAdest(identitas: GeneraPrehensionisIdentitas): GeneraPrehensionis? =
+        RegistraGeneraPrehensionis.invenireSiAdest(identitas)
 }

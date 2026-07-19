@@ -15,6 +15,7 @@ import { PetitioConfiguratioMusculi } from '../../../../../../core/models/dto/pe
 import { MuscleConfig } from '../../../../../../core/models/muscle/muscle-config.interface';
 import { EntiaService } from '../../../../../../core/services/api/entia.service';
 import { PetitioConfiguratioMusculiRegio } from '../../../../../../core/models/dto/petitio/petitio-configuratio-musculi-regio.interface';
+import { MuscleGroupConfig } from '../../../../../../core/models/muscle/muscle-group-config.interface';
 
 @Component({
   selector: 'editor-overlay',
@@ -87,8 +88,10 @@ export class EditorOverlayComponent implements OnInit {
   readonly muscleOptions = input<EditorSelectOption[]>([]);
   readonly muscleGroupOptions = input<EditorSelectOption[]>([]);
   readonly musclePartOptions = input<EditorSelectOption[]>([]);
+  
   readonly muscleConfig = this.nexuumService.muscleConfig;
   readonly muscleGroupConfig = this.nexuumService.muscleGroupConfig;
+  readonly muscleEntities = this.entiaService.muscleEntities;
 
   ngOnInit(): void {
     this.snackbar
@@ -100,7 +103,11 @@ export class EditorOverlayComponent implements OnInit {
   }
 
   protected getMuscleConfiguration(muscleId: number): MuscleConfig | null {
-    return this.muscleConfig().find(it => muscleId === it.muscleId) ?? null
+    return this.muscleConfig().find(it => muscleId === it.muscleId) ?? null;
+  }
+
+  protected getMuscleGroupConfiguration(muscleGroupId: number): MuscleGroupConfig | null {
+    return this.muscleGroupConfig().find(it => muscleGroupId === it.muscleGroupId) ?? null;
   }
 
   protected onRadioEvent(value: number): void {
@@ -158,7 +165,6 @@ export class EditorOverlayComponent implements OnInit {
   }
 
   protected onSave(): void {
-    console.log('selected radio option:', this.selectedRadioOption);
     
     if (!this.selectedRadioOption) {
       this.snackbar.info('select a configuration type first')

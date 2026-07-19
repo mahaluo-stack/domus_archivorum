@@ -10,6 +10,6 @@ import translatores.disciplinarum.TranslatorMotuum
 object ServitiumMotuum : ServitiumLecturae<MotusIdentitas, Motus, ResponsumMotuum>() {
 
     override fun omniaEntia() = RegistrumMotuum.omnia()
-    override fun invenireEntia(identitas: MotusIdentitas) = RegistrumMotuum.invenire(identitas)
+    override fun invenireEntia(identitas: MotusIdentitas) = RegistrumMotuum.invenirePerClavemNecesse(identitas)
     override fun adResponsum(entia: Motus) = TranslatorMotuum.adResponsum(entia)
 }

@@ -11,3 +11,6 @@ fun ApplicationCall.identitas(nomen: String): Int {
     return valor.toIntOrNull()
         ?: throw FabricaExceptionumAuxiliorum.identitasInvalidi(valor)
 }
+
+fun ApplicationCall.cascade(): Boolean =
+    request.queryParameters["cascade"]?.toBooleanStrictOrNull() ?: false

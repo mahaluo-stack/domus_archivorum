@@ -9,7 +9,7 @@ object MinisteriumMusculiRegioMusculi {
     ): Int = ConexioArsDisciplina.renova(
         """
             INSERT INTO nexuum.musculi_regio_musculi (
-             musculi_regio_identitas,
+                musculi_regio_identitas,
                 musculi_identitas
             )
             VALUES (?, ?)
@@ -29,5 +29,14 @@ object MinisteriumMusculiRegioMusculi {
             """.trimIndent()
     ) {
         setInt(1, musculiRegioIdentitas.valor)
+    }
+
+    fun delerePerMusculi(musculiIdentitas: MusculiIdentitas): Int = ConexioArsDisciplina.dele(
+        """
+            DELETE FROM nexuum.musculi_regio_musculi
+            WHERE musculi_identitas = ?;
+            """.trimIndent()
+    ) {
+        setInt(1, musculiIdentitas.valor)
     }
 }

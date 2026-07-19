@@ -1,6 +1,6 @@
 import { Injectable, Signal, computed, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { BehaviorSubject, forkJoin, map, Observable, tap } from 'rxjs';
+import { BehaviorSubject, forkJoin, map, tap } from 'rxjs';
 import { Muscle } from '../../models/muscle/muscle.interface';
 import { apiUrl } from '../../models/constants/api.constants'
 import { MusculiDTO } from '../../models/dto/musculorum/musculi.dto.interface';
@@ -10,6 +10,7 @@ import { MusclePart } from '../../models/muscle/muscle-part.interface';
 import { MusculiRegioDTO } from '../../models/dto/musculorum/musculi-regio.dto.interface';
 import { MusculiParsDTO } from '../../models/dto/musculorum/musculi-pars.dto.interface';
 import { toSignal } from '@angular/core/rxjs-interop';
+import { Responsum } from '../../models/dto/responsum.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -44,30 +45,14 @@ export class MusculorumService {
     }
 
     forkJoin({
-      muscles: this.http
-        .get<MusculiDTO[]>(`${apiUrl}/${this.schema}/musculi`)
-        .pipe(
-          map(MuscleMapper.fromDtos),
-          tap(muscles => this.muscleSubject.next(muscles))
-        ),
-      groups: this.http
-        .get<MusculiRegioDTO[]>(`${apiUrl}/${this.schema}/musculi-regio`)
-        .pipe(
-          map(MuscleGroupMapper.fromDtos),
-          tap(muscles => this.muscleGroupSubject.next(muscles))
-        ),
-      parts: this.http
-        .get<MusculiParsDTO[]>(`${apiUrl}/${this.schema}/musculi-pars`)
-        .pipe(
-          map(MusclePartMapper.fromDtos),
-          tap(muscles => this.musclePartSubject.next(muscles))
-        )
-
+      muscles: this.http.get<Responsum<MusculiDTO[]>>(`${apiUrl}/${this.schema}/musculi`),
+      groups: this.http.get<Responsum<MusculiRegioDTO[]>>(`${apiUrl}/${this.schema}/musculi-regio`),
+      parts: this.http.get<Responsum<MusculiParsDTO[]>>(`${apiUrl}/${this.schema}/musculi-pars`)
     }).subscribe(result => {
-
-      this.muscleSubject.next(result.muscles);
-      this.muscleGroupSubject.next(result.groups);
-      this.musclePartSubject.next(result.parts);
+      
+      this.muscleSubject.next(MuscleMapper.fromDtos(result.muscles.data));
+      this.muscleGroupSubject.next(MuscleGroupMapper.fromDtos(result.groups.data));
+      this.musclePartSubject.next(MusclePartMapper.fromDtos(result.parts.data));
 
       this.loaded = true;
     });

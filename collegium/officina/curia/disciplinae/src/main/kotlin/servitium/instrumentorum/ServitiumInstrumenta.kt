@@ -10,6 +10,6 @@ import translatores.instrumentorum.TranslatorInstrumenta
 object ServitiumInstrumenta : ServitiumLecturae<InstrumentaIdentitas, Instrumenta, ResponsumInstrumenta>() {
 
     override fun omniaEntia() = RegistrumInstrumenta.omnia()
-    override fun invenireEntia(identitas: InstrumentaIdentitas) = RegistrumInstrumenta.invenire(identitas)
+    override fun invenireEntia(identitas: InstrumentaIdentitas) = RegistrumInstrumenta.invenirePerClavemNecesse(identitas)
     override fun adResponsum(entia: Instrumenta): ResponsumInstrumenta = TranslatorInstrumenta.adResponsum(entia)
 }

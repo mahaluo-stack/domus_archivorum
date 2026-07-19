@@ -1,11 +1,8 @@
 package moderatores.nexuum
 
-import ars_disciplina.musculorum.valores.identitas.MusculiIdentitas
-import ars_disciplina.musculorum.valores.identitas.MusculiRegioIdentitas
 import auxilia.musculiIdentitas
-import auxilia.musculiParsIdentitas
 import auxilia.musculiRegioIdentitas
-import commune.constantia.ConstantiaResponsumDelere
+import commune.constantia.ConstantiaResponsumDelereNexus
 import commune.constantia.ConstantiaResponsumPonere
 import commune.contractus.petitio.nexuum.PetitioConfiguratioMusculi
 import commune.contractus.petitio.nexuum.PetitioConfiguratioMusculiRegio
@@ -63,11 +60,11 @@ fun Route.moderatorNexuum() {
             )
             call.respond(
                 HttpStatusCode.OK, when (exitus) {
-                    ConstantiaResponsumDelere.SUCCESS -> Responsum<Unit>(
+                    ConstantiaResponsumDelereNexus.SUCCESS -> Responsum<Unit>(
                         true, "Muscle configuration removed."
                     )
 
-                    ConstantiaResponsumDelere.NOT_FOUND -> Responsum(
+                    ConstantiaResponsumDelereNexus.NOT_FOUND -> Responsum(
                         false, "Muscle configuration does not exist."
                     )
                 }
@@ -115,11 +112,11 @@ fun Route.moderatorNexuum() {
             )
             call.respond(
                 HttpStatusCode.OK, when (exitus) {
-                    ConstantiaResponsumDelere.SUCCESS -> Responsum<Unit>(
+                    ConstantiaResponsumDelereNexus.SUCCESS -> Responsum<Unit>(
                         true, "Muscle configuration removed."
                     )
 
-                    ConstantiaResponsumDelere.NOT_FOUND -> Responsum(
+                    ConstantiaResponsumDelereNexus.NOT_FOUND -> Responsum(
                         false, "Muscle configuration does not exist."
                     )
                 }

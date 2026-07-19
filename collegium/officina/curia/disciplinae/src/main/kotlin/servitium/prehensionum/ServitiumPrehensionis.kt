@@ -10,6 +10,6 @@ import translatores.prehensionum.TranslatorPrehensiones
 object ServitiumPrehensionis : ServitiumLecturae<PrehensionesIdentitas, Prehensiones, ResponsumPrehensiones>() {
 
     override fun omniaEntia() = RegistrumPreheniones.omnia()
-    override fun invenireEntia(identitas: PrehensionesIdentitas) = RegistrumPreheniones.invenire(identitas)
+    override fun invenireEntia(identitas: PrehensionesIdentitas) = RegistrumPreheniones.invenirePerClavemNecesse(identitas)
     override fun adResponsum(entia: Prehensiones): ResponsumPrehensiones = TranslatorPrehensiones.adResponsum(entia)
 }

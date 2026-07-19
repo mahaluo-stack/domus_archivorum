@@ -11,6 +11,6 @@ import translatores.disciplinarum.TranslatorVariationes
 object ServitiumVariationes : ServitiumLecturae<VariationesIdentitas, Variationes, ResponsumVariationes>() {
 
     override fun omniaEntia() = RegistraVariationes.omnia()
-    override fun invenireEntia(identitas: VariationesIdentitas) = RegistrumVariationes.invenire(identitas)
+    override fun invenireEntia(identitas: VariationesIdentitas) = RegistrumVariationes.invenirePerClavemNecesse(identitas)
     override fun adResponsum(entia: Variationes) = TranslatorVariationes.adResponsum(entia)
 }

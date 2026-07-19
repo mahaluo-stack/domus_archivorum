@@ -1,5 +1,6 @@
 package ars_disciplina.nexuum
 
+import ConexioArsDisciplina
 import ars_disciplina.musculorum.valores.identitas.MusculiIdentitas
 import ars_disciplina.musculorum.valores.identitas.MusculiParsIdentitas
 
@@ -32,5 +33,17 @@ object MinisteriumMusculiMusculiPars {
             """.trimIndent()
         ) {
             setInt(1, musculiIdentitas.valor)
+        }
+
+    fun delerePerMusculiPars(
+        musculiParsIdentitas: MusculiParsIdentitas
+    ): Int =
+        ConexioArsDisciplina.dele(
+            """
+        DELETE FROM nexuum.musculi_musculi_pars
+        WHERE musculi_pars_identitas = ?;
+        """.trimIndent()
+        ) {
+            setInt(1, musculiParsIdentitas.valor)
         }
 }

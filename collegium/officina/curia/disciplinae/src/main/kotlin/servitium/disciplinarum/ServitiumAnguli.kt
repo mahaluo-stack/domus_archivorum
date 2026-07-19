@@ -10,6 +10,6 @@ import translatores.disciplinarum.TranslatorAngulus
 object ServitiumAnguli : ServitiumLecturae<AngulusIdentitas, Angulus, ResponsumAnguli>() {
 
     override fun omniaEntia() = RegistrumAngulus.omnia()
-    override fun invenireEntia(identitas: AngulusIdentitas) = RegistrumAngulus.invenire(identitas)
+    override fun invenireEntia(identitas: AngulusIdentitas) = RegistrumAngulus.invenirePerClavemNecesse(identitas)
     override fun adResponsum(entia: Angulus): ResponsumAnguli = TranslatorAngulus.adResponsum(entia)
 }

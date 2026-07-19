@@ -8,5 +8,6 @@ import ars_disciplina.regularum.valores.RegulaeIdentitas
 object RegistrumRegulae : Registrum<RegulaeIdentitas, Regulae>()  {
 
     override fun omnia(): Collection<Regulae> = RegistraRegulae.omnia()
-    override fun invenire(identitas: RegulaeIdentitas): Regulae = RegistraRegulae.invenirePerClavemNecesse(identitas)
+    override fun invenirePerClavemNecesse(identitas: RegulaeIdentitas): Regulae = RegistraRegulae.invenirePerClavemNecesse(identitas)
+    override fun invenireSiAdest(identitas: RegulaeIdentitas): Regulae? = RegistraRegulae.invenireSiAdest(identitas)
 }

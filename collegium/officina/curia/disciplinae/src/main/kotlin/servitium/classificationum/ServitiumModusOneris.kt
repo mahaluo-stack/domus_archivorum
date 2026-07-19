@@ -10,6 +10,6 @@ import translatores.classificationum.TranslatorModusOneris
 object ServitiumModusOneris : ServitiumLecturae<ModusOnerisIdentitas, ModusOneris, ResponsumModusOneris>() {
 
     override fun omniaEntia() = RegistrumModusOneris.omnia()
-    override fun invenireEntia(identitas: ModusOnerisIdentitas) = RegistrumModusOneris.invenire(identitas)
+    override fun invenireEntia(identitas: ModusOnerisIdentitas) = RegistrumModusOneris.invenirePerClavemNecesse(identitas)
     override fun adResponsum(entia: ModusOneris): ResponsumModusOneris = TranslatorModusOneris.adResponsum(entia)
 }

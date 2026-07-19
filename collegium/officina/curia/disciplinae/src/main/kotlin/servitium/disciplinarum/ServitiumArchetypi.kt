@@ -10,6 +10,6 @@ import translatores.disciplinarum.TranslatorArchetypi
 object ServitiumArchetypi : ServitiumLecturae<ArchetypusIdentitas, Archetypus, ResponsumArchetypi>() {
 
     override fun omniaEntia() = RegistrumArchetypi.omnia()
-    override fun invenireEntia(identitas: ArchetypusIdentitas) = RegistrumArchetypi.invenire(identitas)
+    override fun invenireEntia(identitas: ArchetypusIdentitas) = RegistrumArchetypi.invenirePerClavemNecesse(identitas)
     override fun adResponsum(entia: Archetypus): ResponsumArchetypi = TranslatorArchetypi.adResponsum(entia)
 }

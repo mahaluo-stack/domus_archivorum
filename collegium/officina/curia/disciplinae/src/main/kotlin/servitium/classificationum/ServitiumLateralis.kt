@@ -10,6 +10,6 @@ import translatores.classificationum.TranslatorLateralis
 object ServitiumLateralis : ServitiumLecturae<LateralisIdentitas, Lateralis, ResponsumLateralis>() {
 
     override fun omniaEntia() = RegistrumLateralis.omnia()
-    override fun invenireEntia(identitas: LateralisIdentitas) = RegistrumLateralis.invenire(identitas)
+    override fun invenireEntia(identitas: LateralisIdentitas) = RegistrumLateralis.invenirePerClavemNecesse(identitas)
     override fun adResponsum(entia: Lateralis): ResponsumLateralis = TranslatorLateralis.adResponsum(entia)
 }
