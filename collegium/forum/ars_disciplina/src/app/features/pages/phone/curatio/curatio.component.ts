@@ -29,14 +29,14 @@ export class CuratioComponent {
       route: '/curatio/anatomia'
     },
     {
-      title: 'equipment',
+      title: 'instrumenta',
       icon: 'fitness_center',
-      route: '/curatio/equipment'
+      route: '/curatio/instrumenta'
     },
     {
-      title: 'archetypes',
-      icon: 'category',
-      route: '/curatio/archetypes'
+      title: 'entia',
+      icon: 'hub',
+      route: '/curatio/entia'
     }
   ];
 }

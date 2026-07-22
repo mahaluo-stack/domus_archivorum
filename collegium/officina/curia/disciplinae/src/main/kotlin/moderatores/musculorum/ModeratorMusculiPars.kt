@@ -74,7 +74,7 @@ fun Route.moderatorMusculiPars() {
                     )
 
                     ConstantiaResponsumPonere.UPDATED -> Responsum(
-                        false, "Muscle Part updated."
+                        true, "Muscle Part updated."
                     )
                 }
             )

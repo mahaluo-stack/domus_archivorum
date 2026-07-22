@@ -3,7 +3,7 @@
         <div class="flex-column">
 
             <div class="flex-row">
-                <editor-radio label="registry" [selectedValue]="selectedRadioOption" [options]="radioOptions"
+                <editor-radio label="muscle registry" [selectedValue]="selectedRadioOption" [options]="radioOptions"
                     (clicked)="onRadioEvent($event)" />
             </div>
             <div class="flex-column">
@@ -34,7 +34,7 @@
                     [disabled]="!getActiveCancelButton()" (clicked)="clearSelection()" />
 
                 <editor-icon-button label="delete" [active]="!!selectedSource" [disabled]="!selectedSource"
-                    (clicked)="clearSelection()" />
+                    (clicked)="onDelete()" />
             </div>
         </div>
     </div>

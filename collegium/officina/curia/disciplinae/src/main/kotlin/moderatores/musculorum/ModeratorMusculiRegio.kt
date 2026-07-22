@@ -75,7 +75,7 @@ fun Route.moderatorMusculiRegio() {
                     )
 
                     ConstantiaResponsumPonere.UPDATED -> Responsum(
-                        false, "Muscle Group updated."
+                        true, "Muscle Group updated."
                     )
                 }
             )

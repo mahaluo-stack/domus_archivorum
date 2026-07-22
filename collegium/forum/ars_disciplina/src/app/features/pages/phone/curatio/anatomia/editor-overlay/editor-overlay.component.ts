@@ -88,18 +88,13 @@ export class EditorOverlayComponent implements OnInit {
   readonly muscleOptions = input<EditorSelectOption[]>([]);
   readonly muscleGroupOptions = input<EditorSelectOption[]>([]);
   readonly musclePartOptions = input<EditorSelectOption[]>([]);
-  
+
   readonly muscleConfig = this.nexuumService.muscleConfig;
   readonly muscleGroupConfig = this.nexuumService.muscleGroupConfig;
   readonly muscleEntities = this.entiaService.muscleEntities;
 
   ngOnInit(): void {
-    this.snackbar
-      .track(
-        this.entiaService.loadMuscleEntities(),
-        'loading entities...'
-      )
-      .subscribe();
+    this.entiaService.loadMuscleEntities()
   }
 
   protected getMuscleConfiguration(muscleId: number): MuscleConfig | null {
@@ -165,7 +160,7 @@ export class EditorOverlayComponent implements OnInit {
   }
 
   protected onSave(): void {
-    
+
     if (!this.selectedRadioOption) {
       this.snackbar.info('select a configuration type first')
       return

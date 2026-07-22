@@ -8,12 +8,10 @@ import { ActariumComponent } from "../../features/pages/phone/actarium/actarium.
 import { ConsiliumComponent } from "../../features/pages/phone/consilium/consilium.component";
 import { AtriumComponent } from "../../features/pages/phone/atrium/atrium.component";
 import { AdminGuard } from "../guards/admin.guard";
-import { ArchetypesComponent } from "../../features/pages/phone/curatio/archetypes/archetypes.component";
-import { EquipmentComponent } from "../../features/pages/phone/curatio/equipment/equipment.component";
-import { EditMuscleComponent } from "../../features/pages/phone/curatio/muscle/edit-muscle/edit-muscle.component";
-import { MuscleComponent } from "../../features/pages/phone/curatio/muscle/muscle.component";
+import { EntiaComponent } from "../../features/pages/phone/curatio/entia/entia.component";
 import { AnatomiaComponent } from "../../features/pages/phone/curatio/anatomia/anatomia.component";
 import { DisciplinaComponent } from "../../features/pages/phone/curatio/disciplina/disciplina.component";
+import { InstrumentaComponent } from "../../features/pages/phone/curatio/instrumenta/instrumenta.component";
 
 const routes: Routes = [
   {
@@ -67,9 +65,9 @@ const routes: Routes = [
     }
   },
   {
-    title: 'archetypes',
-    path: 'curatio/archetypes',
-    component: ArchetypesComponent,
+    title: 'entia',
+    path: 'curatio/entia',
+    component: EntiaComponent,
     canActivate: [AuthGuard],
     runGuardsAndResolvers: 'always'
   },
@@ -88,23 +86,9 @@ const routes: Routes = [
     runGuardsAndResolvers: 'always'
   },
   {
-    title: 'muscles',
-    path: 'curatio/muscles',
-    component: MuscleComponent,
-    canActivate: [AuthGuard],
-    runGuardsAndResolvers: 'always'
-  },
-  {
-    title: 'edit muscle',
-    path: 'curatio/muscles/edit-muscle/:id',
-    component: EditMuscleComponent,
-    canActivate: [AuthGuard],
-    runGuardsAndResolvers: 'always',
-  },
-  {
-    title: 'equipment',
-    path: 'curatio/equipment',
-    component: EquipmentComponent,
+    title: 'instrumenta',
+    path: 'curatio/instrumenta',
+    component: InstrumentaComponent,
     canActivate: [AuthGuard],
     runGuardsAndResolvers: 'always'
   },

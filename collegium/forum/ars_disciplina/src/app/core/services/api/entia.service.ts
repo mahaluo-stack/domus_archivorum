@@ -10,13 +10,17 @@ import { Observable } from "rxjs";
 })
 export class EntiaService {
 
+    private loaded = false;
     private readonly http = inject(HttpClient);
     private readonly schema = 'entia';
 
     private readonly muscleEntitySignal = signal<MuscleEntity[]>([]);
     readonly muscleEntities = this.muscleEntitySignal.asReadonly();
 
-    loadMuscleEntities(): Observable<Responsum<void>> {
-          return this.http.get<Responsum<void>>(`${apiUrl}/${this.schema}/musculi`)
+    loadMuscleEntities(): void {
+        if (!this.loaded) {
+            this.http.get<Responsum<void>>(`${apiUrl}/${this.schema}/musculi`);
+        }
+        this.loaded = true;
     }
 }

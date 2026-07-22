@@ -13,6 +13,9 @@ import { MusculiRegioDTO } from '../../../../../../core/models/dto/musculorum/mu
 import { SnackbarService } from '../../../../../../core/services/snackbar.service';
 import { Muscle } from '../../../../../../core/models/muscle/muscle.interface';
 import { MuscleGroup } from '../../../../../../core/models/muscle/muscle-group.interface';
+import { PetitioMusculi } from '../../../../../../core/models/dto/petitio/petitio-musculi.interface';
+import { PetitioMusculiPars } from '../../../../../../core/models/dto/petitio/petitio-musculi-pars.interface';
+import { PetitioMusculiRegio } from '../../../../../../core/models/dto/petitio/petitio-musculi-regio.interface';
 
 @Component({
   selector: 'registry-overlay',
@@ -144,8 +147,99 @@ export class RegistryOverlayComponent {
   }
 
   protected onSave(): void {
-    console.log('selected source: ', this.selectedSource);
-    console.log('selected sourceoption:', this.sourceOptions[this.selectedSource!]);
+
+    var petitio: PetitioMusculi | PetitioMusculiPars | PetitioMusculiRegio = {
+      identitas: this.selectedSource ?? 0,
+      nomen: this.nameTextFieldValue,
+      descriptio: this.descriptionTextFieldValue
+    }
+
+    if (!this.selectedSource) {
+      if (this.selectedRadioOption === 1) {
+        this.snackbar
+          .track(
+            this.musculorumService.createMusclePart(petitio),
+            'creating muscle part...'
+          )
+          .subscribe();
+      }
+      if (this.selectedRadioOption === 2) {
+        this.snackbar
+          .track(
+            this.musculorumService.createMuscle(petitio),
+            'creating muscle ...'
+          )
+          .subscribe();
+      }
+      if (this.selectedRadioOption === 3) {
+        this.snackbar
+          .track(
+            this.musculorumService.createMuscleGroup(petitio),
+            'creating muscle group...'
+          )
+          .subscribe();
+      }
+    }
+    else {
+      if (this.selectedRadioOption === 1) {
+        this.snackbar
+          .track(
+            this.musculorumService.updateMusclePart(petitio),
+            'updating muscle part...'
+          )
+          .subscribe();
+      }
+      if (this.selectedRadioOption === 2) {
+        this.snackbar
+          .track(
+            this.musculorumService.updateMuscle(petitio),
+            'updating muscle ...'
+          )
+          .subscribe();
+      }
+      if (this.selectedRadioOption === 3) {
+        this.snackbar
+          .track(
+            this.musculorumService.updateMuscleGroup(petitio),
+            'updating muscle group...'
+          )
+          .subscribe();
+      }
+    }
+  }
+
+  protected onDelete(): void {
+    if (!this.selectedSource) {
+      this.snackbar.info('make a selection first')
+    }
+    else {
+      if (this.selectedRadioOption === 1) {
+        this.snackbar
+          .track(
+            this.musculorumService.deleteMusclePart(this.selectedSource),
+            'deleting muscle part...'
+          )
+          .subscribe();
+      }
+
+      if (this.selectedRadioOption === 2) {
+        this.snackbar
+          .track(
+            this.musculorumService.deleteMuscle(this.selectedSource),
+            'deleting muscle...'
+          )
+          .subscribe();
+      }
+
+      if (this.selectedRadioOption === 3) {
+        this.snackbar
+          .track(
+            this.musculorumService.deleteMuscleGroup(this.selectedSource),
+            'deleting muscle group...'
+          )
+          .subscribe();
+      }
+    }
   }
 
   protected clearSelection(): void {
